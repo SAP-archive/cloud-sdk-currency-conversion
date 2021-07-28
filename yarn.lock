@@ -1392,15 +1392,7 @@
     "@sap-cloud-sdk/util" "^1.47.1"
     axios "^0.21.1"
 
-"@sap-cloud-sdk/analytics@^1.47.1":
-  version "1.47.1"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/analytics/-/analytics-1.47.1.tgz#b56ea7e722e0767f3db654f30932414a95a86f10"
-  integrity sha512-r8Z3vIP8Uxe7qKCOzl65IzbXCebBLAHF10Zl7LhfZfIJ7cql/pruXWiRqnSSTg2tpXGVoBWMzIYjTCFceMfe9w==
-  dependencies:
-    "@sap-cloud-sdk/util" "^1.47.1"
-    axios "^0.21.1"
-
-"@sap-cloud-sdk/core@^1.18.1", "@sap-cloud-sdk/core@^1.32.1":
+"@sap-cloud-sdk/core@^1.18.1", "@sap-cloud-sdk/core@^1.32.1", "@sap-cloud-sdk/core@^1.41":
   version "1.47.1"
   resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/core/-/core-1.47.1.tgz#72c844b9e30e940977244893f2e55a89cd2c9f2f"
   integrity sha512-N3ugk6gEDFCQg0EQ3K+W+iGg7QHCMwv1hlbbnJvtLEhuzdEq08wt/YdNSNE6aZtosXcaOz8x4/y8nIvO6anSbA==
@@ -1419,38 +1411,7 @@
     uuid "^8.2.0"
     voca "^1.4.0"
 
-"@sap-cloud-sdk/core@^1.41":
-  version "1.47.1"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/core/-/core-1.47.1.tgz#72c844b9e30e940977244893f2e55a89cd2c9f2f"
-  integrity sha512-N3ugk6gEDFCQg0EQ3K+W+iGg7QHCMwv1hlbbnJvtLEhuzdEq08wt/YdNSNE6aZtosXcaOz8x4/y8nIvO6anSbA==
-  dependencies:
-    "@sap-cloud-sdk/analytics" "^1.47.1"
-    "@sap-cloud-sdk/util" "^1.47.1"
-    "@sap/xsenv" "^3.0.0"
-    "@types/jsonwebtoken" "^8.3.8"
-    axios "^0.21.1"
-    bignumber.js "^9.0.0"
-    http-proxy-agent "^4.0.1"
-    https-proxy-agent "^5.0.0"
-    jsonwebtoken "^8.5.1"
-    moment "^2.29.0"
-    opossum "^6.0.0"
-    uuid "^8.2.0"
-    voca "^1.4.0"
-
-"@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.32.1", "@sap-cloud-sdk/util@^1.47.1":
-  version "1.47.1"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-1.47.1.tgz#d3f213c06fe2d2d78bd3dcce8fabddca2abfc6eb"
-  integrity sha512-1amI7fn1+aLyli1rkm5Vsnock7V4xwDXtVWF3raW4jUw8/4A7UEOSCKBBN948YdQ7yxaZcG83J7Lg9dTOP4Qsw==
-  dependencies:
-    axios "^0.21.1"
-    chalk "^4.1.0"
-    logform "^2.2.0"
-    promise.allsettled "^1.0.4"
-    voca "^1.4.0"
-    winston "^3.3.3"
-
-"@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.47.1":
+"@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.32.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.47.1":
   version "1.47.1"
   resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-1.47.1.tgz#d3f213c06fe2d2d78bd3dcce8fabddca2abfc6eb"
   integrity sha512-1amI7fn1+aLyli1rkm5Vsnock7V4xwDXtVWF3raW4jUw8/4A7UEOSCKBBN948YdQ7yxaZcG83J7Lg9dTOP4Qsw==
@@ -1600,9 +1561,9 @@
     debug "3.1.0"
 
 "@sap/hana-client@^2", "@sap/hana-client@^2.6.58":
-  version "2.7.23"
-  resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.7.23.tgz#a918b29ffadfea14dc29595f0299166999e4afbd"
-  integrity sha512-r3Oa74kabm9SqYCdl1/Wh8Cysa+6+cpA6D6+OYT2eT92tZumMpo2VV0Ykf4WX3cawqSVyy/lr6Gi7Utpos4Vtw==
+  version "2.9.23"
+  resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.9.23.tgz#989d5eeab43a19a50fed315bc5ecc206dc2b811a"
+  integrity sha512-ywuZMtYoyFC3GEk3Bo+G9eDNDAM0QGPiXPep1Essrk9bHJ5KEeUYdZoKLJdF0kGvBCBC+5YCKFtqZqJpoZYNeA==
   dependencies:
     debug "3.1.0"
 
@@ -2657,10 +2618,10 @@ chai-subset@1.6.0:
   resolved "https://registry.yarnpkg.com/chai-subset/-/chai-subset-1.6.0.tgz#a5d0ca14e329a79596ed70058b6646bd6988cfe9"
   integrity sha1-pdDKFOMpp5WW7XAFi2ZGvWmIz+k=
 
-chai@4.3.4:
-  version "4.3.4"
-  resolved "https://registry.yarnpkg.com/chai/-/chai-4.3.4.tgz#b55e655b31e1eac7099be4c08c21964fce2e6c49"
-  integrity sha512-yS5H68VYOCtN1cjfwumDSuzn/9c+yza4f3reKXlE5rUg7SFcCEy90gJvydNgOYtblyf4Zi6jIWRnXOgErta0KA==
+chai@4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/chai/-/chai-4.3.1.tgz#6fc6af447610709818e5c45116207d60b8a49cfd"
+  integrity sha512-JClPZFGRcSl7X8dYzlCJY7v+X1fBA+9Y339Y8EqhBVfp0QC1hTnaf7nMfR+XZ74clkBC64b0iEw2cWKHt3EVqA==
   dependencies:
     assertion-error "^1.1.0"
     check-error "^1.0.2"
@@ -7205,11 +7166,6 @@ onigasm@^2.2.5:
   integrity sha512-F+th54mPc0l1lp1ZcFMyL/jTs2Tlq4SqIHKIXGZOR/VkHkF9A7Fr5rRr5+ZG/lWeRsyrClLYRq7s/yFQ/XhWCA==
   dependencies:
     lru-cache "^5.1.1"
-
-opossum@^6.0.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/opossum/-/opossum-6.2.0.tgz#19154f934ad656f296e593794d4a8b7e91852aa2"
-  integrity sha512-pqemKjWRvgkhNNRsovfKQ/B3t16OIyOp+VPr+jQCf2U/PhqfyFyvur6LxMxw+1Vrj+Q392YSav6z9wS1wwc+2g==
 
 opossum@^6.0.0:
   version "6.2.0"
