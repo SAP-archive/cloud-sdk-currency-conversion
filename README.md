@@ -1,5 +1,7 @@
 # SAP Cloud SDK Currency Conversion Library
 
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP/cloud-sdk-currency-conversion)](https://api.reuse.software/info/github.com/SAP/cloud-sdk-currency-conversion)
+
 The currency conversion library is an extension to the SAP Cloud SDK. You can use this library to facilitate currency exchange rate conversion.
 
 > The library does not provide any out of the box market data. You must provide the currency exchange rates to the library from your own data sources. You can use the [SAP Market Rates Management](https://www.sap.com/products/market-rates-management.html) service or any other service of your choice.
@@ -62,4 +64,4 @@ The GitHub issue tracker is the preferred channel for reporting bugs, feature re
 
 ## License
 
-This project is licensed under Apache 2.0 as noted in the [license file](https://github.com/sap-staging/cloud-sdk-currency-conversion/blob/main/LICENSES/Apache-2.0.txt).
+Copyright 2018-2021 SAP SE or an SAP affiliate company and cloud-sdk-currency-conversion contributors. This project is licensed under Apache 2.0 as noted in the [license file](LICENSE). Detailed information including third-party components and their licensing/copyright information is available [via the REUSE tool](https://api.reuse.software/info/github.com/SAP/cloud-sdk-currency-conversion).
