@@ -1447,13 +1447,14 @@
     winston "^3.3.3"
 
 "@sap/audit-logging@latest":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@sap/audit-logging/-/audit-logging-4.2.0.tgz#3f151fd9293babc2ac966818e0ce0d2ccca4e78c"
-  integrity sha512-BdOELIL4ElZL19/+R7EIJNAqhxJA+KnnYBSKr/0ann+g+f070unPqdRkf+L99micfL4gpsAqhej2e9QkT2h0pQ==
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@sap/audit-logging/-/audit-logging-5.1.0.tgz#1e356f51c6333e60f8b88945dfd3c1185bb4a7cf"
+  integrity sha512-EM2lCFCSxLK9i5zZzPqB7HdUZRZNDhHdx3ieyHy4BLYdDkOGVCd6fHFqc0teWNuh64aWTt18J/T3vNhFkd0vlw==
   dependencies:
+    "@sap/xssec" "^3.2.2"
     debug "4.2.0"
-    request "2.88.2"
-    requestretry "4.1.1"
+    fetch-retry "4.1.0"
+    node-fetch "2.6.1"
 
 "@sap/cds-compiler@^1.43.1":
   version "1.46.6"
@@ -1637,7 +1638,7 @@
     debug "4.2.0"
     verror "1.10.0"
 
-"@sap/xssec@^3":
+"@sap/xssec@^3", "@sap/xssec@^3.2.2":
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/@sap/xssec/-/xssec-3.2.3.tgz#a7d68e14ed1d6bd24bc58aa23df499bfb49ac5f5"
   integrity sha512-4gOWZszdUFR7c0wZhKgN4YpucIm2iVn+qGjuHLq06WPRO/ufFJYkQ0bY8xDZj/3WrIq2rokx8xiMavNHP92I0A==
@@ -4234,6 +4235,11 @@ fecha@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/fecha/-/fecha-4.2.0.tgz#3ffb6395453e3f3efff850404f0a59b6747f5f41"
   integrity sha512-aN3pcx/DSmtyoovUudctc8+6Hl4T+hI9GBBHLjA76jdZl7+b1sgh5g4k+u/GL3dTy1/pnYzKp69FpJ0OicE3Wg==
+
+fetch-retry@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/fetch-retry/-/fetch-retry-4.1.0.tgz#853ce17e3b23383bfeb3d34a1aa3dfb96a480d11"
+  integrity sha512-FUc9XZuhyE3ka3m53lec29PXVhdRf59QG01nE+OZdfl0M/R0E7Pk6k6qeWzHhX1pHl/f2JPA97sjjbHRgSg/9A==
 
 figures@^3.0.0:
   version "3.2.0"
@@ -6873,7 +6879,7 @@ node-addon-api@^3.0.0:
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-3.1.0.tgz#98b21931557466c6729e51cb77cd39c965f42239"
   integrity sha512-flmrDNB06LIl5lywUz7YlNGZH/5p0M7W28k8hzd9Lshtdh1wshD2Y+U4h9LD6KObOy1f+fEVdgprPrEymjM5uw==
 
-node-fetch@^2.6.1:
+node-fetch@2.6.1, node-fetch@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
@@ -8236,7 +8242,7 @@ request-promise-native@^1.0.8:
     stealthy-require "^1.1.1"
     tough-cookie "^2.3.3"
 
-request@2.88.2, request@^2.87.0, request@^2.88.0, request@^2.88.2:
+request@^2.87.0, request@^2.88.0, request@^2.88.2:
   version "2.88.2"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.2.tgz#d73c918731cb5a87da047e207234146f664d12b3"
   integrity sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==
@@ -8261,15 +8267,6 @@ request@2.88.2, request@^2.87.0, request@^2.88.0, request@^2.88.2:
     tough-cookie "~2.5.0"
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
-
-requestretry@4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/requestretry/-/requestretry-4.1.1.tgz#cff81cf9cacc98bdee1ae8bcf8b542afcbc1938d"
-  integrity sha512-sV2lkWitASDXpIK+m0scC7dHBkW42EKj5iao6Cp8GCXsXY7qS4Q/min6PP5YBuqgV9W38lsA7LUhEkOezl1/Og==
-  dependencies:
-    extend "^3.0.2"
-    lodash "^4.17.15"
-    when "^3.7.7"
 
 requestretry@5.0.0:
   version "5.0.0"
