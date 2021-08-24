@@ -1584,9 +1584,9 @@
     debug "3.1.0"
 
 "@sap/hana-client@^2", "@sap/hana-client@^2.6.58":
-  version "2.7.23"
-  resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.7.23.tgz#a918b29ffadfea14dc29595f0299166999e4afbd"
-  integrity sha512-r3Oa74kabm9SqYCdl1/Wh8Cysa+6+cpA6D6+OYT2eT92tZumMpo2VV0Ykf4WX3cawqSVyy/lr6Gi7Utpos4Vtw==
+  version "2.9.28"
+  resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.9.28.tgz#7bf7e42f422ff0a72c92ce0f9c32bbfcbb7e435d"
+  integrity sha512-RPWMZHUH/Wi9ef72li+dLgDQgP+9zlr57XTWfWNMqqLfumx5Xp/cMlxBIGO4cJ7TAM032SMlcjU2W2uziRA9Hw==
   dependencies:
     debug "3.1.0"
 
