@@ -15,7 +15,7 @@
     "passport": "latest"
   },
   "devDependencies": {
-    "jest": "^27.0.6"
+    "jest": "^26.5.3"
   },
   "scripts": {
     "test": "yarn jest --coverage",
