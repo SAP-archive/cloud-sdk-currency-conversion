@@ -1,312 +1,16 @@
 /* Copyright (c) 2021 SAP SE or an SAP affiliate company. All rights reserved. */
 import { Tenant } from '@sap-cloud-sdk/core';
 import {
-  buildCurrency,
-  Currency,
   CurrencyConversionError,
   ConversionParameterForNonFixedRate,
   DataAdapter,
   ExchangeRate,
   ExchangeRateTypeDetail,
-  Value,
   SingleNonFixedRateConversionResult,
-  TenantSettings,
-  buildConversionParameterForNonFixedRate,
-  setDefaultSettings
+  TenantSettings
 } from '@sap-cloud-sdk/currency-conversion-models';
 import { CurrencyConverter } from '../../src/core/currency-converter';
-
-const TENANT_ID: Tenant = { id: 'TenantID' };
-const TENANT_ID1: Tenant = { id: 'tenantId1' };
-
-const MRM = 'MRM';
-const ECB = 'ECB';
-const THR = 'THR';
-
-const M = 'M';
-const B = 'B';
-const ASK = 'ASK';
-
-const INR: Currency = buildCurrency('INR');
-const EUR: Currency = buildCurrency('EUR');
-const USD: Currency = buildCurrency('USD');
-const BHD: Currency = buildCurrency('BHD');
-const CLF: Currency = buildCurrency('CLF');
-
-const S_100: Value = new Value('100');
-const S_123_123: Value = new Value('123.123');
-const S_0_300623: Value = new Value('0.300623');
-
-const S_2020_01_01T02_30_00Z: Date = new Date('2020-01-01T02:30:00Z');
-const S_2020_01_16T02_30_00Z: Date = new Date('2020-01-16T02:30:00Z');
-const S_2019_09_16T02_30_00Z: Date = new Date('2019-09-16T02:30:00Z');
-const S_1990_03_01T02_30_00Z: Date = new Date('1990-03-01T02:30:00Z');
-
-const defaultTenantSettings: TenantSettings = {
-  ratesDataProviderCode: MRM,
-  ratesDataSource: ECB
-};
-
-const inrEurMConversionParam: ConversionParameterForNonFixedRate = buildConversionParameterForNonFixedRate(
-  'INR',
-  'EUR',
-  '100',
-  M,
-  S_2019_09_16T02_30_00Z
-);
-const eurInrDecimalValueConversionParam: ConversionParameterForNonFixedRate = buildConversionParameterForNonFixedRate(
-  'EUR',
-  'INR',
-  '120.4576776757575757567',
-  B,
-  S_2020_01_01T02_30_00Z
-);
-const usdBhdMConversionParam: ConversionParameterForNonFixedRate = buildConversionParameterForNonFixedRate(
-  'USD',
-  'BHD',
-  '100.12122',
-  M,
-  S_2020_01_01T02_30_00Z
-);
-const usdClfMConversionParam: ConversionParameterForNonFixedRate = buildConversionParameterForNonFixedRate(
-  'USD',
-  'CLF',
-  '100.111231',
-  M,
-  S_2020_01_01T02_30_00Z
-);
-const inrBhdMFiveParam: ConversionParameterForNonFixedRate = buildConversionParameterForNonFixedRate(
-  'INR',
-  'BHD',
-  '20.1',
-  M,
-  S_2020_01_01T02_30_00Z
-);
-const inrBhdMMoreThanFiveParam: ConversionParameterForNonFixedRate = buildConversionParameterForNonFixedRate(
-  'INR',
-  'BHD',
-  '8499999.99990',
-  M,
-  S_2020_01_01T02_30_00Z
-);
-
-const inrEurMConversionParamPastDate: ConversionParameterForNonFixedRate = buildConversionParameterForNonFixedRate(
-  'INR',
-  'EUR',
-  '100',
-  M,
-  S_1990_03_01T02_30_00Z
-);
-
-/* Exchange Rate starts*/
-
-/* MRM, THR */
-const eurInrMrmThrMRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: M
-  },
-  value: S_100,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const usdEurMrmThrMRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: M
-  },
-  value: S_100,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-/* MRM ECB */
-const eurInrMrmEcbDirectConversionDecimal: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: B
-  },
-  value: S_123_123,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: S_2020_01_01T02_30_00Z
-};
-
-const inrEurMrmEcbMRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_100,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const eurInrMrmEcbMRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_100,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: S_2020_01_16T02_30_00Z
-};
-
-const eurInrMrmEcbIndirectConversionRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: B
-  },
-  value: S_100,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: S_2020_01_01T02_30_00Z
-};
-
-const eurUsdMrmEcbAskRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: ASK
-  },
-  value: S_100,
-  fromCurrency: EUR,
-  toCurrency: USD,
-  validFromDateTime: S_2020_01_01T02_30_00Z
-};
-
-const inrEurMrmEcbMDiffrentTenantRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID1),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_100,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const eurInrMrmEcbAskIndirectFalseRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: ASK
-  },
-  value: S_100,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: S_2020_01_01T02_30_00Z
-};
-
-const usdBhdMrmEcbMRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_100,
-  fromCurrency: USD,
-  toCurrency: BHD,
-  validFromDateTime: S_2020_01_01T02_30_00Z
-};
-
-const usdClfMrmEcbMRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_100,
-  fromCurrency: USD,
-  toCurrency: CLF,
-  validFromDateTime: S_2020_01_01T02_30_00Z
-};
-
-const inrBhdMrmEcbMRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_0_300623,
-  fromCurrency: INR,
-  toCurrency: BHD,
-  validFromDateTime: S_2020_01_01T02_30_00Z
-};
-
-const inrEurMrmEcbMDuplicateRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 10,
-    toCurrencyfactor: 5
-  },
-
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_100,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const eurInrMrmEcbMDuplicateRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 10,
-    toCurrencyfactor: 5
-  },
-
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_100,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
+import * as constants from './test-data';
 
 const currencyConverter: CurrencyConverter = new CurrencyConverter();
 
@@ -320,7 +24,7 @@ function buildAdapter(exchangeRates: ExchangeRate[]): DataAdapter {
   ): Promise<ExchangeRate[]> => Promise.resolve(exchangeRates);
 
   adapter.getDefaultSettingsForTenant = (tenant: Tenant): Promise<TenantSettings> =>
-    Promise.resolve(defaultTenantSettings);
+    Promise.resolve(constants.defaultTenantSettings);
 
   adapter.getExchangeRateTypeDetailsForTenant = (
     tenant: Tenant,
@@ -342,7 +46,7 @@ function buildAdapterThrowsExcpetion(exchangeRates: ExchangeRate[]): DataAdapter
   };
 
   adapter.getDefaultSettingsForTenant = (tenant: Tenant): Promise<TenantSettings> =>
-    Promise.resolve(defaultTenantSettings);
+    Promise.resolve(constants.defaultTenantSettings);
 
   adapter.getExchangeRateTypeDetailsForTenant = (
     tenant: Tenant,
@@ -371,14 +75,14 @@ function buildAdapterTSNull(exchangeRates: ExchangeRate[]): DataAdapter {
 describe('Non Fixed Rate -- Single Currency Conversoin Tests Positive.', () => {
   it('Test Direct Conversion Decimal Value.', async () => {
     const result: SingleNonFixedRateConversionResult = await currencyConverter.convertCurrencyWithNonFixedRate(
-      eurInrDecimalValueConversionParam,
+      constants.eurInrDecimalValueConvParam,
       buildAdapter([
-        eurInrMrmEcbDirectConversionDecimal,
-        inrEurMrmEcbMRate,
-        inrEurMrmEcbMDiffrentTenantRate,
-        eurInrMrmThrMRate
+        constants.eurInrMrmEcbDirectConversionDecimal,
+        constants.inrEurMrmEcbMRate,
+        constants.inrEurMrmEcbMDiffrentTenantRate,
+        constants.eurInrMrmThrMRate
       ]),
-      TENANT_ID
+      constants.TENANT_ID
     );
     expect(result).toBeTruthy();
     expect(result.convertedAmount.valueString).toBe('14831.1106484722999998921741');
@@ -388,9 +92,9 @@ describe('Non Fixed Rate -- Single Currency Conversoin Tests Positive.', () => {
 
   it('Test Direct Conversion Exponent Three.', async () => {
     const result: SingleNonFixedRateConversionResult = await currencyConverter.convertCurrencyWithNonFixedRate(
-      usdBhdMConversionParam,
-      buildAdapter([usdBhdMrmEcbMRate]),
-      TENANT_ID
+      constants.usdBhdMConversionParam,
+      buildAdapter([constants.usdBhdMrmEcbMRate]),
+      constants.TENANT_ID
     );
     expect(result).toBeTruthy();
     expect(result.roundedOffConvertedAmount.decimalValue.dp()).toEqual(3);
@@ -399,9 +103,9 @@ describe('Non Fixed Rate -- Single Currency Conversoin Tests Positive.', () => {
 
   it('Test Direct Conversion Rounded Off Value Exponent Four.', async () => {
     const result: SingleNonFixedRateConversionResult = await currencyConverter.convertCurrencyWithNonFixedRate(
-      usdClfMConversionParam,
-      buildAdapter([usdClfMrmEcbMRate]),
-      TENANT_ID
+      constants.usdClfMConversionParam,
+      buildAdapter([constants.usdClfMrmEcbMRate]),
+      constants.TENANT_ID
     );
     expect(result).toBeTruthy();
     expect(result.roundedOffConvertedAmount.decimalValue.dp()).toEqual(4);
@@ -410,24 +114,24 @@ describe('Non Fixed Rate -- Single Currency Conversoin Tests Positive.', () => {
 
   it('Test Direct Conversion Rounded Halfup Last Digit Five.', async () => {
     const result: SingleNonFixedRateConversionResult = await currencyConverter.convertCurrencyWithNonFixedRate(
-      inrBhdMFiveParam,
-      buildAdapter([inrBhdMrmEcbMRate]),
-      TENANT_ID
+      constants.inrBhdMFiveParam,
+      buildAdapter([constants.inrBhdMrmEcbMRate]),
+      constants.TENANT_ID
     );
     expect(result).toBeTruthy();
     expect(result.convertedAmount.valueString).toEqual('6.0425223');
     expect(result.roundedOffConvertedAmount.valueString).toEqual('6.043');
     expect(result.roundedOffConvertedAmount.decimalValue.dp()).toEqual(
-      inrBhdMFiveParam.toCurrency.defaultFractionDigits
+      constants.inrBhdMFiveParam.toCurrency.defaultFractionDigits
     );
     expect(result.exchangeRate.data.ratesDataSource).toBe('ECB');
   });
 
   it('Test Direct Conversion Rounded Halfup Last Digit More Than Five.', async () => {
     const result: SingleNonFixedRateConversionResult = await currencyConverter.convertCurrencyWithNonFixedRate(
-      inrBhdMMoreThanFiveParam,
-      buildAdapter([inrBhdMrmEcbMRate]),
-      TENANT_ID
+      constants.inrBhdMMoreThanFiveParam,
+      buildAdapter([constants.inrBhdMrmEcbMRate]),
+      constants.TENANT_ID
     );
     expect(result).toBeTruthy();
     expect(result.convertedAmount.valueString).toEqual('2555295.4999699377');
@@ -438,22 +142,24 @@ describe('Non Fixed Rate -- Single Currency Conversoin Tests Positive.', () => {
 
   it('Test Direct Conversion With Empty Exchange RateType Details.', async () => {
     const result: SingleNonFixedRateConversionResult = await currencyConverter.convertCurrencyWithNonFixedRate(
-      inrEurMConversionParam,
+      constants.inrEurMConversionParam,
       buildAdapter([
-        inrEurMrmEcbMRate,
-        eurInrMrmEcbMRate,
-        eurInrMrmEcbIndirectConversionRate,
-        eurUsdMrmEcbAskRate,
-        inrEurMrmEcbMDiffrentTenantRate,
-        usdEurMrmThrMRate,
-        eurInrMrmThrMRate,
-        eurInrMrmEcbAskIndirectFalseRate
+        constants.inrEurMrmEcbMRate,
+        constants.eurInrMrmEcbMRate,
+        constants.eurInrMrmEcbIndirectConversionRate,
+        constants.eurUsdMrmEcbAskRate,
+        constants.inrEurMrmEcbMDiffrentTenantRate,
+        constants.usdEurMrmThrMExRate,
+        constants.eurInrMrmThrMRate,
+        constants.eurInrMrmEcbAskIndirectFalseRate
       ]),
-      TENANT_ID
+      constants.TENANT_ID
     );
     expect(result).toBeTruthy();
-    expect(result.exchangeRate.fromCurrency.currencyCode).toEqual(inrEurMrmEcbMRate.fromCurrency.currencyCode);
-    expect(result.exchangeRate.toCurrency.currencyCode).toEqual(inrEurMrmEcbMRate.toCurrency.currencyCode);
+    expect(result.exchangeRate.fromCurrency.currencyCode).toEqual(
+      constants.inrEurMrmEcbMRate.fromCurrency.currencyCode
+    );
+    expect(result.exchangeRate.toCurrency.currencyCode).toEqual(constants.inrEurMrmEcbMRate.toCurrency.currencyCode);
     expect(result.convertedAmount.valueString).toBe('10000');
     expect(result.roundedOffConvertedAmount.valueString).toBe('10000');
     expect(result.exchangeRate.data.ratesDataSource).toBe('ECB');
@@ -461,9 +167,9 @@ describe('Non Fixed Rate -- Single Currency Conversoin Tests Positive.', () => {
   it('Test Single Conversion With Exchange Rat eRecord Having Future Date', async () => {
     await expect(
       currencyConverter.convertCurrencyWithNonFixedRate(
-        inrEurMConversionParamPastDate,
-        buildAdapter([eurInrMrmThrMRate, inrEurMrmEcbMRate, eurInrMrmEcbMRate]),
-        TENANT_ID
+        constants.inrEurMConvParamPastDate,
+        buildAdapter([constants.eurInrMrmThrMRate, constants.inrEurMrmEcbMRate, constants.eurInrMrmEcbMRate]),
+        constants.TENANT_ID
       )
     ).rejects.toThrowError();
   });
@@ -473,8 +179,8 @@ describe('Non Fixed Rate -- Single Currency Conversoin Tests Positive.', () => {
     await expect(
       currencyConverter.convertCurrencyWithNonFixedRate(
         temp[0],
-        buildAdapter([eurInrMrmThrMRate, inrEurMrmEcbMRate, eurInrMrmEcbMRate]),
-        TENANT_ID
+        buildAdapter([constants.eurInrMrmThrMRate, constants.inrEurMrmEcbMRate, constants.eurInrMrmEcbMRate]),
+        constants.TENANT_ID
       )
     ).rejects.toThrowError();
   });
@@ -482,62 +188,74 @@ describe('Non Fixed Rate -- Single Currency Conversoin Tests Positive.', () => {
   it('Test Single Conversion With Empty Exchange Rates.', async () => {
     const temp: ExchangeRate[] = new Array();
     await expect(
-      currencyConverter.convertCurrencyWithNonFixedRate(inrEurMConversionParamPastDate, buildAdapter(temp), TENANT_ID)
+      currencyConverter.convertCurrencyWithNonFixedRate(
+        constants.inrEurMConvParamPastDate,
+        buildAdapter(temp),
+        constants.TENANT_ID
+      )
     ).rejects.toThrowError();
   });
   it('Test Single Conversion With ExchangeRates Throws DataAdapterException.', async () => {
     const temp: ExchangeRate[] = new Array();
     await expect(
       currencyConverter.convertCurrencyWithNonFixedRate(
-        inrEurMConversionParamPastDate,
+        constants.inrEurMConvParamPastDate,
         buildAdapterThrowsExcpetion(temp),
-        TENANT_ID
+        constants.TENANT_ID
       )
     ).rejects.toThrowError();
   });
   it('Test Single Conversion With Duplicate Exchange Rate Same TimeStamp', async () => {
     await expect(
       currencyConverter.convertCurrencyWithNonFixedRate(
-        inrEurMConversionParam,
-        buildAdapter([inrEurMrmEcbMDuplicateRate, inrEurMrmEcbMRate]),
-        TENANT_ID
+        constants.inrEurMConversionParam,
+        buildAdapter([constants.inrEurMrmEcbMDuplicateExRate, constants.inrEurMrmEcbMRate]),
+        constants.TENANT_ID
       )
     ).rejects.toThrowError();
   });
   it('Test Single Conversion With Duplicate Record.', async () => {
     await expect(
       currencyConverter.convertCurrencyWithNonFixedRate(
-        inrEurMConversionParam,
-        buildAdapter([inrEurMrmEcbMDuplicateRate, inrEurMrmEcbMRate]),
-        TENANT_ID
+        constants.inrEurMConversionParam,
+        buildAdapter([constants.inrEurMrmEcbMDuplicateExRate, constants.inrEurMrmEcbMRate]),
+        constants.TENANT_ID
       )
     ).rejects.toThrowError();
   });
   it('Test Single Conversion With No Record Found', async () => {
     await expect(
       currencyConverter.convertCurrencyWithNonFixedRate(
-        inrEurMConversionParam,
-        buildAdapter([eurInrMrmThrMRate, eurInrMrmEcbMDuplicateRate]),
-        TENANT_ID
+        constants.inrEurMConversionParam,
+        buildAdapter([constants.eurInrMrmThrMRate, constants.eurInrMrmEcbMDuplicateExRate]),
+        constants.TENANT_ID
       )
     ).rejects.toThrowError();
   });
   it('Test Single Conversion With Data Adapter Null', async () => {
     const temp: DataAdapter[] = new Array();
     await expect(
-      currencyConverter.convertCurrencyWithNonFixedRate(inrEurMConversionParam, temp[0], TENANT_ID)
+      currencyConverter.convertCurrencyWithNonFixedRate(constants.inrEurMConversionParam, temp[0], constants.TENANT_ID)
     ).rejects.toThrowError();
   });
   it('Test Single Conversion With Exchange Rates Null', async () => {
     const temp: ExchangeRate[] = new Array();
     await expect(
-      currencyConverter.convertCurrencyWithNonFixedRate(inrEurMConversionParam, buildAdapter(temp), TENANT_ID)
+      currencyConverter.convertCurrencyWithNonFixedRate(
+        constants.inrEurMConversionParam,
+        buildAdapter(temp),
+        constants.TENANT_ID
+      )
     ).rejects.toThrowError();
   });
   it('Test Single Conversion With Exchange Rates And Default TS Null', async () => {
     const temp: ExchangeRate[] = new Array();
     await expect(
-      currencyConverter.convertCurrencyWithNonFixedRate(inrEurMConversionParam, buildAdapterTSNull(temp), TENANT_ID)
+      currencyConverter.convertCurrencyWithNonFixedRate(
+        constants.inrEurMConversionParam,
+        buildAdapterTSNull(temp),
+        constants.TENANT_ID
+      )
     ).rejects.toThrowError();
   });
 });
