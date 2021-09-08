@@ -1434,7 +1434,7 @@
     uuid "^8.2.0"
     voca "^1.4.0"
 
-"@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.32.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.48.0":
+"@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.32.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.48.1":
   version "1.48.1"
   resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-1.48.1.tgz#5efb9621830c0f6502b14de9ed54e1f131c8e1fc"
   integrity sha512-Sq/vDwbRtjH1R8rXkq2mfzUcPRSqK1UVjB0aB44Oa+RWLKLR3LFKb5R2JZeyjmF7Tr1QSNvNyFUZiGwSFHszAw==
@@ -6509,10 +6509,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-marked@^2.1.1:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-2.1.3.tgz#bd017cef6431724fd4b27e0657f5ceb14bff3753"
-  integrity sha512-/Q+7MGzaETqifOMWYEA7HVMaZb4XbcRfaOzcSsHZEith83KGlvaSG33u0SKu89Mj5h+T8V2hM+8O45Qc5XTgwA==
+marked@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-3.0.2.tgz#60ce97d6aec34dd882ab4bb4df82494666854e17"
+  integrity sha512-TMJQQ79Z0e3rJYazY0tIoMsFzteUGw9fB3FD+gzuIT3zLuG9L9ckIvUfF51apdJkcqc208jJN2KbtPbOvXtbjA==
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -8597,10 +8597,10 @@ shellwords@^0.1.1:
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
 
-shiki@^0.9.3:
-  version "0.9.5"
-  resolved "https://registry.yarnpkg.com/shiki/-/shiki-0.9.5.tgz#c8da81a05fbfd1810729c6873901a729a72ec541"
-  integrity sha512-XFn+rl3wIowDjzdr5DlHoHgQphXefgUTs2bNp/bZu4WF9gTrTLnKwio3f28VjiFG6Jpip7yQn/p4mMj6OrjrtQ==
+shiki@^0.9.8:
+  version "0.9.10"
+  resolved "https://registry.yarnpkg.com/shiki/-/shiki-0.9.10.tgz#feb8d4938b5dd71c5c8b1c1c7cd28fbbd37da087"
+  integrity sha512-xeM7Oc6hY+6iW5O/T5hor8ul7mEprzyl5y4r5zthEHToQNw7MIhREMgU3r2gKDB0NaMLNrkcEQagudCdzE13Lg==
   dependencies:
     json5 "^2.2.0"
     onigasm "^2.2.5"
@@ -9502,17 +9502,17 @@ typedoc-default-themes@^0.12.10:
   integrity sha512-fIS001cAYHkyQPidWXmHuhs8usjP5XVJjWB8oZGqkTowZaz3v7g3KDZeeqE82FBrmkAnIBOY3jgy7lnPnqATbA==
 
 typedoc@^0.21.4:
-  version "0.21.6"
-  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.21.6.tgz#854bfa2d6b3ac818ac70aa4734a4d1ba93695595"
-  integrity sha512-+4u3PEBjQdaL5/yfus5WJbjIdQHv7E/FpZq3cNki9BBdGmZhqnTF6JLIXDQ2EfVggojOJG9/soB5QVFgXRYnIw==
+  version "0.21.9"
+  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.21.9.tgz#6fbdc7152024a00f03af53a0ca40f44e91f0f129"
+  integrity sha512-VRo7aII4bnYaBBM1lhw4bQFmUcDQV8m8tqgjtc7oXl87jc1Slbhfw2X5MccfcR2YnEClHDWgsiQGgNB8KJXocA==
   dependencies:
     glob "^7.1.7"
     handlebars "^4.7.7"
     lunr "^2.3.9"
-    marked "^2.1.1"
+    marked "^3.0.2"
     minimatch "^3.0.0"
     progress "^2.0.3"
-    shiki "^0.9.3"
+    shiki "^0.9.8"
     typedoc-default-themes "^0.12.10"
 
 typescript@^4.0.2:
