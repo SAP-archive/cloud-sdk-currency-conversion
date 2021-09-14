@@ -1589,14 +1589,7 @@
     "@sap/cds" "^5.0.0"
     semver "^7.3.4"
 
-"@sap/hana-client@2.8.20":
-  version "2.8.20"
-  resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.8.20.tgz#bc5c6bd900fd1a15afb1b9ab3c98fc1453613d99"
-  integrity sha512-4PnAEaR6Z3AuFk3Tv6eeooD3Ank2aUws/RLZZifk4Yi9gxz38YZoLrwUcZD0YCY040oZs5VXOdNVUaTTgWO2vg==
-  dependencies:
-    debug "3.1.0"
-
-"@sap/hana-client@^2", "@sap/hana-client@^2.6.58":
+"@sap/hana-client@2.9.28", "@sap/hana-client@^2", "@sap/hana-client@^2.6.58":
   version "2.9.28"
   resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.9.28.tgz#7bf7e42f422ff0a72c92ce0f9c32bbfcbb7e435d"
   integrity sha512-RPWMZHUH/Wi9ef72li+dLgDQgP+9zlr57XTWfWNMqqLfumx5Xp/cMlxBIGO4cJ7TAM032SMlcjU2W2uziRA9Hw==
@@ -1604,21 +1597,21 @@
     debug "3.1.0"
 
 "@sap/hdi-deploy@^4":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@sap/hdi-deploy/-/hdi-deploy-4.1.0.tgz#e9373fb69b1e959106661032324e0bf5226c76dd"
-  integrity sha512-SefMBb+KeDFCzsOLT0zM7R/L+cJ2vEtZGUIh5QZ0En2MtLachpol/Z7hpV4ga1noXCJv+wMzy+frfQbYkVfliw==
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@sap/hdi-deploy/-/hdi-deploy-4.2.0.tgz#102c03c12bad0297f0fd1d4bde440993b8003442"
+  integrity sha512-ZwH6q3/fK3EQ2p80H0Pw2yKJZk6iY6Kedti+2LNV4urLqNfwuOnoKVuVifohwRlOyPzwluF59XkBcXSr9t0tiA==
   dependencies:
-    "@sap/hana-client" "2.8.20"
-    "@sap/hdi" "4.0.2"
+    "@sap/hana-client" "2.9.28"
+    "@sap/hdi" "4.1.0"
     "@sap/xsenv" "3.1.0"
     async "3.1.0"
     dotenv "10.0.0"
     handlebars "4.7.7"
 
-"@sap/hdi@4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@sap/hdi/-/hdi-4.0.2.tgz#169935f6ff7eba513202904c1f25ef29e8697605"
-  integrity sha512-OrZD+pw3UPFV4Ly2zHF2m1lkV9wSHYavt5YZmt1dmf23L3ze7vXnpAIdAedfMfsLVedoIaMkercXh1duBeSD7A==
+"@sap/hdi@4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@sap/hdi/-/hdi-4.1.0.tgz#ccbcc9a1a2355318016991bc152403bb5e88513b"
+  integrity sha512-rDN5cFk7ejB2xT6qlu/jLYXgDGUQWaNgykpoBK81z8v8/yOkXIvK0C+WXz6ZDOTx8ePDiw0yEm4gUz0UDAhghQ==
   dependencies:
     async "3.1.0"
 
