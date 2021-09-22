@@ -11,15 +11,15 @@ import { ExchangeRateRecordDeterminer } from '../../src/core/exchange-rate-recor
 import { ConversionError } from '../../src/constants/conversion-error';
 import * as constants from './test-data';
 
-const S_0_5: Value = new Value('0.5');
-const S_0_33333333333333: Value = new Value('0.33333333333333');
-const S_2: Value = new Value('2');
-const S_0_02: Value = new Value('0.02');
-const S_50: Value = new Value('50');
-const S_1: Value = new Value('1');
-const S_8: Value = new Value('8');
-const S_0_08: Value = new Value('0.08');
-const S_200: Value = new Value('200');
+const VALUE_0_5: Value = new Value('0.5');
+const VALUE_0_33333333333333: Value = new Value('0.33333333333333');
+const VALUE_2: Value = new Value('2');
+const VALUE_0_02: Value = new Value('0.02');
+const VALUE_50: Value = new Value('50');
+const VALUE_1: Value = new Value('1');
+const VALUE_8: Value = new Value('8');
+const VALUE_0_08: Value = new Value('0.08');
+const VALUE_200: Value = new Value('200');
 
 const DATE_2020_01_01: Date = new Date('2020-01-01T02:30:00Z');
 const DATE_2019_09_16: Date = new Date('2019-09-16T02:30:00Z');
@@ -317,7 +317,7 @@ describe('Exchange Rate Record Determiner Null Tenant Setting', () => {
         ratesDataSource: null as any,
         exchangeRateType: constants.A
       },
-      value: S_0_5,
+      value: VALUE_0_5,
       fromCurrency: constants.EUR,
       toCurrency: constants.USD,
       validFromDateTime: DATE_2020_01_01
@@ -343,7 +343,7 @@ describe('Exchange Rate Record Determiner Null Tenant Setting', () => {
         ratesDataSource: null as any,
         exchangeRateType: constants.A
       },
-      value: S_0_33333333333333,
+      value: VALUE_0_33333333333333,
       fromCurrency: constants.EUR,
       toCurrency: constants.USD,
       validFromDateTime: DATE_2020_01_01
@@ -392,7 +392,7 @@ describe('Exchange Rate Record Determiner Null Tenant Setting', () => {
         ratesDataSource: null as any,
         exchangeRateType: constants.A
       },
-      value: S_0_5,
+      value: VALUE_0_5,
       fromCurrency: constants.EUR,
       toCurrency: constants.USD,
       validFromDateTime: DATE_2019_09_16
@@ -598,7 +598,7 @@ describe('Exchange Rate Record Determiner Null Tenant Setting', () => {
         ratesDataSource: null as any,
         exchangeRateType: constants.A
       },
-      value: S_2,
+      value: VALUE_2,
       fromCurrency: constants.EUR,
       toCurrency: constants.USD,
       validFromDateTime: DATE_2020_01_01
@@ -624,7 +624,7 @@ describe('Exchange Rate Record Determiner Null Tenant Setting', () => {
         ratesDataSource: null as any,
         exchangeRateType: constants.A
       },
-      value: S_0_02,
+      value: VALUE_0_02,
       fromCurrency: constants.EUR,
       toCurrency: constants.USD,
       validFromDateTime: DATE_2020_01_01
@@ -650,7 +650,7 @@ describe('Exchange Rate Record Determiner Null Tenant Setting', () => {
         ratesDataSource: null as any,
         exchangeRateType: constants.A
       },
-      value: S_50,
+      value: VALUE_50,
       fromCurrency: constants.EUR,
       toCurrency: constants.USD,
       validFromDateTime: DATE_2020_01_01
@@ -676,7 +676,7 @@ describe('Exchange Rate Record Determiner Null Tenant Setting', () => {
         ratesDataSource: null as any,
         exchangeRateType: constants.A
       },
-      value: S_0_5,
+      value: VALUE_0_5,
       fromCurrency: constants.EUR,
       toCurrency: constants.USD,
       validFromDateTime: DATE_2020_01_01
@@ -702,7 +702,7 @@ describe('Exchange Rate Record Determiner Null Tenant Setting', () => {
         ratesDataSource: null as any,
         exchangeRateType: constants.A
       },
-      value: S_1,
+      value: VALUE_1,
       fromCurrency: constants.EUR,
       toCurrency: constants.USD,
       validFromDateTime: DATE_2020_01_01
@@ -728,7 +728,7 @@ describe('Exchange Rate Record Determiner Null Tenant Setting', () => {
         ratesDataSource: null as any,
         exchangeRateType: constants.A
       },
-      value: S_8,
+      value: VALUE_8,
       fromCurrency: constants.EUR,
       toCurrency: constants.USD,
       validFromDateTime: DATE_2020_01_01
@@ -754,7 +754,7 @@ describe('Exchange Rate Record Determiner Null Tenant Setting', () => {
         ratesDataSource: null as any,
         exchangeRateType: constants.A
       },
-      value: S_0_08,
+      value: VALUE_0_08,
       fromCurrency: constants.EUR,
       toCurrency: constants.USD,
       validFromDateTime: DATE_2020_01_01
@@ -780,7 +780,7 @@ describe('Exchange Rate Record Determiner Null Tenant Setting', () => {
         ratesDataSource: null as any,
         exchangeRateType: constants.A
       },
-      value: S_200,
+      value: VALUE_200,
       fromCurrency: constants.EUR,
       toCurrency: constants.USD,
       validFromDateTime: DATE_2020_01_01
@@ -806,7 +806,7 @@ describe('Exchange Rate Record Determiner Null Tenant Setting', () => {
         ratesDataSource: null as any,
         exchangeRateType: constants.A
       },
-      value: S_2,
+      value: VALUE_2,
       fromCurrency: constants.EUR,
       toCurrency: constants.USD,
       validFromDateTime: DATE_2020_01_01

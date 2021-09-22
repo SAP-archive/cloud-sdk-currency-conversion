@@ -32,33 +32,33 @@ export const USD: Currency = buildCurrency('USD');
 export const BHD: Currency = buildCurrency('BHD');
 export const CLF: Currency = buildCurrency('CLF');
 
-export const A_1: CurrencyAmount = new CurrencyAmount('1');
-export const A_10000: CurrencyAmount = new CurrencyAmount('10000');
-export const A_20000: CurrencyAmount = new CurrencyAmount('20000');
-export const A_300: CurrencyAmount = new CurrencyAmount('300');
-export const A_50: CurrencyAmount = new CurrencyAmount('50');
-export const A_0_333333333333: CurrencyAmount = new CurrencyAmount('0.333333333333');
-export const A_0_33: CurrencyAmount = new CurrencyAmount('0.33');
-export const A_0_5: CurrencyAmount = new CurrencyAmount('0.5');
-export const A_2: CurrencyAmount = new CurrencyAmount('2');
-export const A_120: CurrencyAmount = new CurrencyAmount('120');
-export const A_5000: CurrencyAmount = new CurrencyAmount('5000');
+export const AMOUNT_1: CurrencyAmount = new CurrencyAmount('1');
+export const AMOUNT_10000: CurrencyAmount = new CurrencyAmount('10000');
+export const AMOUNT_20000: CurrencyAmount = new CurrencyAmount('20000');
+export const AMOUNT_300: CurrencyAmount = new CurrencyAmount('300');
+export const AMOUNT_50: CurrencyAmount = new CurrencyAmount('50');
+export const AMOUNT_0_333333333333: CurrencyAmount = new CurrencyAmount('0.333333333333');
+export const AMOUNT_0_33: CurrencyAmount = new CurrencyAmount('0.33');
+export const AMOUNT_0_5: CurrencyAmount = new CurrencyAmount('0.5');
+export const AMOUNT_2: CurrencyAmount = new CurrencyAmount('2');
+export const AMOUNT_120: CurrencyAmount = new CurrencyAmount('120');
+export const AMOUNT_5000: CurrencyAmount = new CurrencyAmount('5000');
 
-const S_0: Value = new Value('0');
-const S_1: Value = new Value('1');
-const S_2: Value = new Value('2');
-const S_3: Value = new Value('3');
-const S_5: Value = new Value('5');
-const S_10: Value = new Value('10');
-const S_7_00000001: Value = new Value('7.00000001');
-const S_21_00000001: Value = new Value('21.00000001');
-const S_100: Value = new Value('100');
-const S_7_0: Value = new Value('7.0');
-const S_21_0: Value = new Value('21.0');
-const S_123_123: Value = new Value('123.123');
-const S_0_300623: Value = new Value('0.300623');
-const S_20: Value = new Value('20');
-const S_30: Value = new Value('30');
+const VALUE_0: Value = new Value('0');
+const VALUE_1: Value = new Value('1');
+const VALUE_2: Value = new Value('2');
+const VALUE_3: Value = new Value('3');
+const VALUE_5: Value = new Value('5');
+const VALUE_10: Value = new Value('10');
+const VALUE_7_00000001: Value = new Value('7.00000001');
+const VALUE_21_00000001: Value = new Value('21.00000001');
+const VALUE_100: Value = new Value('100');
+const VALUE_7_0: Value = new Value('7.0');
+const VALUE_21_0: Value = new Value('21.0');
+const VALUE_123_123: Value = new Value('123.123');
+const VALUE_0_300623: Value = new Value('0.300623');
+const VALUE_20: Value = new Value('20');
+const VALUE_30: Value = new Value('30');
 
 const DATE_2020_01_01: Date = new Date('2020-01-01T02:30:00Z');
 const DATE_2020_02_01: Date = new Date('2020-02-01T02:30:00Z');
@@ -128,13 +128,6 @@ export const usdEurMConversionParam: ConversionParameterForNonFixedRate = buildC
   'EUR',
   '100',
   M,
-  DATE_2020_01_01
-);
-export const usdEurAskConversionParam: ConversionParameterForNonFixedRate = buildConversionParameterForNonFixedRate(
-  'USD',
-  'EUR',
-  '100',
-  ASK,
   DATE_2020_01_01
 );
 export const eurInrDecimalValueConvParam: ConversionParameterForNonFixedRate = buildConversionParameterForNonFixedRate(
@@ -263,13 +256,6 @@ export const usdEurMConversionParameter: ConversionParameterForNonFixedRate = bu
   M,
   DATE_2020_01_03
 );
-export const eurUsdMrmThrABCConvParam: ConversionParameterForNonFixedRate = buildConversionParameterForNonFixedRate(
-  'USD',
-  'EUR',
-  '100',
-  'ABC',
-  DATE_2020_01_01
-);
 export const usdBhdMConversionParam: ConversionParameterForNonFixedRate = buildConversionParameterForNonFixedRate(
   'USD',
   'BHD',
@@ -296,7 +282,7 @@ export const inrEurMrmEcbMRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -309,7 +295,7 @@ export const inrEurMrmEcbMDuplicateExcRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -322,7 +308,7 @@ export const eurInrMrmEcbMRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_16
@@ -335,7 +321,7 @@ export const eurInrMrmEcbMDuplicateExcRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2019_09_16
@@ -353,7 +339,7 @@ export const eurInrMrmEcbAskIndirectTrueRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: ASK
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -366,7 +352,7 @@ export const eurInrMrmEcbAskIndirectFalseRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: ASK
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -379,7 +365,7 @@ export const inrEurMrmEcbMDiffrentTenantRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -392,7 +378,7 @@ export const eurUsdMrmEcbMRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -405,7 +391,7 @@ export const usdEurMrmEcbMRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -418,7 +404,7 @@ export const usdInrMrmEcbMRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -431,7 +417,7 @@ export const usdInrMrmEcbLastRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: LAST
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -444,7 +430,7 @@ export const eurInrMrmEcbLastRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: LAST
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -462,7 +448,7 @@ export const eurUsdMrmEcbIndirectTrueExcRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_2,
+  value: VALUE_2,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -475,7 +461,7 @@ export const eurUsdMrmEcbIndirectFalseRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_2,
+  value: VALUE_2,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_02_01
@@ -488,7 +474,7 @@ export const eurInrMrmEcbARate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -501,7 +487,7 @@ export const eurInrMrmEcbADateBeforeRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2019_09_16
@@ -514,7 +500,7 @@ export const usdInrMrmEcbARate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -527,7 +513,7 @@ export const eurUsdMrmEcbARate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_2,
+  value: VALUE_2,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -540,7 +526,7 @@ export const eurInrMrmEcbADuplicateRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -553,7 +539,7 @@ export const usdInrMrmEcbADuplicateRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -571,7 +557,7 @@ export const eurInrMrmIndirectTrueRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -584,7 +570,7 @@ export const eurInrMrmIndirectFalseRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -602,7 +588,7 @@ export const eurInrMrmIndirectTrueFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -620,7 +606,7 @@ export const eurInrMrmIndirectFalseFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -638,7 +624,7 @@ export const usdInrMrmIndirectTrueRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -651,7 +637,7 @@ export const usdInrMrmIndirectFalseRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -669,7 +655,7 @@ export const usdInrMrmIndirectTrueFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -687,7 +673,7 @@ export const usdInrMrmIndirectFalseFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -700,7 +686,7 @@ export const usdInrMrmEcbDuplicateDateRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -713,7 +699,7 @@ export const eurInrMrmThrMRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2019_09_16
@@ -731,7 +717,7 @@ export const eurInrMrmThrAskIndirectTrueRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: ASK
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -744,7 +730,7 @@ export const eurInrMrmIndirectFalseRateInfiniteDecimal: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_3,
+  value: VALUE_3,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -757,7 +743,7 @@ export const usdInrMrmIndirectFalseRateInfiniteDecimal: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_3,
+  value: VALUE_3,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -770,7 +756,7 @@ export const eurInrMrmEcbZeroRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -783,7 +769,7 @@ export const usdInrMrmEcbZeroRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -801,7 +787,7 @@ export const eurInrMrmEcbZeroFactor: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -819,7 +805,7 @@ export const usdInrMrmEcbZeroFactor: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -837,7 +823,7 @@ export const eurInrMrmEcbZeroFactorExcRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -855,7 +841,7 @@ export const usdInrMrmEcbZeroFactorRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -868,7 +854,7 @@ export const eurInrMrmEcbScaleMoreThanDefaultRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_7_00000001,
+  value: VALUE_7_00000001,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -881,7 +867,7 @@ export const usdInrMrmEcbScaleMoreThanDefaultRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_21_00000001,
+  value: VALUE_21_00000001,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -894,7 +880,7 @@ export const eurInrMrmEcbScaleMoreThanZeroRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_7_0,
+  value: VALUE_7_0,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -907,7 +893,7 @@ export const usdInrMrmEcbScaleMoreThanZeroRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_21_0,
+  value: VALUE_21_0,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -920,7 +906,7 @@ export const eurUsdMrmEcbIndirectFalseInvertedTrueRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -933,7 +919,7 @@ export const usdEurMrmEcbIndirectFalseInvertedTrueRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -946,7 +932,7 @@ export const inrEurMrmThrMRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -959,7 +945,7 @@ export const eurInrMrmThrAExcRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2019_09_16
@@ -972,7 +958,7 @@ export const eurUsdByorEcbIndirectFalseInvertedTrueRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -985,7 +971,7 @@ export const eurUsdMrmThrIndirectFalseInvertedTrueRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -998,7 +984,7 @@ export const inrEurMrmThrMExcRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -1011,7 +997,7 @@ export const inrEurMrmThrMDuplicateRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -1024,7 +1010,7 @@ export const eurInrMrmThrMExcRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_16
@@ -1037,7 +1023,7 @@ export const eurInrMrmThrMDuplicateRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2019_09_16
@@ -1050,7 +1036,7 @@ export const eurInrMrmThrAskIndirectFalseRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: ASK
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1063,7 +1049,7 @@ export const inrEurMrmThrMDiffrentTenantRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -1076,7 +1062,7 @@ export const usdInrMrmThrLastRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: LAST
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1089,7 +1075,7 @@ export const eurInrMrmThrLastRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: LAST
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1107,7 +1093,7 @@ export const eurUsdMrmThrIndirectTrueRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_2,
+  value: VALUE_2,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -1120,7 +1106,7 @@ export const eurUsdMrmThrIndirectFalseRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_2,
+  value: VALUE_2,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_02_01
@@ -1133,7 +1119,7 @@ export const eurInrMrmThrARate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1146,7 +1132,7 @@ export const eurInrMrmThrADateBeforeRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2019_09_16
@@ -1159,7 +1145,7 @@ export const usdInrMrmThrARate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1172,7 +1158,7 @@ export const eurInrMrmThrADuplicateRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1185,7 +1171,7 @@ export const usdInrMrmThrADuplicateRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1203,7 +1189,7 @@ export const eurInrMrmThrIndirectTrueRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1216,7 +1202,7 @@ export const eurInrMrmThrIndirectFalseRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1234,7 +1220,7 @@ export const eurInrMrmThrIndirectTrueFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1252,7 +1238,7 @@ export const eurInrMrmThrIndirectFalseFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1270,7 +1256,7 @@ export const usdInrMrmThrIndirectTrueRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1283,7 +1269,7 @@ export const usdInrMrmThrIndirectFalseRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1301,7 +1287,7 @@ export const usdInrMrmThrIndirectTrueFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1319,7 +1305,7 @@ export const usdInrMrmThrIndirectFalseFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1332,7 +1318,7 @@ export const usdInrMrmThrDuplicateDateRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1345,7 +1331,7 @@ export const eurInrMrmThrZeroRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1358,7 +1344,7 @@ export const usdInrMrmThrZeroRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1376,7 +1362,7 @@ export const eurInrMrmThrZeroFactor: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1394,7 +1380,7 @@ export const usdInrMrmThrZeroFactor: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1412,7 +1398,7 @@ export const eurInrMrmThrZeroFactorRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1430,7 +1416,7 @@ export const usdInrMrmThrZeroFactorRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1443,7 +1429,7 @@ export const eurUsdMrmThrMRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -1456,7 +1442,7 @@ export const usdEurMrmThrMRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -1469,7 +1455,7 @@ export const eurInrMrmThrIndirectFalseRateInfiniteDecimal: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_3,
+  value: VALUE_3,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1482,7 +1468,7 @@ export const usdInrMrmThrIndirectFalseRateInfiniteDecimal: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_3,
+  value: VALUE_3,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1500,7 +1486,7 @@ export const eurInrMrmEcbIndirectTrueExcRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_16
@@ -1513,7 +1499,7 @@ export const eurInrMrmEcbIndirectFalseExcRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_16
@@ -1531,7 +1517,7 @@ export const eurInrMrmEcbIndirectTrueFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1549,7 +1535,7 @@ export const eurInrMrmEcbIndirectFalseFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1567,7 +1553,7 @@ export const usdInrMrmEcbIndirectTrueRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1580,7 +1566,7 @@ export const usdInrMrmEcbIndirectFalseRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1598,7 +1584,7 @@ export const usdInrMrmEcbIndirectTrueFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1616,7 +1602,7 @@ export const usdInrMrmEcbIndirectFalseFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1629,7 +1615,7 @@ export const usdInrMrmEcbDuplicateDateExcRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1642,7 +1628,7 @@ export const eurInrMrmEcbIndirectFalseRateInfiniteDecimal: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_3,
+  value: VALUE_3,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1655,7 +1641,7 @@ export const usdInrMrmEcbIndirectFalseRateInfiniteDecimal: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_3,
+  value: VALUE_3,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1673,7 +1659,7 @@ export const eurInrMrmEcbZeroFactorRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1686,7 +1672,7 @@ export const eurInrMrmThrScaleMoreThanZeroRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_7_0,
+  value: VALUE_7_0,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1699,7 +1685,7 @@ export const usdInrMrmThrScaleMoreThanZeroRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_21_0,
+  value: VALUE_21_0,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1712,7 +1698,7 @@ export const eurInrMrmThrScaleMoreThanDefaultRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_7_00000001,
+  value: VALUE_7_00000001,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -1725,7 +1711,7 @@ export const usdInrMrmThrScaleMoreThanDefaultRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: A
   },
-  value: S_21_00000001,
+  value: VALUE_21_00000001,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1738,7 +1724,7 @@ export const eurInrMrmEcbDirectConversionDecimal: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_123_123,
+  value: VALUE_123_123,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1756,7 +1742,7 @@ export const eurInrMrmEcbIndirectConversionExcRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1769,7 +1755,7 @@ export const eurUsdMrmEcbAskRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: ASK
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -1782,7 +1768,7 @@ export const usdBhdMrmEcbMRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: BHD,
   validFromDateTime: DATE_2020_01_01
@@ -1795,7 +1781,7 @@ export const usdClfMrmEcbMRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: CLF,
   validFromDateTime: DATE_2020_01_01
@@ -1808,7 +1794,7 @@ export const inrBhdMrmEcbMRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_0_300623,
+  value: VALUE_0_300623,
   fromCurrency: INR,
   toCurrency: BHD,
   validFromDateTime: DATE_2020_01_01
@@ -1826,7 +1812,7 @@ export const inrEurMrmEcbMDuplicateRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -1844,7 +1830,7 @@ export const eurInrMrmEcbMDuplicateRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2019_09_16
@@ -1857,7 +1843,7 @@ export const eurUsdMrmThrAskRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: ASK
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -1870,7 +1856,7 @@ export const inrBhdMrmThrMRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_0_300623,
+  value: VALUE_0_300623,
   fromCurrency: INR,
   toCurrency: BHD,
   validFromDateTime: DATE_2020_01_01
@@ -1888,7 +1874,7 @@ export const eurInrMrmThrIndirectConversionRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1906,7 +1892,7 @@ export const eurInrMrmThrIndirectConversionDecimalRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_123_123,
+  value: VALUE_123_123,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1919,7 +1905,7 @@ export const eurInrMrmThrDirectConversionDecimal: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_123_123,
+  value: VALUE_123_123,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -1937,7 +1923,7 @@ export const inrEurMrmThrMIndirectFactorFiveTenRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -1955,7 +1941,7 @@ export const inrEurMrmThrMIndirectFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -1973,7 +1959,7 @@ export const inrEurMrmThrMDirectFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -1986,7 +1972,7 @@ export const eurEurMrmThrMRate: ExchangeRate = {
     ratesDataSource: null as any,
     exchangeRateType: B
   },
-  value: S_1,
+  value: VALUE_1,
   fromCurrency: EUR,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -1999,7 +1985,7 @@ export const inrInrMrmThrMRate: ExchangeRate = {
     ratesDataSource: null as any,
     exchangeRateType: B
   },
-  value: S_1,
+  value: VALUE_1,
   fromCurrency: INR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -2017,7 +2003,7 @@ export const eurInrMrmEcbIndirectConversionDecimalRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_123_123,
+  value: VALUE_123_123,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -2035,7 +2021,7 @@ export const usdEurMrmEcbMExcRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -2048,7 +2034,7 @@ export const eurEurMrmEcbMRate: ExchangeRate = {
     ratesDataSource: null as any,
     exchangeRateType: B
   },
-  value: S_1,
+  value: VALUE_1,
   fromCurrency: EUR,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2061,7 +2047,7 @@ export const inrInrMrmEcbMRate: ExchangeRate = {
     ratesDataSource: null as any,
     exchangeRateType: B
   },
-  value: S_1,
+  value: VALUE_1,
   fromCurrency: INR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -2079,7 +2065,7 @@ export const inrEurMrmEcbMIndirectFactorFiveTenRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -2097,7 +2083,7 @@ export const inrEurMrmEcbMIndirectFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -2115,7 +2101,7 @@ export const inrEurMrmEcbMDirectFactorFiveTenRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -2133,7 +2119,7 @@ export const inrEurMrmEcbMDirectFactorMoreThanOneRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -2151,7 +2137,7 @@ export const usdEurMrmEcbIndirectTrueInvertedTrueExcRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2169,7 +2155,7 @@ export const usdEurMrmEcbIndirectTrueInvertedFalseExcRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2182,7 +2168,7 @@ export const usdEurMrmEcbIndirectFalseInvertedFalseExcRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2200,7 +2186,7 @@ export const usdEurMrmEcbIndirectTrueInvertedTrueFactorMoreThanOneExcRate: Excha
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_20,
+  value: VALUE_20,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2218,7 +2204,7 @@ export const usdEurMrmEcbIndirectTrueInvertedFalseFactorMoreThanOneExcRate: Exch
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_20,
+  value: VALUE_20,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2236,7 +2222,7 @@ export const usdEurMrmEcbIndirectFalseInvertedTrueFactorMoreThanOneRate: Exchang
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_20,
+  value: VALUE_20,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2254,7 +2240,7 @@ export const usdEurMrmEcbIndirectFalseInvertedFalseFactorMoreThanOneRate: Exchan
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_20,
+  value: VALUE_20,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2272,7 +2258,7 @@ export const eurUsdMrmEcbIndirectTrueInvertedTrueRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2290,7 +2276,7 @@ export const eurUsdMrmEcbIndirectTrueInvertedFalseRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2303,7 +2289,7 @@ export const eurUsdMrmEcbIndirectFalseInvertedFalseRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2321,7 +2307,7 @@ export const eurUsdMrmEcbIndirectTrueInvertedTrueFactorMoreThanOneRate: Exchange
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_30,
+  value: VALUE_30,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2339,7 +2325,7 @@ export const eurUsdMrmEcbIndirectTrueInvertedFalseFactorMoreThanOneRate: Exchang
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_30,
+  value: VALUE_30,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2357,7 +2343,7 @@ export const eurUsdMrmEcbIndirectFalseInvertedTrueFactorMoreThanOneRate: Exchang
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_30,
+  value: VALUE_30,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2375,7 +2361,7 @@ export const eurUsdMrmEcbIndirectFalseInvertedFalseFactorMoreThanOneRate: Exchan
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_30,
+  value: VALUE_30,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2388,7 +2374,7 @@ export const eurUsdMrmEcbNewRateType = {
     ratesDataSource: ECB,
     exchangeRateType: 'ABC'
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2406,7 +2392,7 @@ export const usdEurMrmThrIndirectTrueInvertedTrueRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2424,7 +2410,7 @@ export const usdEurMrmThrIndirectTrueInvertedFalseRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2437,7 +2423,7 @@ export const usdEurMrmThrIndirectFalseInvertedTrueRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2450,7 +2436,7 @@ export const usdEurMrmThrIndirectFalseInvertedFalseRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2468,7 +2454,7 @@ export const usdEurMrmThrIndirectTrueInvertedTrueFactorMoreThanOneRate: Exchange
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_20,
+  value: VALUE_20,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2486,7 +2472,7 @@ export const usdEurMrmThrIndirectTrueInvertedFalseFactorMoreThanOneRate: Exchang
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_20,
+  value: VALUE_20,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2504,7 +2490,7 @@ export const usdEurMrmThrIndirectFalseInvertedTrueFactorMoreThanOneRate: Exchang
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_20,
+  value: VALUE_20,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2522,7 +2508,7 @@ export const usdEurMrmThrIndirectFalseInvertedFalseFactorMoreThanOneRate: Exchan
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_20,
+  value: VALUE_20,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2540,7 +2526,7 @@ export const eurUsdMrmThrIndirectTrueInvertedTrueRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2558,7 +2544,7 @@ export const eurUsdMrmThrIndirectTrueInvertedFalseRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2571,7 +2557,7 @@ export const eurUsdMrmThrIndirectFalseInvertedFalseRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2589,7 +2575,7 @@ export const eurUsdMrmThrIndirectTrueInvertedTrueFactorMoreThanOneRate: Exchange
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_30,
+  value: VALUE_30,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2607,7 +2593,7 @@ export const eurUsdMrmThrIndirectTrueInvertedFalseFactorMoreThanOneRate: Exchang
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_30,
+  value: VALUE_30,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2625,7 +2611,7 @@ export const eurUsdMrmThrIndirectFalseInvertedTrueFactorMoreThanOneRate: Exchang
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_30,
+  value: VALUE_30,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2643,7 +2629,7 @@ export const eurUsdMrmThrIndirectFalseInvertedFalseFactorMoreThanOneRate: Exchan
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_30,
+  value: VALUE_30,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2656,7 +2642,7 @@ export const eurUsdMrmThrNewRateType: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: 'ABC'
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2674,7 +2660,7 @@ export const usdEurMrmEcbMultipleProviderDirectRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_02
@@ -2692,7 +2678,7 @@ export const usdEurMrmEcbIndirectTrueInvertedTrueDuplicateDateRate: ExchangeRate
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_02
@@ -2710,7 +2696,7 @@ export const usdEurMrmEcbIndirectTrueInvertedTrueRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_02
@@ -2728,7 +2714,7 @@ export const usdEurMrmEcbIndirectTrueInvertedFalseRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_02
@@ -2741,7 +2727,7 @@ export const usdEurMrmEcbIndirectFalseInvertedTrueExcRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_02
@@ -2754,7 +2740,7 @@ export const usdEurMrmEcbIndirectFalseInvertedFalseRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_02
@@ -2772,7 +2758,7 @@ export const usdEurMrmEcbIndirectTrueInvertedTrueFactorMoreThanOneRate: Exchange
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_20,
+  value: VALUE_20,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_02
@@ -2790,7 +2776,7 @@ export const usdEurMrmEcbIndirectTrueInvertedFalseFactorMoreThanOneRate: Exchang
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_20,
+  value: VALUE_20,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_02
@@ -2808,7 +2794,7 @@ export const usdEurMrmEcbIndirectFalseInvertedTrueFactorMoreThanOneExcRate: Exch
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_20,
+  value: VALUE_20,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_02
@@ -2826,7 +2812,7 @@ export const usdEurMrmEcbIndirectFalseInvertedFalseFactorMoreThanOneExcRate: Exc
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_20,
+  value: VALUE_20,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_02
@@ -2844,7 +2830,7 @@ export const eurUsdMrmEcbMultipleProviderIndirectRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_30,
+  value: VALUE_30,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2862,7 +2848,7 @@ export const eurUsdMrmEcbIndirectTrueInvertedTrueDuplicateDateRate: ExchangeRate
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2875,7 +2861,7 @@ export const eurUsdMrmEcbNewExcRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: 'ABC'
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
@@ -2893,7 +2879,7 @@ export const usdEurMrmThrMultipleProviderDirectRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_02
@@ -2911,7 +2897,7 @@ export const eurUsdMrmThrMultipleProviderIndirectRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -2929,7 +2915,7 @@ export const eurUsdMrmThrIndirectTrueInvertedTrueExcRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_02
@@ -2947,7 +2933,7 @@ export const eurUsdMrmThrIndirectTrueInvertedFalseExcRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_02
@@ -2960,7 +2946,7 @@ export const eurUsdMrmThrIndirectFalseInvertedTrueExcRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_02
@@ -2973,7 +2959,7 @@ export const eurUsdMrmThrIndirectFalseInvertedFalseExcRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_02
@@ -2991,7 +2977,7 @@ export const eurUsdMrmThrIndirectTrueInvertedTrueFactorMoreThanOneExcRate: Excha
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_30,
+  value: VALUE_30,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_02
@@ -3009,7 +2995,7 @@ export const eurUsdMrmThrIndirectTrueInvertedFalseFactorMoreThanOneExcRate: Exch
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_30,
+  value: VALUE_30,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_02
@@ -3027,7 +3013,7 @@ export const eurUsdMrmThrIndirectFalseInvertedTrueFactorMoreThanOneExcRate: Exch
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_30,
+  value: VALUE_30,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_02
@@ -3045,7 +3031,7 @@ export const eurUsdMrmThrIndirectFalseInvertedFalseFactorMoreThanOneExcRate: Exc
     ratesDataSource: THR,
     exchangeRateType: B
   },
-  value: S_30,
+  value: VALUE_30,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_02
@@ -3058,7 +3044,7 @@ export const eurUsdMrmThrNewExcRateType: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: 'ABC'
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_02
@@ -3076,7 +3062,7 @@ export const inrEurMrmThrMDirectFactorFiveTenRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3094,7 +3080,7 @@ export const usdEurMrmThrMExcRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3107,7 +3093,7 @@ export const eurUsdMrmEcbIndirectTrueRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_2,
+  value: VALUE_2,
   fromCurrency: EUR,
   toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
@@ -3125,7 +3111,7 @@ export const eurInrMrmEcbIndirectTrueRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -3138,7 +3124,7 @@ export const eurInrMrmEcbIndirectFalseRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: A
   },
-  value: S_5,
+  value: VALUE_5,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -3151,7 +3137,7 @@ export const eurInrMrmEcbAskRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: ASK
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -3164,7 +3150,7 @@ export const usdInrMrmEcbAskRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: ASK
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -3177,7 +3163,7 @@ export const usdInrMrmThrAskRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: ASK
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -3190,7 +3176,7 @@ export const eurInrMrmThrAskRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: ASK
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
@@ -3209,7 +3195,7 @@ export const usdEurMrmThrMExRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3228,7 +3214,7 @@ export const eurInrMrmEcbIndirectConversionRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: B
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -3247,7 +3233,7 @@ export const inrEurMrmEcbMDuplicateExRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3266,7 +3252,7 @@ export const eurInrMrmEcbMDuplicateExRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_100,
+  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2019_09_16
@@ -3279,7 +3265,7 @@ export const inrEurMrmEcbDirectZeroRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3297,7 +3283,7 @@ export const inrEurMrmEcbDirectZeroToFactorRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3315,7 +3301,7 @@ export const inrEurMrmEcbIndirectZeroRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3333,7 +3319,7 @@ export const inrEurMrmEcbIndirectZeroFactorsZeroRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3351,7 +3337,7 @@ export const inrEurMrmEcbIndirectZeroToFactorZeroRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3369,7 +3355,7 @@ export const inrEurMrmEcbIndirectZeroFromFactZeroRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3387,7 +3373,7 @@ export const inrEurMrmEcbDirectZeroFactorsZeroRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3405,7 +3391,7 @@ export const inrEurMrmEcbDirectZeroFromFactZeroRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3423,7 +3409,7 @@ export const inrEurMrmEcbIndirectZeroFactorsRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3441,7 +3427,7 @@ export const inrEurMrmEcbIndirectZeroFromFactorRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3459,7 +3445,7 @@ export const inrEurMrmEcbDirectZeroFactorsRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3477,7 +3463,7 @@ export const inrEurMrmEcbDirectZeroFromFactorRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3495,7 +3481,7 @@ export const inrEurMrmEcbIndirectZeroToFactorRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3513,7 +3499,7 @@ export const inrEurMrmEcbDirectZeroToFactorZeroRate: ExchangeRate = {
     ratesDataSource: ECB,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3531,7 +3517,7 @@ export const inrEurMrmThrIndirectZeroRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3544,7 +3530,7 @@ export const inrEurMrmThrDirectZeroRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3562,7 +3548,7 @@ export const inrEurMrmThrIndirectZeroFactorsZeroRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3580,7 +3566,7 @@ export const inrEurMrmThrIndirectZeroToFactorZeroRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3598,7 +3584,7 @@ export const inrEurMrmThrIndirectZeroFromFactZeroRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3616,7 +3602,7 @@ export const inrEurMrmThrDirectZeroFactorsZeroRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3634,7 +3620,7 @@ export const inrEurMrmThrDirectZeroToFactorZeroRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3652,7 +3638,7 @@ export const inrEurMrmThrDirectZeroFromFactZeroRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_0,
+  value: VALUE_0,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3670,7 +3656,7 @@ export const inrEurMrmThrIndirectZeroFactorsRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3688,7 +3674,7 @@ export const inrEurMrmThrIndirectZeroToFactorRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3706,7 +3692,7 @@ export const inrEurMrmThrIndirectZeroFromFactorRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3724,7 +3710,7 @@ export const inrEurMrmThrDirectZeroFactorsRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3742,7 +3728,7 @@ export const inrEurMrmThrDirectZeroToFactorRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
@@ -3760,7 +3746,7 @@ export const inrEurMrmThrDirectZeroFromFactorRate: ExchangeRate = {
     ratesDataSource: THR,
     exchangeRateType: M
   },
-  value: S_10,
+  value: VALUE_10,
   fromCurrency: INR,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16

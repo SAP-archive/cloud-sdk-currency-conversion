@@ -45,8 +45,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Inverted Single Conversion With Inverted Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.eurUsdMrmEcbIndirectFalseInvertedTrueRate,
-      constants.A_1,
-      constants.A_1
+      constants.AMOUNT_1,
+      constants.AMOUNT_1
     );
     const result: SingleNonFixedRateConversionResult = await currencyConverter.convertCurrencyWithNonFixedRate(
       constants.usdEurMConversionParam,
@@ -60,8 +60,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Inverted Single Conversion With Direct Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.usdEurMrmEcbIndirectFalseInvertedTrueRate,
-      constants.A_10000,
-      constants.A_10000
+      constants.AMOUNT_10000,
+      constants.AMOUNT_10000
     );
     const result: SingleNonFixedRateConversionResult = await currencyConverter.convertCurrencyWithNonFixedRate(
       constants.usdEurMConversionParam,
@@ -78,8 +78,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Inverted Bulk Conversion With Inverted Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.eurUsdMrmEcbIndirectFalseInvertedTrueRate,
-      constants.A_1,
-      constants.A_1
+      constants.AMOUNT_1,
+      constants.AMOUNT_1
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -96,8 +96,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Inverted Bulk Conversion With Direct Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.usdEurMrmEcbIndirectFalseInvertedTrueRate,
-      constants.A_10000,
-      constants.A_10000
+      constants.AMOUNT_10000,
+      constants.AMOUNT_10000
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -132,8 +132,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Inverted Conversion With New Exchange Rate Type', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.eurUsdMrmEcbNewRateType,
-      constants.A_10000,
-      constants.A_10000
+      constants.AMOUNT_10000,
+      constants.AMOUNT_10000
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -150,8 +150,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Conversion For Indirect True Inverted True Inverted Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.eurUsdMrmEcbIndirectTrueInvertedTrueRate,
-      constants.A_10000,
-      constants.A_10000
+      constants.AMOUNT_10000,
+      constants.AMOUNT_10000
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -183,8 +183,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Conversion For Indirect False Inverted True Inverted Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.eurUsdMrmEcbIndirectFalseInvertedTrueRate,
-      constants.A_1,
-      constants.A_1
+      constants.AMOUNT_1,
+      constants.AMOUNT_1
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -216,8 +216,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Conversion For Indirect True Inverted True Inverted Currency Pair Factor More Than One Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.eurUsdMrmEcbIndirectTrueInvertedTrueFactorMoreThanOneRate,
-      constants.A_300,
-      constants.A_300
+      constants.AMOUNT_300,
+      constants.AMOUNT_300
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -234,8 +234,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Conversion For Indirect False Inverted True Inverted Currency Pair Factor More Than One Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.eurUsdMrmEcbIndirectFalseInvertedTrueFactorMoreThanOneRate,
-      constants.A_0_333333333333,
-      constants.A_0_33
+      constants.AMOUNT_0_333333333333,
+      constants.AMOUNT_0_33
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -267,8 +267,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Conversion For Indirect True Inverted True Direct Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.usdEurMrmEcbIndirectTrueInvertedTrueExcRate,
-      constants.A_1,
-      constants.A_1
+      constants.AMOUNT_1,
+      constants.AMOUNT_1
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -288,8 +288,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Conversion For Indirect True Inverted False Direct Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.usdEurMrmEcbIndirectTrueInvertedFalseExcRate,
-      constants.A_1,
-      constants.A_1
+      constants.AMOUNT_1,
+      constants.AMOUNT_1
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -309,8 +309,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Conversion For Indirect False Inverted True Direct Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.usdEurMrmEcbIndirectFalseInvertedTrueRate,
-      constants.A_10000,
-      constants.A_10000
+      constants.AMOUNT_10000,
+      constants.AMOUNT_10000
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -330,8 +330,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Conversion For Indirect False Inverted False Direct Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.usdEurMrmEcbIndirectFalseInvertedFalseExcRate,
-      constants.A_10000,
-      constants.A_10000
+      constants.AMOUNT_10000,
+      constants.AMOUNT_10000
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -351,8 +351,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Conversion For Indirect True Inverted True Direct Currency Pair Factor More Than One Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.usdEurMrmEcbIndirectTrueInvertedTrueFactorMoreThanOneExcRate,
-      constants.A_50,
-      constants.A_50
+      constants.AMOUNT_50,
+      constants.AMOUNT_50
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -372,8 +372,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Conversion For Indirect True Inverted False Direct Currency Pair Factor More Than One Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.usdEurMrmEcbIndirectTrueInvertedFalseFactorMoreThanOneExcRate,
-      constants.A_50,
-      constants.A_50
+      constants.AMOUNT_50,
+      constants.AMOUNT_50
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -393,8 +393,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Conversion For Indirect False Inverted True Direct Currency Pair Factor More Than One Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.usdEurMrmEcbIndirectFalseInvertedTrueFactorMoreThanOneRate,
-      constants.A_20000,
-      constants.A_20000
+      constants.AMOUNT_20000,
+      constants.AMOUNT_20000
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -414,8 +414,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion default tenant settings', (
   it('Conversion For Indirect False Inverted False Direct Currency Pair Factor More Than One Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.usdEurMrmEcbIndirectFalseInvertedFalseFactorMoreThanOneRate,
-      constants.A_20000,
-      constants.A_20000
+      constants.AMOUNT_20000,
+      constants.AMOUNT_20000
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,

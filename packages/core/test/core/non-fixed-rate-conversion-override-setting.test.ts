@@ -115,8 +115,8 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
   it('Single Conversion With Empty Exchange Rate Type Details', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.inrEurMrmThrMExcRate,
-      constants.A_10000,
-      constants.A_10000
+      constants.AMOUNT_10000,
+      constants.AMOUNT_10000
     );
     const result: SingleNonFixedRateConversionResult = await currencyConverter.convertCurrencyWithNonFixedRate(
       constants.inrEurMConversionParam,
@@ -190,8 +190,8 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
   it('Bulk Conversion With Empty Exchange Rate Type Details', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.inrEurMrmThrMExcRate,
-      constants.A_10000,
-      constants.A_10000
+      constants.AMOUNT_10000,
+      constants.AMOUNT_10000
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -220,8 +220,8 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
   it('Bulk Conversion With null Exchange Rate Type Details', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.inrEurMrmThrMExcRate,
-      constants.A_10000,
-      constants.A_10000
+      constants.AMOUNT_10000,
+      constants.AMOUNT_10000
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -331,8 +331,8 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
   it('Bulk Conversion With Direct Factor Five Ten Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.inrEurMrmThrMDirectFactorFiveTenRate,
-      constants.A_20000,
-      constants.A_20000
+      constants.AMOUNT_20000,
+      constants.AMOUNT_20000
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -350,8 +350,8 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
   it('Bulk Conversion With Direct Factor More Than One Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.inrEurMrmThrMDirectFactorMoreThanOneRate,
-      constants.A_5000,
-      constants.A_5000
+      constants.AMOUNT_5000,
+      constants.AMOUNT_5000
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -372,8 +372,8 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
   it('Bulk Conversion With indirect Factor Five Ten Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.inrEurMrmThrMIndirectFactorFiveTenRate,
-      constants.A_2,
-      constants.A_2
+      constants.AMOUNT_2,
+      constants.AMOUNT_2
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -394,8 +394,8 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
   it('Bulk Conversion With Inirect Factor More Than One Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.inrEurMrmThrMIndirectFactorMoreThanOneRate,
-      constants.A_0_5,
-      constants.A_0_5
+      constants.AMOUNT_0_5,
+      constants.AMOUNT_0_5
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -467,18 +467,18 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
   it('Multiple Conversion Success Failure', async () => {
     const expectedConversionResult1: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.inrEurMrmThrMExcRate,
-      constants.A_10000,
-      constants.A_10000
+      constants.AMOUNT_10000,
+      constants.AMOUNT_10000
     );
     const expectedConversionResult2: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.eurUsdMrmThrAskRate,
-      constants.A_10000,
-      constants.A_10000
+      constants.AMOUNT_10000,
+      constants.AMOUNT_10000
     );
     const expectedConversionResult3: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.eurInrMrmThrAskIndirectFalseRate,
-      constants.A_10000,
-      constants.A_10000
+      constants.AMOUNT_10000,
+      constants.AMOUNT_10000
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -596,8 +596,8 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
   it('Bulk Conversion With Different Tenant Record Found', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.inrEurMrmThrMDiffrentTenantRate,
-      constants.A_10000,
-      constants.A_10000
+      constants.AMOUNT_10000,
+      constants.AMOUNT_10000
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -620,8 +620,8 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
   it('Bulk Conversion With Old Conversion Time', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.inrEurMrmThrMExcRate,
-      constants.A_10000,
-      constants.A_10000
+      constants.AMOUNT_10000,
+      constants.AMOUNT_10000
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
@@ -644,13 +644,13 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
   it('Bulk Conversion With Same Currency Pair List', async () => {
     const expectedConversionResult1: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.inrInrMrmThrMRate,
-      constants.A_120,
-      constants.A_120
+      constants.AMOUNT_120,
+      constants.AMOUNT_120
     );
     const expectedConversionResult2: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
       constants.eurEurMrmThrMRate,
-      constants.A_120,
-      constants.A_120
+      constants.AMOUNT_120,
+      constants.AMOUNT_120
     );
     const result: BulkConversionResult<
       ConversionParameterForNonFixedRate,
