@@ -10,21 +10,424 @@ import {
   ExchangeRateTypeDetail,
   ConversionParameterForNonFixedRate,
   buildExchangeRateTypeDetail,
-  buildConversionParameterForNonFixedRate
+  buildConversionParameterForNonFixedRate,
+  setDefaultSettings
 } from '@sap-cloud-sdk/currency-conversion-models';
 import { ConversionError } from '../../src/constants/conversion-error';
 import { CurrencyConverter } from '../../src/core/currency-converter';
 import * as constants from './test-data';
 
-const DATE_2020_01_01: Date = new Date('2020-01-01T02:30:00Z');
+const DATE_2020_01_02: Date = new Date('2020-01-02T02:30:00Z');
 
 const eurUsdMrmThrABCConvParam: ConversionParameterForNonFixedRate = buildConversionParameterForNonFixedRate(
   'USD',
   'EUR',
   '100',
   'ABC',
-  DATE_2020_01_01
+  constants.DATE_2020_01_01
 );
+
+const usdEurMrmEcbMultipleProviderDirectRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 1
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const usdEurMrmEcbIndirectTrueInvertedTrueDuplicateDateRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 1
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const usdEurMrmEcbIndirectTrueInvertedTrueRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 1
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const usdEurMrmEcbIndirectTrueInvertedFalseRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 1
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.B
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const usdEurMrmEcbIndirectFalseInvertedTrueExcRate: ExchangeRate = {
+  settings: setDefaultSettings(constants.TENANT_ID),
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const usdEurMrmEcbIndirectFalseInvertedFalseRate: ExchangeRate = {
+  settings: setDefaultSettings(constants.TENANT_ID),
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.B
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const usdEurMrmEcbIndirectTrueInvertedTrueFactorMoreThanOneRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 10
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_20,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const usdEurMrmEcbIndirectTrueInvertedFalseFactorMoreThanOneRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 10
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.B
+  },
+  value: constants.VALUE_20,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const usdEurMrmEcbIndirectFalseInvertedTrueFactorMoreThanOneExcRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: false,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 10
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_20,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const usdEurMrmEcbIndirectFalseInvertedFalseFactorMoreThanOneExcRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: false,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 10
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.B
+  },
+  value: constants.VALUE_20,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const eurUsdMrmEcbMultipleProviderIndirectRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 10,
+    toCurrencyfactor: 100
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_30,
+  fromCurrency: constants.EUR,
+  toCurrency: constants.USD,
+  validFromDateTime: constants.DATE_2020_01_01
+};
+
+const eurUsdMrmEcbIndirectTrueInvertedTrueDuplicateDateRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 1
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.EUR,
+  toCurrency: constants.USD,
+  validFromDateTime: constants.DATE_2020_01_01
+};
+
+const eurUsdMrmEcbNewExcRate: ExchangeRate = {
+  settings: setDefaultSettings(constants.TENANT_ID),
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: 'ABC'
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: constants.DATE_2020_01_01
+};
+
+const usdEurMrmThrMultipleProviderDirectRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 1
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.THR,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const eurUsdMrmThrMultipleProviderIndirectRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 1
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.THR,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.EUR,
+  toCurrency: constants.USD,
+  validFromDateTime: constants.DATE_2020_01_01
+};
+
+const eurUsdMrmThrIndirectTrueInvertedTrueExcRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 1
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.THR,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.EUR,
+  toCurrency: constants.USD,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const eurUsdMrmThrIndirectTrueInvertedFalseExcRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 1
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.THR,
+    exchangeRateType: constants.B
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.EUR,
+  toCurrency: constants.USD,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const eurUsdMrmThrIndirectFalseInvertedTrueExcRate: ExchangeRate = {
+  settings: setDefaultSettings(constants.TENANT_ID),
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.THR,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.EUR,
+  toCurrency: constants.USD,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const eurUsdMrmThrIndirectFalseInvertedFalseExcRate: ExchangeRate = {
+  settings: setDefaultSettings(constants.TENANT_ID),
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.THR,
+    exchangeRateType: constants.B
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.EUR,
+  toCurrency: constants.USD,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const eurUsdMrmThrIndirectTrueInvertedTrueFactorMoreThanOneExcRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 10,
+    toCurrencyfactor: 100
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.THR,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_30,
+  fromCurrency: constants.EUR,
+  toCurrency: constants.USD,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const eurUsdMrmThrIndirectTrueInvertedFalseFactorMoreThanOneExcRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 10,
+    toCurrencyfactor: 100
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.THR,
+    exchangeRateType: constants.B
+  },
+  value: constants.VALUE_30,
+  fromCurrency: constants.EUR,
+  toCurrency: constants.USD,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const eurUsdMrmThrIndirectFalseInvertedTrueFactorMoreThanOneExcRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: false,
+    fromCurrencyfactor: 10,
+    toCurrencyfactor: 100
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.THR,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_30,
+  fromCurrency: constants.EUR,
+  toCurrency: constants.USD,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const eurUsdMrmThrIndirectFalseInvertedFalseFactorMoreThanOneExcRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: false,
+    fromCurrencyfactor: 10,
+    toCurrencyfactor: 100
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.THR,
+    exchangeRateType: constants.B
+  },
+  value: constants.VALUE_30,
+  fromCurrency: constants.EUR,
+  toCurrency: constants.USD,
+  validFromDateTime: DATE_2020_01_02
+};
+
+const eurUsdMrmThrNewExcRateType: ExchangeRate = {
+  settings: setDefaultSettings(constants.TENANT_ID),
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.THR,
+    exchangeRateType: 'ABC'
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: DATE_2020_01_02
+};
 
 const currencyConverter: CurrencyConverter = new CurrencyConverter();
 
@@ -54,16 +457,13 @@ function buildAdapter(exchangeRates: ExchangeRate[]): DataAdapter {
 describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () => {
   it('Inverted Single Conversion With Inverted Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
-      constants.eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
+      eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
       constants.AMOUNT_1,
       constants.AMOUNT_1
     );
     const result: SingleNonFixedRateConversionResult = await currencyConverter.convertCurrencyWithNonFixedRate(
       constants.usdEurMConversionParameter,
-      buildAdapter([
-        constants.eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
-        constants.eurUsdMrmEcbIndirectFalseInvertedTrueRate
-      ]),
+      buildAdapter([eurUsdMrmThrIndirectFalseInvertedTrueExcRate, constants.eurUsdMrmEcbIndirectFalseInvertedTrueRate]),
       constants.TENANT_ID
     );
     expect(result).toBeTruthy();
@@ -72,17 +472,17 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
 
   it('Inverted Single Conversion With Direct Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
-      constants.usdEurMrmEcbIndirectFalseInvertedTrueExcRate,
+      usdEurMrmEcbIndirectFalseInvertedTrueExcRate,
       constants.AMOUNT_10000,
       constants.AMOUNT_10000
     );
     const result: SingleNonFixedRateConversionResult = await currencyConverter.convertCurrencyWithNonFixedRate(
       constants.usdEurMConversionParameter,
       buildAdapter([
-        constants.eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
+        eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
         constants.usdEurMrmThrIndirectFalseInvertedTrueRate,
         constants.eurUsdMrmEcbIndirectFalseInvertedTrueRate,
-        constants.usdEurMrmEcbIndirectFalseInvertedTrueExcRate
+        usdEurMrmEcbIndirectFalseInvertedTrueExcRate
       ]),
       constants.TENANT_ID
     );
@@ -92,7 +492,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
 
   it('Inverted Bulk Conversion With Inverted Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
-      constants.eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
+      eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
       constants.AMOUNT_1,
       constants.AMOUNT_1
     );
@@ -101,10 +501,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       SingleNonFixedRateConversionResult
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [constants.usdEurMConversionParameter],
-      buildAdapter([
-        constants.eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
-        constants.eurUsdMrmEcbIndirectFalseInvertedTrueRate
-      ]),
+      buildAdapter([eurUsdMrmThrIndirectFalseInvertedTrueExcRate, constants.eurUsdMrmEcbIndirectFalseInvertedTrueRate]),
       constants.TENANT_ID
     );
     expect(result.get(constants.usdEurMConversionParameter)).toBeTruthy();
@@ -117,10 +514,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       SingleNonFixedRateConversionResult
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [constants.usdEurMConversionParameter],
-      buildAdapter([
-        constants.usdEurMrmEcbIndirectTrueInvertedTrueRate,
-        constants.usdEurMrmEcbIndirectTrueInvertedTrueDuplicateDateRate
-      ]),
+      buildAdapter([usdEurMrmEcbIndirectTrueInvertedTrueRate, usdEurMrmEcbIndirectTrueInvertedTrueDuplicateDateRate]),
       constants.TENANT_ID
     );
     expect(result.get(constants.usdEurMConversionParameter)).toBeInstanceOf(CurrencyConversionError);
@@ -135,10 +529,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       SingleNonFixedRateConversionResult
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [constants.usdEurBConvParamPastDate],
-      buildAdapter([
-        constants.eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
-        constants.eurUsdMrmEcbIndirectFalseInvertedTrueRate
-      ]),
+      buildAdapter([eurUsdMrmThrIndirectFalseInvertedTrueExcRate, constants.eurUsdMrmEcbIndirectFalseInvertedTrueRate]),
       constants.TENANT_ID
     );
     expect(result.get(constants.usdEurBConvParamPastDate)).toBeInstanceOf(CurrencyConversionError);
@@ -153,10 +544,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       SingleNonFixedRateConversionResult
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [constants.usdEurMConversionParameter],
-      buildAdapter([
-        constants.usdEurMrmEcbMultipleProviderDirectRate,
-        constants.usdEurMrmThrMultipleProviderDirectRate
-      ]),
+      buildAdapter([usdEurMrmEcbMultipleProviderDirectRate, usdEurMrmThrMultipleProviderDirectRate]),
       constants.TENANT_ID
     );
     expect(result.get(constants.usdEurMConversionParameter)).toBeInstanceOf(CurrencyConversionError);
@@ -173,7 +561,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       [constants.usdEurMConversionParameter],
       buildAdapter([
         constants.eurUsdMrmEcbIndirectTrueInvertedTrueRate,
-        constants.eurUsdMrmEcbIndirectTrueInvertedTrueDuplicateDateRate
+        eurUsdMrmEcbIndirectTrueInvertedTrueDuplicateDateRate
       ]),
       constants.TENANT_ID
     );
@@ -189,10 +577,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       SingleNonFixedRateConversionResult
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [constants.usdEurMConversionParameter],
-      buildAdapter([
-        constants.eurUsdMrmEcbMultipleProviderIndirectRate,
-        constants.eurUsdMrmThrMultipleProviderIndirectRate
-      ]),
+      buildAdapter([eurUsdMrmEcbMultipleProviderIndirectRate, eurUsdMrmThrMultipleProviderIndirectRate]),
       constants.TENANT_ID
     );
     expect(result.get(constants.usdEurMConversionParameter)).toBeInstanceOf(CurrencyConversionError);
@@ -203,7 +588,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
 
   it('Inverted Bulk Conversion With Direct Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
-      constants.usdEurMrmEcbIndirectFalseInvertedTrueExcRate,
+      usdEurMrmEcbIndirectFalseInvertedTrueExcRate,
       constants.AMOUNT_10000,
       constants.AMOUNT_10000
     );
@@ -213,10 +598,10 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [constants.usdEurMConversionParameter],
       buildAdapter([
-        constants.eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
+        eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
         constants.usdEurMrmThrIndirectFalseInvertedTrueRate,
         constants.eurUsdMrmEcbIndirectFalseInvertedTrueRate,
-        constants.usdEurMrmEcbIndirectFalseInvertedTrueExcRate
+        usdEurMrmEcbIndirectFalseInvertedTrueExcRate
       ]),
       constants.TENANT_ID
     );
@@ -226,7 +611,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
 
   it('Inverted Bulk Conversion With New Exchange Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
-      constants.eurUsdMrmEcbNewExcRate,
+      eurUsdMrmEcbNewExcRate,
       constants.AMOUNT_10000,
       constants.AMOUNT_10000
     );
@@ -235,7 +620,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       SingleNonFixedRateConversionResult
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [eurUsdMrmThrABCConvParam],
-      buildAdapter([constants.eurUsdMrmThrNewExcRateType, constants.eurUsdMrmEcbNewExcRate]),
+      buildAdapter([eurUsdMrmThrNewExcRateType, eurUsdMrmEcbNewExcRate]),
       constants.TENANT_ID
     );
     expect(result.get(eurUsdMrmThrABCConvParam)).toBeTruthy();
@@ -244,7 +629,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
 
   it('Conversion For Indirect True Inverted True Inverted Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
-      constants.eurUsdMrmThrIndirectTrueInvertedTrueExcRate,
+      eurUsdMrmThrIndirectTrueInvertedTrueExcRate,
       constants.AMOUNT_10000,
       constants.AMOUNT_10000
     );
@@ -253,10 +638,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       SingleNonFixedRateConversionResult
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [constants.usdEurMConversionParameter],
-      buildAdapter([
-        constants.eurUsdMrmThrIndirectTrueInvertedTrueExcRate,
-        constants.eurUsdMrmEcbIndirectTrueInvertedTrueRate
-      ]),
+      buildAdapter([eurUsdMrmThrIndirectTrueInvertedTrueExcRate, constants.eurUsdMrmEcbIndirectTrueInvertedTrueRate]),
       constants.TENANT_ID
     );
     expect(result.get(constants.usdEurMConversionParameter)).toBeTruthy();
@@ -269,10 +651,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       SingleNonFixedRateConversionResult
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [constants.usdEurBConversionParam],
-      buildAdapter([
-        constants.eurUsdMrmThrIndirectTrueInvertedFalseExcRate,
-        constants.eurUsdMrmEcbIndirectTrueInvertedFalseRate
-      ]),
+      buildAdapter([eurUsdMrmThrIndirectTrueInvertedFalseExcRate, constants.eurUsdMrmEcbIndirectTrueInvertedFalseRate]),
       constants.TENANT_ID
     );
     expect(result.get(constants.usdEurBConversionParam)).toBeInstanceOf(CurrencyConversionError);
@@ -283,7 +662,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
 
   it('Conversion For Indirect False Inverted True Inverted Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
-      constants.eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
+      eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
       constants.AMOUNT_1,
       constants.AMOUNT_1
     );
@@ -292,10 +671,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       SingleNonFixedRateConversionResult
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [constants.usdEurMConversionParameter],
-      buildAdapter([
-        constants.eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
-        constants.eurUsdMrmEcbIndirectFalseInvertedTrueRate
-      ]),
+      buildAdapter([eurUsdMrmThrIndirectFalseInvertedTrueExcRate, constants.eurUsdMrmEcbIndirectFalseInvertedTrueRate]),
       constants.TENANT_ID
     );
     expect(result.get(constants.usdEurMConversionParameter)).toBeTruthy();
@@ -309,7 +685,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [constants.usdEurBConversionParam],
       buildAdapter([
-        constants.eurUsdMrmThrIndirectFalseInvertedFalseExcRate,
+        eurUsdMrmThrIndirectFalseInvertedFalseExcRate,
         constants.eurUsdMrmEcbIndirectFalseInvertedFalseRate
       ]),
       constants.TENANT_ID
@@ -322,7 +698,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
 
   it('Conversion For Indirect True Inverted True Inverted Currency Pair Factor More Than One Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
-      constants.eurUsdMrmThrIndirectTrueInvertedTrueFactorMoreThanOneExcRate,
+      eurUsdMrmThrIndirectTrueInvertedTrueFactorMoreThanOneExcRate,
       constants.AMOUNT_300,
       constants.AMOUNT_300
     );
@@ -332,7 +708,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [constants.usdEurMConversionParameter],
       buildAdapter([
-        constants.eurUsdMrmThrIndirectTrueInvertedTrueFactorMoreThanOneExcRate,
+        eurUsdMrmThrIndirectTrueInvertedTrueFactorMoreThanOneExcRate,
         constants.eurUsdMrmEcbIndirectTrueInvertedTrueFactorMoreThanOneRate
       ]),
       constants.TENANT_ID
@@ -348,7 +724,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [constants.usdEurBConversionParam],
       buildAdapter([
-        constants.eurUsdMrmThrIndirectTrueInvertedFalseFactorMoreThanOneExcRate,
+        eurUsdMrmThrIndirectTrueInvertedFalseFactorMoreThanOneExcRate,
         constants.eurUsdMrmEcbIndirectTrueInvertedFalseFactorMoreThanOneRate
       ]),
       constants.TENANT_ID
@@ -361,7 +737,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
 
   it('Conversion For Indirect False Inverted True Inverted Currency Pair Factor More Than One Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
-      constants.eurUsdMrmThrIndirectFalseInvertedTrueFactorMoreThanOneExcRate,
+      eurUsdMrmThrIndirectFalseInvertedTrueFactorMoreThanOneExcRate,
       constants.AMOUNT_0_333333333333,
       constants.AMOUNT_0_33
     );
@@ -371,7 +747,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [constants.usdEurMConversionParameter],
       buildAdapter([
-        constants.eurUsdMrmThrIndirectFalseInvertedTrueFactorMoreThanOneExcRate,
+        eurUsdMrmThrIndirectFalseInvertedTrueFactorMoreThanOneExcRate,
         constants.eurUsdMrmEcbIndirectFalseInvertedTrueFactorMoreThanOneRate
       ]),
       constants.TENANT_ID
@@ -387,7 +763,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
     > = await currencyConverter.convertCurrenciesWithNonFixedRate(
       [constants.usdEurBConversionParam],
       buildAdapter([
-        constants.eurUsdMrmThrIndirectFalseInvertedFalseFactorMoreThanOneExcRate,
+        eurUsdMrmThrIndirectFalseInvertedFalseFactorMoreThanOneExcRate,
         constants.eurUsdMrmEcbIndirectFalseInvertedFalseFactorMoreThanOneRate
       ]),
       constants.TENANT_ID
@@ -400,7 +776,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
 
   it('Conversion For Indirect True Inverted True Direct Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
-      constants.usdEurMrmEcbIndirectTrueInvertedTrueRate,
+      usdEurMrmEcbIndirectTrueInvertedTrueRate,
       constants.AMOUNT_1,
       constants.AMOUNT_1
     );
@@ -411,8 +787,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       [constants.usdEurMConversionParameter],
       buildAdapter([
         constants.usdEurMrmThrIndirectTrueInvertedTrueRate,
-        constants.eurUsdMrmThrIndirectTrueInvertedTrueExcRate,
-        constants.usdEurMrmEcbIndirectTrueInvertedTrueRate,
+        eurUsdMrmThrIndirectTrueInvertedTrueExcRate,
+        usdEurMrmEcbIndirectTrueInvertedTrueRate,
         constants.eurUsdMrmEcbIndirectTrueInvertedTrueRate
       ]),
       constants.TENANT_ID
@@ -434,8 +810,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       [constants.usdEurBConversionParam],
       buildAdapter([
         constants.usdEurMrmThrIndirectTrueInvertedFalseRate,
-        constants.eurUsdMrmThrIndirectTrueInvertedFalseExcRate,
-        constants.usdEurMrmEcbIndirectTrueInvertedFalseRate,
+        eurUsdMrmThrIndirectTrueInvertedFalseExcRate,
+        usdEurMrmEcbIndirectTrueInvertedFalseRate,
         constants.eurUsdMrmEcbIndirectTrueInvertedFalseRate
       ]),
       constants.TENANT_ID
@@ -446,7 +822,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
 
   it('Conversion For Indirect False Inverted True Direct Currency Pair', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
-      constants.usdEurMrmEcbIndirectFalseInvertedTrueExcRate,
+      usdEurMrmEcbIndirectFalseInvertedTrueExcRate,
       constants.AMOUNT_10000,
       constants.AMOUNT_10000
     );
@@ -457,8 +833,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       [constants.usdEurMConversionParameter],
       buildAdapter([
         constants.usdEurMrmThrIndirectFalseInvertedTrueRate,
-        constants.eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
-        constants.usdEurMrmEcbIndirectFalseInvertedTrueExcRate,
+        eurUsdMrmThrIndirectFalseInvertedTrueExcRate,
+        usdEurMrmEcbIndirectFalseInvertedTrueExcRate,
         constants.eurUsdMrmEcbIndirectFalseInvertedTrueRate
       ]),
       constants.TENANT_ID
@@ -480,8 +856,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       [constants.usdEurBConversionParam],
       buildAdapter([
         constants.usdEurMrmThrIndirectFalseInvertedFalseRate,
-        constants.eurUsdMrmThrIndirectFalseInvertedFalseExcRate,
-        constants.usdEurMrmEcbIndirectFalseInvertedFalseRate,
+        eurUsdMrmThrIndirectFalseInvertedFalseExcRate,
+        usdEurMrmEcbIndirectFalseInvertedFalseRate,
         constants.eurUsdMrmEcbIndirectFalseInvertedFalseRate
       ]),
       constants.TENANT_ID
@@ -492,7 +868,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
 
   it('Conversion For Indirect True Inverted True Direct Currency Pair Factor More Than One Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
-      constants.usdEurMrmEcbIndirectTrueInvertedTrueFactorMoreThanOneRate,
+      usdEurMrmEcbIndirectTrueInvertedTrueFactorMoreThanOneRate,
       constants.AMOUNT_50,
       constants.AMOUNT_50
     );
@@ -503,8 +879,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       [constants.usdEurMConversionParameter],
       buildAdapter([
         constants.usdEurMrmThrIndirectTrueInvertedTrueFactorMoreThanOneRate,
-        constants.eurUsdMrmThrIndirectTrueInvertedTrueFactorMoreThanOneExcRate,
-        constants.usdEurMrmEcbIndirectTrueInvertedTrueFactorMoreThanOneRate,
+        eurUsdMrmThrIndirectTrueInvertedTrueFactorMoreThanOneExcRate,
+        usdEurMrmEcbIndirectTrueInvertedTrueFactorMoreThanOneRate,
         constants.eurUsdMrmEcbIndirectTrueInvertedTrueFactorMoreThanOneRate
       ]),
       constants.TENANT_ID
@@ -526,8 +902,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       [constants.usdEurBConversionParam],
       buildAdapter([
         constants.usdEurMrmThrIndirectTrueInvertedFalseFactorMoreThanOneRate,
-        constants.eurUsdMrmThrIndirectTrueInvertedFalseFactorMoreThanOneExcRate,
-        constants.usdEurMrmEcbIndirectTrueInvertedFalseFactorMoreThanOneRate,
+        eurUsdMrmThrIndirectTrueInvertedFalseFactorMoreThanOneExcRate,
+        usdEurMrmEcbIndirectTrueInvertedFalseFactorMoreThanOneRate,
         constants.eurUsdMrmEcbIndirectTrueInvertedFalseFactorMoreThanOneRate
       ]),
       constants.TENANT_ID
@@ -538,7 +914,7 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
 
   it('Conversion For Indirect False Inverted True Direct Currency Pair Factor More Than One Rate', async () => {
     const expectedConversionResult: SingleNonFixedRateConversionResult = new SingleNonFixedRateConversionResult(
-      constants.usdEurMrmEcbIndirectFalseInvertedTrueFactorMoreThanOneExcRate,
+      usdEurMrmEcbIndirectFalseInvertedTrueFactorMoreThanOneExcRate,
       constants.AMOUNT_20000,
       constants.AMOUNT_20000
     );
@@ -549,8 +925,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       [constants.usdEurMConversionParameter],
       buildAdapter([
         constants.usdEurMrmThrIndirectFalseInvertedTrueFactorMoreThanOneRate,
-        constants.eurUsdMrmThrIndirectFalseInvertedTrueFactorMoreThanOneExcRate,
-        constants.usdEurMrmEcbIndirectFalseInvertedTrueFactorMoreThanOneExcRate,
+        eurUsdMrmThrIndirectFalseInvertedTrueFactorMoreThanOneExcRate,
+        usdEurMrmEcbIndirectFalseInvertedTrueFactorMoreThanOneExcRate,
         constants.eurUsdMrmEcbIndirectFalseInvertedTrueFactorMoreThanOneRate
       ]),
       constants.TENANT_ID
@@ -572,8 +948,8 @@ describe('Non Fixed Rate -- Inverted Rate conversion null tenant settings', () =
       [constants.usdEurBConversionParam],
       buildAdapter([
         constants.usdEurMrmThrIndirectFalseInvertedFalseFactorMoreThanOneRate,
-        constants.eurUsdMrmThrIndirectFalseInvertedFalseFactorMoreThanOneExcRate,
-        constants.usdEurMrmEcbIndirectFalseInvertedFalseFactorMoreThanOneExcRate,
+        eurUsdMrmThrIndirectFalseInvertedFalseFactorMoreThanOneExcRate,
+        usdEurMrmEcbIndirectFalseInvertedFalseFactorMoreThanOneExcRate,
         constants.eurUsdMrmEcbIndirectFalseInvertedFalseFactorMoreThanOneRate
       ]),
       constants.TENANT_ID

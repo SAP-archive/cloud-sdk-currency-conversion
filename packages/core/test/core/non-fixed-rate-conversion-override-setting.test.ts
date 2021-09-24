@@ -9,12 +9,93 @@ import {
   TenantSettings,
   SingleNonFixedRateConversionResult,
   CurrencyConversionError,
-  BulkConversionResult
+  BulkConversionResult,
+  setDefaultSettings
 } from '@sap-cloud-sdk/currency-conversion-models';
 import { BigNumber } from 'bignumber.js';
 import { ConversionError } from '../../src/constants/conversion-error';
 import { CurrencyConverter } from '../../src/core/currency-converter';
 import * as constants from './test-data';
+
+const inrEurMrmEcbMDuplicateExcRate: ExchangeRate = {
+  settings: setDefaultSettings(constants.TENANT_ID),
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.INR,
+  toCurrency: constants.EUR,
+  validFromDateTime: constants.DATE_2019_09_16
+};
+
+const eurInrMrmEcbMDuplicateExcRate: ExchangeRate = {
+  settings: setDefaultSettings(constants.TENANT_ID),
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.EUR,
+  toCurrency: constants.INR,
+  validFromDateTime: constants.DATE_2019_09_16
+};
+
+const eurInrMrmEcbIndirectConversionExcRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 1
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.B
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.EUR,
+  toCurrency: constants.INR,
+  validFromDateTime: constants.DATE_2020_01_01
+};
+
+const usdEurMrmEcbMExcRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 1
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: constants.DATE_2019_09_16
+};
+
+const usdEurMrmThrMExcRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 1
+  },
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.THR,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: constants.DATE_2019_09_16
+};
 
 const currencyConverter: CurrencyConverter = new CurrencyConverter();
 
@@ -128,7 +209,7 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
         constants.eurInrMrmThrIndirectConversionRate,
         constants.eurUsdMrmThrAskRate,
         constants.inrEurMrmThrMDiffrentTenantRate,
-        constants.usdEurMrmThrMExcRate,
+        usdEurMrmThrMExcRate,
         constants.eurInrMrmThrMExcRate,
         constants.eurInrMrmThrAskIndirectFalseRate
       ]),
@@ -173,7 +254,7 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
           constants.eurInrMrmThrIndirectConversionRate,
           constants.eurUsdMrmThrAskRate,
           constants.inrEurMrmThrMDiffrentTenantRate,
-          constants.usdEurMrmThrMExcRate,
+          usdEurMrmThrMExcRate,
           constants.eurInrMrmThrMExcRate,
           constants.eurInrMrmThrAskIndirectFalseRate
         ]),
@@ -206,7 +287,7 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
         constants.eurInrMrmThrIndirectConversionRate,
         constants.eurUsdMrmThrAskRate,
         constants.inrEurMrmThrMDiffrentTenantRate,
-        constants.usdEurMrmThrMExcRate,
+        usdEurMrmThrMExcRate,
         constants.eurInrMrmThrMExcRate,
         constants.eurInrMrmThrAskIndirectFalseRate
       ]),
@@ -236,7 +317,7 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
         constants.eurInrMrmThrIndirectConversionRate,
         constants.eurUsdMrmThrAskRate,
         constants.inrEurMrmThrMDiffrentTenantRate,
-        constants.usdEurMrmThrMExcRate,
+        usdEurMrmThrMExcRate,
         constants.eurInrMrmThrMExcRate,
         constants.eurInrMrmThrAskIndirectFalseRate
       ]),
@@ -284,7 +365,7 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
           constants.eurInrMrmThrIndirectConversionRate,
           constants.eurUsdMrmThrAskRate,
           constants.inrEurMrmThrMDiffrentTenantRate,
-          constants.usdEurMrmThrMExcRate,
+          usdEurMrmThrMExcRate,
           constants.eurInrMrmThrMExcRate,
           constants.eurInrMrmThrAskIndirectFalseRate
         ]),
@@ -314,7 +395,7 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
           constants.eurInrMrmThrIndirectConversionRate,
           constants.eurUsdMrmThrAskRate,
           constants.inrEurMrmThrMDiffrentTenantRate,
-          constants.usdEurMrmThrMExcRate,
+          usdEurMrmThrMExcRate,
           constants.eurInrMrmThrMExcRate,
           constants.eurInrMrmThrAskIndirectFalseRate
         ]),
@@ -530,7 +611,7 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
         constants.eurInrMrmThrIndirectConversionRate,
         constants.inrEurMrmThrMExcRate,
         constants.eurInrMrmThrMExcRate,
-        constants.eurInrMrmEcbIndirectConversionExcRate,
+        eurInrMrmEcbIndirectConversionExcRate,
         constants.inrEurMrmEcbMRate,
         constants.eurInrMrmEcbMRate
       ]),
@@ -738,11 +819,11 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
       buildAdapter([
         constants.inrEurMrmThrMExcRate,
         constants.eurUsdMrmThrAskRate,
-        constants.usdEurMrmThrMExcRate,
+        usdEurMrmThrMExcRate,
         constants.eurInrMrmThrMExcRate,
         constants.inrEurMrmEcbMRate,
         constants.eurUsdMrmEcbAskRate,
-        constants.usdEurMrmEcbMExcRate,
+        usdEurMrmEcbMExcRate,
         constants.eurInrMrmEcbMRate
       ]),
       constants.TENANT_ID,
@@ -784,7 +865,7 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
       buildAdapter([
         constants.inrEurMrmThrMDuplicateRate,
         constants.inrEurMrmThrMExcRate,
-        constants.inrEurMrmEcbMDuplicateExcRate,
+        inrEurMrmEcbMDuplicateExcRate,
         constants.inrEurMrmEcbMRate
       ]),
       constants.TENANT_ID,
@@ -805,7 +886,7 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
       buildAdapter([
         constants.inrEurMrmThrMDuplicateRate,
         constants.inrEurMrmThrMExcRate,
-        constants.inrEurMrmEcbMDuplicateExcRate,
+        inrEurMrmEcbMDuplicateExcRate,
         constants.inrEurMrmEcbMRate
       ]),
       constants.TENANT_ID,
@@ -827,7 +908,7 @@ describe('Non Fixed Rate Conversion override tenant settings', () => {
         constants.eurInrMrmThrMExcRate,
         constants.eurInrMrmThrMDuplicateRate,
         constants.eurInrMrmEcbMRate,
-        constants.eurInrMrmEcbMDuplicateExcRate
+        eurInrMrmEcbMDuplicateExcRate
       ]),
       constants.TENANT_ID,
       constants.overrideTenantSettings

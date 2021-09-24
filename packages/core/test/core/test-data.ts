@@ -44,30 +44,24 @@ export const AMOUNT_2: CurrencyAmount = new CurrencyAmount('2');
 export const AMOUNT_120: CurrencyAmount = new CurrencyAmount('120');
 export const AMOUNT_5000: CurrencyAmount = new CurrencyAmount('5000');
 
-const VALUE_0: Value = new Value('0');
-const VALUE_1: Value = new Value('1');
-const VALUE_2: Value = new Value('2');
-const VALUE_3: Value = new Value('3');
-const VALUE_5: Value = new Value('5');
-const VALUE_10: Value = new Value('10');
-const VALUE_7_00000001: Value = new Value('7.00000001');
-const VALUE_21_00000001: Value = new Value('21.00000001');
-const VALUE_100: Value = new Value('100');
-const VALUE_7_0: Value = new Value('7.0');
-const VALUE_21_0: Value = new Value('21.0');
-const VALUE_123_123: Value = new Value('123.123');
-const VALUE_0_300623: Value = new Value('0.300623');
-const VALUE_20: Value = new Value('20');
-const VALUE_30: Value = new Value('30');
+export const VALUE_0: Value = new Value('0');
+export const VALUE_1: Value = new Value('1');
+export const VALUE_2: Value = new Value('2');
+export const VALUE_3: Value = new Value('3');
+export const VALUE_5: Value = new Value('5');
+export const VALUE_10: Value = new Value('10');
+export const VALUE_7_00000001: Value = new Value('7.00000001');
+export const VALUE_21_00000001: Value = new Value('21.00000001');
+export const VALUE_100: Value = new Value('100');
+export const VALUE_7_0: Value = new Value('7.0');
+export const VALUE_21_0: Value = new Value('21.0');
+export const VALUE_20: Value = new Value('20');
+export const VALUE_30: Value = new Value('30');
 
-const DATE_2020_01_01: Date = new Date('2020-01-01T02:30:00Z');
-const DATE_2020_02_01: Date = new Date('2020-02-01T02:30:00Z');
-const DATE_2020_01_16: Date = new Date('2020-01-16T02:30:00Z');
-const DATE_2019_09_16: Date = new Date('2019-09-16T02:30:00Z');
-const DATE_2020_03_01: Date = new Date('2020-03-01T02:30:00Z');
-const DATE_1990_03_01: Date = new Date('1990-03-01T02:30:00Z');
-const DATE_2020_01_02: Date = new Date('2020-01-02T02:30:00Z');
-const DATE_2020_01_03: Date = new Date('2020-01-03T02:30:00Z');
+export const DATE_2020_01_01: Date = new Date('2020-01-01T02:30:00Z');
+export const DATE_2020_02_01: Date = new Date('2020-02-01T02:30:00Z');
+export const DATE_2020_01_16: Date = new Date('2020-01-16T02:30:00Z');
+export const DATE_2019_09_16: Date = new Date('2019-09-16T02:30:00Z');
 
 export const defaultTenantSettings: TenantSettings = {
   ratesDataProviderCode: MRM,
@@ -78,6 +72,13 @@ export const overrideTenantSettings: TenantSettings = {
   ratesDataProviderCode: MRM,
   ratesDataSource: THR
 };
+
+const VALUE_123_123: Value = new Value('123.123');
+const VALUE_0_300623: Value = new Value('0.300623');
+
+const DATE_2020_03_01: Date = new Date('2020-03-01T02:30:00Z');
+const DATE_1990_03_01: Date = new Date('1990-03-01T02:30:00Z');
+const DATE_2020_01_03: Date = new Date('2020-01-03T02:30:00Z');
 
 /* Conversion Parameter Starts */
 
@@ -288,19 +289,6 @@ export const inrEurMrmEcbMRate: ExchangeRate = {
   validFromDateTime: DATE_2019_09_16
 };
 
-export const inrEurMrmEcbMDuplicateExcRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2019_09_16
-};
-
 export const eurInrMrmEcbMRate: ExchangeRate = {
   settings: setDefaultSettings(TENANT_ID),
   data: {
@@ -312,19 +300,6 @@ export const eurInrMrmEcbMRate: ExchangeRate = {
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_16
-};
-
-export const eurInrMrmEcbMDuplicateExcRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2019_09_16
 };
 
 export const eurInrMrmEcbAskIndirectTrueRate: ExchangeRate = {
@@ -394,19 +369,6 @@ export const usdEurMrmEcbMRate: ExchangeRate = {
   value: VALUE_100,
   fromCurrency: USD,
   toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const usdInrMrmEcbMRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: USD,
-  toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
 };
 
@@ -503,19 +465,6 @@ export const usdInrMrmEcbARate: ExchangeRate = {
   value: VALUE_10,
   fromCurrency: USD,
   toCurrency: INR,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const eurUsdMrmEcbARate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: A
-  },
-  value: VALUE_2,
-  fromCurrency: EUR,
-  toCurrency: USD,
   validFromDateTime: DATE_2020_01_01
 };
 
@@ -925,45 +874,6 @@ export const usdEurMrmEcbIndirectFalseInvertedTrueRate: ExchangeRate = {
   validFromDateTime: DATE_2020_01_01
 };
 
-export const inrEurMrmThrMRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const eurInrMrmThrAExcRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: A
-  },
-  value: VALUE_5,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2019_09_16
-};
-
-export const eurUsdByorEcbIndirectFalseInvertedTrueRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: 'BYOR',
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: EUR,
-  toCurrency: USD,
-  validFromDateTime: DATE_2020_01_01
-};
-
 export const eurUsdMrmThrIndirectFalseInvertedTrueRate: ExchangeRate = {
   settings: setDefaultSettings(TENANT_ID),
   data: {
@@ -1123,19 +1033,6 @@ export const eurInrMrmThrARate: ExchangeRate = {
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_02_01
-};
-
-export const eurInrMrmThrADateBeforeRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: A
-  },
-  value: VALUE_5,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2019_09_16
 };
 
 export const usdInrMrmThrARate: ExchangeRate = {
@@ -1324,117 +1221,6 @@ export const usdInrMrmThrDuplicateDateRate: ExchangeRate = {
   validFromDateTime: DATE_2020_01_01
 };
 
-export const eurInrMrmThrZeroRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: A
-  },
-  value: VALUE_0,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_02_01
-};
-
-export const usdInrMrmThrZeroRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: A
-  },
-  value: VALUE_0,
-  fromCurrency: USD,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const eurInrMrmThrZeroFactor: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 0,
-    toCurrencyfactor: 0
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: A
-  },
-  value: VALUE_10,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_02_01
-};
-
-export const usdInrMrmThrZeroFactor: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 0,
-    toCurrencyfactor: 0
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: A
-  },
-  value: VALUE_10,
-  fromCurrency: USD,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const eurInrMrmThrZeroFactorRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 0,
-    toCurrencyfactor: 0
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: A
-  },
-  value: VALUE_0,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_02_01
-};
-
-export const usdInrMrmThrZeroFactorRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 0,
-    toCurrencyfactor: 0
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: A
-  },
-  value: VALUE_0,
-  fromCurrency: USD,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const eurUsdMrmThrMRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: EUR,
-  toCurrency: USD,
-  validFromDateTime: DATE_2020_01_01
-};
-
 export const usdEurMrmThrMRate: ExchangeRate = {
   settings: setDefaultSettings(TENANT_ID),
   data: {
@@ -1446,63 +1232,6 @@ export const usdEurMrmThrMRate: ExchangeRate = {
   fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2020_01_01
-};
-
-export const eurInrMrmThrIndirectFalseRateInfiniteDecimal: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: A
-  },
-  value: VALUE_3,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_02_01
-};
-
-export const usdInrMrmThrIndirectFalseRateInfiniteDecimal: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: A
-  },
-  value: VALUE_3,
-  fromCurrency: USD,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const eurInrMrmEcbIndirectTrueExcRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_01_16
-};
-
-export const eurInrMrmEcbIndirectFalseExcRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_01_16
 };
 
 export const eurInrMrmEcbIndirectTrueFactorMoreThanOneRate: ExchangeRate = {
@@ -1608,115 +1337,6 @@ export const usdInrMrmEcbIndirectFalseFactorMoreThanOneRate: ExchangeRate = {
   validFromDateTime: DATE_2020_01_01
 };
 
-export const usdInrMrmEcbDuplicateDateExcRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: A
-  },
-  value: VALUE_10,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const eurInrMrmEcbIndirectFalseRateInfiniteDecimal: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: A
-  },
-  value: VALUE_3,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_02_01
-};
-
-export const usdInrMrmEcbIndirectFalseRateInfiniteDecimal: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: A
-  },
-  value: VALUE_3,
-  fromCurrency: USD,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const eurInrMrmEcbZeroFactorRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 0,
-    toCurrencyfactor: 0
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: A
-  },
-  value: VALUE_0,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const eurInrMrmThrScaleMoreThanZeroRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: A
-  },
-  value: VALUE_7_0,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_02_01
-};
-
-export const usdInrMrmThrScaleMoreThanZeroRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: A
-  },
-  value: VALUE_21_0,
-  fromCurrency: USD,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const eurInrMrmThrScaleMoreThanDefaultRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: A
-  },
-  value: VALUE_7_00000001,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_02_01
-};
-
-export const usdInrMrmThrScaleMoreThanDefaultRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: A
-  },
-  value: VALUE_21_00000001,
-  fromCurrency: USD,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_01_01
-};
-
 export const eurInrMrmEcbDirectConversionDecimal: ExchangeRate = {
   settings: setDefaultSettings(TENANT_ID),
   data: {
@@ -1725,24 +1345,6 @@ export const eurInrMrmEcbDirectConversionDecimal: ExchangeRate = {
     exchangeRateType: B
   },
   value: VALUE_123_123,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const eurInrMrmEcbIndirectConversionExcRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: B
-  },
-  value: VALUE_100,
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
@@ -2007,24 +1609,6 @@ export const eurInrMrmEcbIndirectConversionDecimalRate: ExchangeRate = {
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
-};
-
-export const usdEurMrmEcbMExcRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2019_09_16
 };
 
 export const eurEurMrmEcbMRate: ExchangeRate = {
@@ -2648,408 +2232,6 @@ export const eurUsdMrmThrNewRateType: ExchangeRate = {
   validFromDateTime: DATE_2020_01_01
 };
 
-export const usdEurMrmEcbMultipleProviderDirectRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const usdEurMrmEcbIndirectTrueInvertedTrueDuplicateDateRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const usdEurMrmEcbIndirectTrueInvertedTrueRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const usdEurMrmEcbIndirectTrueInvertedFalseRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: B
-  },
-  value: VALUE_100,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const usdEurMrmEcbIndirectFalseInvertedTrueExcRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const usdEurMrmEcbIndirectFalseInvertedFalseRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: B
-  },
-  value: VALUE_100,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const usdEurMrmEcbIndirectTrueInvertedTrueFactorMoreThanOneRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 10
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_20,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const usdEurMrmEcbIndirectTrueInvertedFalseFactorMoreThanOneRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 10
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: B
-  },
-  value: VALUE_20,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const usdEurMrmEcbIndirectFalseInvertedTrueFactorMoreThanOneExcRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 10
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_20,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const usdEurMrmEcbIndirectFalseInvertedFalseFactorMoreThanOneExcRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 10
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: B
-  },
-  value: VALUE_20,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const eurUsdMrmEcbMultipleProviderIndirectRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 10,
-    toCurrencyfactor: 100
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_30,
-  fromCurrency: EUR,
-  toCurrency: USD,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const eurUsdMrmEcbIndirectTrueInvertedTrueDuplicateDateRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: EUR,
-  toCurrency: USD,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const eurUsdMrmEcbNewExcRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: 'ABC'
-  },
-  value: VALUE_100,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const usdEurMrmThrMultipleProviderDirectRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const eurUsdMrmThrMultipleProviderIndirectRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: EUR,
-  toCurrency: USD,
-  validFromDateTime: DATE_2020_01_01
-};
-
-export const eurUsdMrmThrIndirectTrueInvertedTrueExcRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: EUR,
-  toCurrency: USD,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const eurUsdMrmThrIndirectTrueInvertedFalseExcRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: B
-  },
-  value: VALUE_100,
-  fromCurrency: EUR,
-  toCurrency: USD,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const eurUsdMrmThrIndirectFalseInvertedTrueExcRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: EUR,
-  toCurrency: USD,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const eurUsdMrmThrIndirectFalseInvertedFalseExcRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: B
-  },
-  value: VALUE_100,
-  fromCurrency: EUR,
-  toCurrency: USD,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const eurUsdMrmThrIndirectTrueInvertedTrueFactorMoreThanOneExcRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 10,
-    toCurrencyfactor: 100
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: M
-  },
-  value: VALUE_30,
-  fromCurrency: EUR,
-  toCurrency: USD,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const eurUsdMrmThrIndirectTrueInvertedFalseFactorMoreThanOneExcRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 10,
-    toCurrencyfactor: 100
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: B
-  },
-  value: VALUE_30,
-  fromCurrency: EUR,
-  toCurrency: USD,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const eurUsdMrmThrIndirectFalseInvertedTrueFactorMoreThanOneExcRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 10,
-    toCurrencyfactor: 100
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: M
-  },
-  value: VALUE_30,
-  fromCurrency: EUR,
-  toCurrency: USD,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const eurUsdMrmThrIndirectFalseInvertedFalseFactorMoreThanOneExcRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 10,
-    toCurrencyfactor: 100
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: B
-  },
-  value: VALUE_30,
-  fromCurrency: EUR,
-  toCurrency: USD,
-  validFromDateTime: DATE_2020_01_02
-};
-
-export const eurUsdMrmThrNewExcRateType: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: 'ABC'
-  },
-  value: VALUE_100,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2020_01_02
-};
-
 export const inrEurMrmThrMDirectFactorFiveTenRate: ExchangeRate = {
   settings: {
     tenantIdentifier: TENANT_ID,
@@ -3064,24 +2246,6 @@ export const inrEurMrmThrMDirectFactorFiveTenRate: ExchangeRate = {
   },
   value: VALUE_100,
   fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2019_09_16
-};
-
-export const usdEurMrmThrMExcRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: USD,
   toCurrency: EUR,
   validFromDateTime: DATE_2019_09_16
 };
@@ -3182,25 +2346,6 @@ export const eurInrMrmThrAskRate: ExchangeRate = {
   validFromDateTime: DATE_2020_02_01
 };
 
-export const usdEurMrmThrMExRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: THR,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: USD,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2019_09_16
-};
-
 export const eurInrMrmEcbIndirectConversionRate: ExchangeRate = {
   settings: {
     tenantIdentifier: TENANT_ID,
@@ -3218,44 +2363,6 @@ export const eurInrMrmEcbIndirectConversionRate: ExchangeRate = {
   fromCurrency: EUR,
   toCurrency: INR,
   validFromDateTime: DATE_2020_01_01
-};
-
-export const inrEurMrmEcbMDuplicateExRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 10,
-    toCurrencyfactor: 5
-  },
-
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: DATE_2019_09_16
-};
-
-export const eurInrMrmEcbMDuplicateExRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 10,
-    toCurrencyfactor: 5
-  },
-
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: VALUE_100,
-  fromCurrency: EUR,
-  toCurrency: INR,
-  validFromDateTime: DATE_2019_09_16
 };
 
 export const inrEurMrmEcbDirectZeroRate: ExchangeRate = {

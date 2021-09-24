@@ -12,6 +12,63 @@ import {
 import { CurrencyConverter } from '../../src/core/currency-converter';
 import * as constants from './test-data';
 
+const usdEurMrmThrMExRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: true,
+    fromCurrencyfactor: 1,
+    toCurrencyfactor: 1
+  },
+
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.THR,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.USD,
+  toCurrency: constants.EUR,
+  validFromDateTime: constants.DATE_2019_09_16
+};
+
+const inrEurMrmEcbMDuplicateExRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: false,
+    fromCurrencyfactor: 10,
+    toCurrencyfactor: 5
+  },
+
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.INR,
+  toCurrency: constants.EUR,
+  validFromDateTime: constants.DATE_2019_09_16
+};
+
+const eurInrMrmEcbMDuplicateExRate: ExchangeRate = {
+  settings: {
+    tenantIdentifier: constants.TENANT_ID,
+    isIndirect: false,
+    fromCurrencyfactor: 10,
+    toCurrencyfactor: 5
+  },
+
+  data: {
+    ratesDataProviderCode: constants.MRM,
+    ratesDataSource: constants.ECB,
+    exchangeRateType: constants.M
+  },
+  value: constants.VALUE_100,
+  fromCurrency: constants.EUR,
+  toCurrency: constants.INR,
+  validFromDateTime: constants.DATE_2019_09_16
+};
+
 const currencyConverter: CurrencyConverter = new CurrencyConverter();
 
 function buildAdapter(exchangeRates: ExchangeRate[]): DataAdapter {
@@ -149,7 +206,7 @@ describe('Non Fixed Rate -- Single Currency Conversoin Tests Positive.', () => {
         constants.eurInrMrmEcbIndirectConversionRate,
         constants.eurUsdMrmEcbAskRate,
         constants.inrEurMrmEcbMDiffrentTenantRate,
-        constants.usdEurMrmThrMExRate,
+        usdEurMrmThrMExRate,
         constants.eurInrMrmThrMRate,
         constants.eurInrMrmEcbAskIndirectFalseRate
       ]),
@@ -209,7 +266,7 @@ describe('Non Fixed Rate -- Single Currency Conversoin Tests Positive.', () => {
     await expect(
       currencyConverter.convertCurrencyWithNonFixedRate(
         constants.inrEurMConversionParam,
-        buildAdapter([constants.inrEurMrmEcbMDuplicateExRate, constants.inrEurMrmEcbMRate]),
+        buildAdapter([inrEurMrmEcbMDuplicateExRate, constants.inrEurMrmEcbMRate]),
         constants.TENANT_ID
       )
     ).rejects.toThrowError();
@@ -218,7 +275,7 @@ describe('Non Fixed Rate -- Single Currency Conversoin Tests Positive.', () => {
     await expect(
       currencyConverter.convertCurrencyWithNonFixedRate(
         constants.inrEurMConversionParam,
-        buildAdapter([constants.inrEurMrmEcbMDuplicateExRate, constants.inrEurMrmEcbMRate]),
+        buildAdapter([inrEurMrmEcbMDuplicateExRate, constants.inrEurMrmEcbMRate]),
         constants.TENANT_ID
       )
     ).rejects.toThrowError();
@@ -227,7 +284,7 @@ describe('Non Fixed Rate -- Single Currency Conversoin Tests Positive.', () => {
     await expect(
       currencyConverter.convertCurrencyWithNonFixedRate(
         constants.inrEurMConversionParam,
-        buildAdapter([constants.eurInrMrmThrMRate, constants.eurInrMrmEcbMDuplicateExRate]),
+        buildAdapter([constants.eurInrMrmThrMRate, eurInrMrmEcbMDuplicateExRate]),
         constants.TENANT_ID
       )
     ).rejects.toThrowError();
