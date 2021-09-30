@@ -1407,22 +1407,23 @@
   dependencies:
     "@octokit/openapi-types" "^5.2.2"
 
-"@sap-cloud-sdk/analytics@^1.48.1":
-  version "1.48.1"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/analytics/-/analytics-1.48.1.tgz#99d80a858087647d5e531f7e055c36750c29852d"
-  integrity sha512-s325/J5e4yGSngzWLX1UdcbGkQ6sLg+vPuiRHy8ZAmQnCWCEyuF0qCnqMlwnxNrczZZfzXwmNsBUX/7/3hlQSw==
+"@sap-cloud-sdk/analytics@^1.49.0":
+  version "1.49.0"
+  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/analytics/-/analytics-1.49.0.tgz#eba551434fbbd34b58394c89d85be35a2f8d2319"
+  integrity sha512-OBVnJWd9uoV4ecnlc63QnNW7arMIz9VxjSG5/dpHWfqBfrymRQejYE1GlMBquhdEBRmAdJ5/R6TW3At6YlkSpQ==
   dependencies:
-    "@sap-cloud-sdk/util" "^1.48.1"
+    "@sap-cloud-sdk/util" "^1.49.0"
     axios "^0.21.1"
 
 "@sap-cloud-sdk/core@^1.18.1", "@sap-cloud-sdk/core@^1.32.1", "@sap-cloud-sdk/core@^1.41":
-  version "1.48.1"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/core/-/core-1.48.1.tgz#def01c2f5ca05278bc9b0e47a1a74d7af0ed9e12"
-  integrity sha512-vhrzhQpqjv0p8t+xQtkQBwSKgpBOgGBuQl67eayJYgPbAZLiB6MHrdxUE/2Pa7a8rSqlz2ith+8hLyvhjnxrUw==
+  version "1.49.0"
+  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/core/-/core-1.49.0.tgz#2543dc1fa04c7f1af1d3cbd553efdbe61fef458d"
+  integrity sha512-Ho7tLCG6Gb2GhqVLzrZ6uKQrjT6fa7CVa0twP6kf5cUIiXgpiGcG1aMgOKxlBtJiGMJ2bvkm1WL7CUR/5XKRvQ==
   dependencies:
-    "@sap-cloud-sdk/analytics" "^1.48.1"
-    "@sap-cloud-sdk/util" "^1.48.1"
+    "@sap-cloud-sdk/analytics" "^1.49.0"
+    "@sap-cloud-sdk/util" "^1.49.0"
     "@sap/xsenv" "^3.0.0"
+    "@sap/xssec" "3.2.3"
     "@types/jsonwebtoken" "^8.3.8"
     axios "^0.21.1"
     bignumber.js "^9.0.0"
@@ -1434,7 +1435,7 @@
     uuid "^8.2.0"
     voca "^1.4.0"
 
-"@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.32.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.48.1":
+"@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.32.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.49.0":
   version "1.49.0"
   resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-1.49.0.tgz#d1c4106fad24e3ab4b36998857e10b061ab7842f"
   integrity sha512-yeDprXIUnA13FswapRVlJZWsoZS09f1F16bGfWRJl1AmksIG/MzEW6Kwx3ES+c8zVd1cxkluNFnUF4S1Coq37Q==
@@ -1630,6 +1631,19 @@
   dependencies:
     debug "4.2.0"
     verror "1.10.0"
+
+"@sap/xssec@3.2.3":
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/@sap/xssec/-/xssec-3.2.3.tgz#a7d68e14ed1d6bd24bc58aa23df499bfb49ac5f5"
+  integrity sha512-4gOWZszdUFR7c0wZhKgN4YpucIm2iVn+qGjuHLq06WPRO/ufFJYkQ0bY8xDZj/3WrIq2rokx8xiMavNHP92I0A==
+  dependencies:
+    debug "4.3.2"
+    jsonwebtoken "^8.5.1"
+    lru-cache "6.0.0"
+    node-rsa "^1.1.1"
+    request "^2.88.2"
+    requestretry "5.0.0"
+    valid-url "1.0.9"
 
 "@sap/xssec@^3", "@sap/xssec@^3.2.2":
   version "3.2.7"
@@ -4139,7 +4153,7 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
     assign-symbols "^1.0.0"
     is-extendable "^1.0.1"
 
-extend@~3.0.2:
+extend@^3.0.2, extend@~3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
   integrity sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==
@@ -8265,6 +8279,15 @@ request@^2.87.0, request@^2.88.0, request@^2.88.2:
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
 
+requestretry@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/requestretry/-/requestretry-5.0.0.tgz#be630c72de3da357e2bf5ebfb5ed6a4e14535ccb"
+  integrity sha512-Rx0ETW0O1K+PAL/w8XVE2yhBCEtEsu6H690qbyCBT9mAHetXaO3BQ5hO5QGGkawTu9jG29ErmfqJZwX+dUy4tw==
+  dependencies:
+    extend "^3.0.2"
+    lodash "^4.17.15"
+    when "^3.7.7"
+
 require-directory@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/require-directory/-/require-directory-2.1.1.tgz#8c64ad5fd30dab1c976e2344ffe7f792a6a6df42"
@@ -9782,6 +9805,11 @@ whatwg-url@^8.0.0, whatwg-url@^8.4.0:
     lodash.sortby "^4.7.0"
     tr46 "^2.0.2"
     webidl-conversions "^6.1.0"
+
+when@^3.7.7:
+  version "3.7.8"
+  resolved "https://registry.yarnpkg.com/when/-/when-3.7.8.tgz#c7130b6a7ea04693e842cdc9e7a1f2aa39a39f82"
+  integrity sha1-xxMLan6gRpPoQs3J56Hyqjmjn4I=
 
 which-boxed-primitive@^1.0.2:
   version "1.0.2"
