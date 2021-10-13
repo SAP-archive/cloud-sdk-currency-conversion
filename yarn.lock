@@ -1474,20 +1474,20 @@
     antlr4 "4.8.0"
 
 "@sap/cds-dk@^4.3.3":
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/@sap/cds-dk/-/cds-dk-4.4.2.tgz#0838440e470aa55722e02a4f4b145a77de7158f0"
-  integrity sha512-ckfyHfCWE17PO5q/WkxhOLo/M/IDjrIRWbknLnSs44WNmbwmraQO/lJ96soNGY/RgZ30JFHQMdxrKZV8co7/pw==
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/@sap/cds-dk/-/cds-dk-4.5.3.tgz#36fab8c87081d43d91e7319285ff37c04b470e54"
+  integrity sha512-cUKlxwDPPfYvkOSK6QyJ+UsVYSh5j38TSoVVdr1GIFWAHR7PO94MGYBrIwDrxs8c7KeGnd6OVcMwFJ34XxOh1A==
   dependencies:
-    "@sap/cds" "^5.4.0"
+    "@sap/cds" "^5.5.0"
     "@sap/cds-foss" "^3"
-    "@sap/cds-sidecar-client" "^1.1.23"
-    "@sap/eslint-plugin-cds" "2.0.4"
-    axios "^0.21.0"
+    "@sap/eslint-plugin-cds" "^2.1.0"
+    axios "^0.21.4"
     connect-livereload "^0.6.1"
     eslint "^7.0.0"
     express "^4.17.1"
     htmlparser2 "5.0.1"
     livereload-js "^3.3.1"
+    md5 "^2.3.0"
     mustache "^4.0.1"
     node-watch "0.6.4"
     passport "^0.4.1"
@@ -1544,14 +1544,6 @@
     "@sap-cloud-sdk/util" "^1.18.1"
     "@sap/cds-foss" "^2"
 
-"@sap/cds-sidecar-client@^1.1.23":
-  version "1.1.23"
-  resolved "https://registry.yarnpkg.com/@sap/cds-sidecar-client/-/cds-sidecar-client-1.1.23.tgz#d928ce33809587724dc30da4b83ce99131eeda66"
-  integrity sha512-4IQStF2NJnqECLU0e7EohhkmCeSc2QjGJ/bcewegoJl+x4IBOu8LzkgJaSGirzT7INuy/Z4BOJVkVh1Ek+P5Qw==
-  dependencies:
-    axios "^0.21.1"
-    fs-extra "9.0.1"
-
 "@sap/cds@4.3.0":
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/@sap/cds/-/cds-4.3.0.tgz#932422ef73f26c9d93fe948f5f460d87146fb8d9"
@@ -1572,20 +1564,20 @@
     "@sap/cds-reflect" "^2.13.0"
     "@sap/cds-runtime" "~2.7.0"
 
-"@sap/cds@^5.0.0", "@sap/cds@^5.4.0":
-  version "5.4.3"
-  resolved "https://registry.yarnpkg.com/@sap/cds/-/cds-5.4.3.tgz#a02fb6e9b79c2043cc46575a03733a9263d4a648"
-  integrity sha512-Qje6gdQiiqjpb0JyTjI1eIF9Nr62m7PCQ2KyDOhUTc4dQN2En5jH2FuHWeiY5Yzq0oxUQ8tbkGBJmYvFKKkbLg==
+"@sap/cds@^5.0.0", "@sap/cds@^5.5.0":
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/@sap/cds/-/cds-5.5.3.tgz#77d6967397f371b00e5b8dc70d70815b3e707afa"
+  integrity sha512-kFIdD7FGb3+RempaEvzWMnHnm3TrCZ4B+WQZ/+JimgsWS0NumJ17+ZiTRdLEu9Iw/nxP8L7ilhJV/LMktVu2ng==
   dependencies:
     "@sap-cloud-sdk/core" "^1.41"
     "@sap-cloud-sdk/util" "^1.41"
     "@sap/cds-compiler" "^2.4.4"
     "@sap/cds-foss" "^3"
 
-"@sap/eslint-plugin-cds@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@sap/eslint-plugin-cds/-/eslint-plugin-cds-2.0.4.tgz#f7adfad2e290e655a122b48d244d8d55cf3663d3"
-  integrity sha512-lKH5rXCogV4DDf9N+J5a6FUqB/YQRIzpRQcQCg7BvA+nTHXiOt2aBf4SYVunkic6d88j5uapHqIl0D6x0rHFsA==
+"@sap/eslint-plugin-cds@^2.1.0":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@sap/eslint-plugin-cds/-/eslint-plugin-cds-2.1.1.tgz#1e5aee2e5cd0e61c6740c96e5bbf1cdd9e88a12d"
+  integrity sha512-7VVJ1r2aexoU5aTzYFwfvP9GwPfdJpbO0tGcLVI19CmoAjbW8K12/4linev5enusPLM7yOLi8c2JjFWwGim/Dg==
   dependencies:
     "@sap/cds" "^5.0.0"
     semver "^7.3.4"
@@ -2339,7 +2331,7 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
-axios@^0.21.0, axios@^0.21.1, axios@^0.21.4:
+axios@^0.21.1, axios@^0.21.4:
   version "0.21.4"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
   integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
@@ -2755,6 +2747,11 @@ chardet@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
+
+charenc@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
+  integrity sha1-wKHS86cJLgN3S/qD8UwPxXkKhmc=
 
 check-error@^1.0.2:
   version "1.0.2"
@@ -3199,6 +3196,11 @@ cross-spawn@^7.0.0, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
     path-key "^3.1.0"
     shebang-command "^2.0.0"
     which "^2.0.1"
+
+crypt@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/crypt/-/crypt-0.0.2.tgz#88d7ff7ec0dfb86f713dc87bbb42d044d3e6c41b"
+  integrity sha1-iNf/fsDfuG9xPch7u0LQRNPmxBs=
 
 crypto-random-string@^2.0.0:
   version "2.0.0"
@@ -4387,16 +4389,6 @@ fs-extra@10.0.0:
     jsonfile "^6.0.1"
     universalify "^2.0.0"
 
-fs-extra@9.0.1:
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.0.1.tgz#910da0062437ba4c39fedd863f1675ccfefcb9fc"
-  integrity sha512-h2iAoN838FqAFJY2/qVpzFXy+EBxfVE220PalAqQLDVsFOHLJrZvut5puAbCdNv6WJk+B8ihI+k0c7JK5erwqQ==
-  dependencies:
-    at-least-node "^1.0.0"
-    graceful-fs "^4.2.0"
-    jsonfile "^6.0.1"
-    universalify "^1.0.0"
-
 fs-extra@9.1.0, fs-extra@^9.1.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.1.0.tgz#5954460c764a8da2094ba3554bf839e6b9a7c86d"
@@ -5175,7 +5167,7 @@ is-boolean-object@^1.1.0:
   dependencies:
     call-bind "^1.0.2"
 
-is-buffer@^1.1.5:
+is-buffer@^1.1.5, is-buffer@~1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
@@ -6519,6 +6511,15 @@ marked@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/marked/-/marked-3.0.3.tgz#d81ff0f9e29cef0a177327fe009b460f31aa5862"
   integrity sha512-4oIDhVSQ2s+xNCfek9OnZgCQR/WykGCom02JzIIvi4Pme+MIwPYqvGVW8CQWOXeoZu0TtVB6pTxIuoLm+dKqDA==
+
+md5@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/md5/-/md5-2.3.0.tgz#c3da9a6aae3a30b46b7b0c349b87b110dc3bda4f"
+  integrity sha512-T1GITYmFaKuO91vxyoQMFETst+O71VUPEU3ze5GNzDm0OWdP8v1ziTaAEPUr/3kLsY3Sftgz242A1SetQiDL7g==
+  dependencies:
+    charenc "0.0.2"
+    crypt "0.0.2"
+    is-buffer "~1.1.6"
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -9237,9 +9238,9 @@ tmp@^0.0.33:
     os-tmpdir "~1.0.2"
 
 tmpl@1.0.x:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.4.tgz#23640dd7b42d00433911140820e5cf440e521dd1"
-  integrity sha1-I2QN17QtAEM5ERQIIOXPRA5SHdE=
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.5.tgz#8683e0b902bb9c20c4f726e3c0b69f36518c07cc"
+  integrity sha512-3f0uOEAQwIqGuWW2MVzYg8fV/QNnc/IpuJNG837rLuczAaLVHslWHZQj4IGiEl5Hs3kkbhwL9Ab7Hrsmuj+Smw==
 
 to-fast-properties@^2.0.0:
   version "2.0.0"
@@ -9590,11 +9591,6 @@ universal-user-agent@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/universal-user-agent/-/universal-user-agent-6.0.0.tgz#3381f8503b251c0d9cd21bc1de939ec9df5480ee"
   integrity sha512-isyNax3wXoKaulPDZWHQqbmIx1k2tb9fb3GGDBRxCscfYV2Ch7WxPArBsFEG8s/safwXTT7H4QGhaIkTp9447w==
-
-universalify@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/universalify/-/universalify-1.0.0.tgz#b61a1da173e8435b2fe3c67d29b9adf8594bd16d"
-  integrity sha512-rb6X1W158d7pRQBg5gkR8uPaSfiids68LTJQYOtEUhoJUWBdaQHsuT/EUduxXYxcrt4r5PJ4fuHW1MHT6p0qug==
 
 universalify@^2.0.0:
   version "2.0.0"
