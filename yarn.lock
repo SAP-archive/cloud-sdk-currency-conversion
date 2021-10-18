@@ -1474,9 +1474,9 @@
     antlr4 "4.8.0"
 
 "@sap/cds-dk@^4.3.3":
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/@sap/cds-dk/-/cds-dk-4.5.3.tgz#36fab8c87081d43d91e7319285ff37c04b470e54"
-  integrity sha512-cUKlxwDPPfYvkOSK6QyJ+UsVYSh5j38TSoVVdr1GIFWAHR7PO94MGYBrIwDrxs8c7KeGnd6OVcMwFJ34XxOh1A==
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/@sap/cds-dk/-/cds-dk-4.5.4.tgz#9f3e16c8caff522e5733c0ed3061a9f21cf9a07f"
+  integrity sha512-cP2FiQccTHCqdrltyJI4+SOZgSw2ZxuWmC8IxzV+b6qk9p5B2GIHNb8a++ukOKescVVKxCbIaMJeXNAdVJPd/Q==
   dependencies:
     "@sap/cds" "^5.5.0"
     "@sap/cds-foss" "^3"
