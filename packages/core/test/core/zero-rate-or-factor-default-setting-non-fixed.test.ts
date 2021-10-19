@@ -1,300 +1,16 @@
 /* Copyright (c) 2021 SAP SE or an SAP affiliate company. All rights reserved. */
-import { Tenant } from '@sap-cloud-sdk/core';
+
 import {
-  buildCurrency,
-  Currency,
   CurrencyConversionError,
-  ConversionParameterForNonFixedRate,
   DataAdapter,
   ExchangeRate,
   ExchangeRateTypeDetail,
-  Value,
   SingleNonFixedRateConversionResult,
-  TenantSettings,
-  buildConversionParameterForNonFixedRate,
-  setDefaultSettings
+  TenantSettings
 } from '@sap-cloud-sdk/currency-conversion-models';
 import { CurrencyConverter } from '../../src/core/currency-converter';
 import { ConversionError } from '../../src/constants/conversion-error';
-
-const TENANT_ID: Tenant = { id: 'TenantID' };
-
-const MRM = 'MRM';
-const ECB = 'ECB';
-
-const M = 'M';
-
-const INR: Currency = buildCurrency('INR');
-const EUR: Currency = buildCurrency('EUR');
-
-const S_0: Value = new Value('0');
-const S_10: Value = new Value('10');
-
-const S_2019_09_16T02_30_00Z: Date = new Date('2019-09-16T02:30:00Z');
-
-const defaultTenantSettings: TenantSettings = {
-  ratesDataProviderCode: MRM,
-  ratesDataSource: ECB
-};
-
-const inrEurMConversionParam: ConversionParameterForNonFixedRate = buildConversionParameterForNonFixedRate(
-  'INR',
-  'EUR',
-  '100',
-  M,
-  S_2019_09_16T02_30_00Z
-);
-
-/* Exchange Rate starts*/
-
-/* MRM, ECB */
-
-const inrEurMrmEcbDirectZeroRate: ExchangeRate = {
-  settings: setDefaultSettings(TENANT_ID),
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_0,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const inrEurMrmEcbDirectZeroToFactorRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 0
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_10,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const inrEurMrmEcbIndirectZeroRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_0,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const inrEurMrmEcbIndirectZeroFactorsZeroRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 0,
-    toCurrencyfactor: 0
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_0,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const inrEurMrmEcbIndirectZeroToFactorZeroRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 0
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_0,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const inrEurMrmEcbIndirectZeroFromFactZeroRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 0,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_0,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const inrEurMrmEcbDirectZeroFactorsZeroRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 0,
-    toCurrencyfactor: 0
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_0,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const inrEurMrmEcbDirectZeroFromFactZeroRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 0,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_0,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const inrEurMrmEcbIndirectZeroFactorsRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 0,
-    toCurrencyfactor: 0
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_10,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const inrEurMrmEcbIndirectZeroFromFactorRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 0,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_10,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const inrEurMrmEcbDirectZeroFactorsRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 0,
-    toCurrencyfactor: 0
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_10,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const inrEurMrmEcbDirectZeroFromFactorRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 0,
-    toCurrencyfactor: 1
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_10,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const inrEurMrmEcbIndirectZeroToFactorRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: true,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 0
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_10,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
-
-const inrEurMrmEcbDirectZeroToFactorZeroRate: ExchangeRate = {
-  settings: {
-    tenantIdentifier: TENANT_ID,
-    isIndirect: false,
-    fromCurrencyfactor: 1,
-    toCurrencyfactor: 0
-  },
-  data: {
-    ratesDataProviderCode: MRM,
-    ratesDataSource: ECB,
-    exchangeRateType: M
-  },
-  value: S_0,
-  fromCurrency: INR,
-  toCurrency: EUR,
-  validFromDateTime: S_2019_09_16T02_30_00Z
-};
+import * as constants from './test-data';
 
 const currencyConverter: CurrencyConverter = new CurrencyConverter();
 
@@ -303,7 +19,7 @@ function buildAdapter(exchangeRates: ExchangeRate[]): DataAdapter {
 
   adapter.getExchangeRatesForTenant = (): Promise<ExchangeRate[]> => Promise.resolve(exchangeRates);
 
-  adapter.getDefaultSettingsForTenant = (): Promise<TenantSettings> => Promise.resolve(defaultTenantSettings);
+  adapter.getDefaultSettingsForTenant = (): Promise<TenantSettings> => Promise.resolve(constants.defaultTenantSettings);
 
   adapter.getExchangeRateTypeDetailsForTenant = (): Promise<Map<string, ExchangeRateTypeDetail>> =>
     Promise.resolve(new Map());
@@ -315,7 +31,7 @@ function buildAdapterWithDataSource(exchangeRates: ExchangeRate[], dataSource: s
   adapter.getExchangeRatesForTenant = (): Promise<ExchangeRate[]> => Promise.resolve(exchangeRates);
 
   const tenantSettings = {
-    ratesDataProviderCode: MRM,
+    ratesDataProviderCode: constants.MRM,
     ratesDataSource: dataSource
   };
   adapter.getDefaultSettingsForTenant = (): Promise<TenantSettings> => Promise.resolve(tenantSettings);
@@ -329,65 +45,65 @@ describe('Non Fixed Rate -- zero rate or zero factor tests default tenant settin
   it('Test Direct Zero Rate.', async () => {
     const result = (
       await currencyConverter.convertCurrenciesWithNonFixedRate(
-        Array.of(inrEurMConversionParam),
-        buildAdapter([inrEurMrmEcbDirectZeroRate]),
-        TENANT_ID
+        Array.of(constants.inrEurMConversionParam),
+        buildAdapter([constants.inrEurMrmEcbDirectZeroRate]),
+        constants.TENANT_ID
       )
-    ).get(inrEurMConversionParam) as SingleNonFixedRateConversionResult;
+    ).get(constants.inrEurMConversionParam) as SingleNonFixedRateConversionResult;
     expect(result).toBeTruthy();
     expect(result.convertedAmount.decimalValue.toNumber()).toBe(0);
     expect(result.roundedOffConvertedAmount.decimalValue.toString()).toBe('0');
-    expect(result.exchangeRate).toMatchObject(inrEurMrmEcbDirectZeroRate);
+    expect(result.exchangeRate).toMatchObject(constants.inrEurMrmEcbDirectZeroRate);
   });
 
   it('Test Direct Zero to Factor Zero.', async () => {
     const result: SingleNonFixedRateConversionResult = await currencyConverter.convertCurrencyWithNonFixedRate(
-      inrEurMConversionParam,
-      buildAdapterWithDataSource([inrEurMrmEcbDirectZeroToFactorZeroRate], ECB),
-      TENANT_ID
+      constants.inrEurMConversionParam,
+      buildAdapterWithDataSource([constants.inrEurMrmEcbDirectZeroToFactorZeroRate], constants.ECB),
+      constants.TENANT_ID
     );
     expect(result).toBeTruthy();
     expect(result.convertedAmount.decimalValue.toNumber()).toBe(0);
     expect(result.roundedOffConvertedAmount.decimalValue.toString()).toBe('0');
-    expect(result.exchangeRate).toMatchObject(inrEurMrmEcbDirectZeroToFactorZeroRate);
+    expect(result.exchangeRate).toMatchObject(constants.inrEurMrmEcbDirectZeroToFactorZeroRate);
   });
 
   it('Test Indirect Zero To Factor Rate.', async () => {
     const result = (
       await currencyConverter.convertCurrenciesWithNonFixedRate(
-        Array.of(inrEurMConversionParam),
-        buildAdapterWithDataSource([inrEurMrmEcbIndirectZeroToFactorRate], ECB),
-        TENANT_ID
+        Array.of(constants.inrEurMConversionParam),
+        buildAdapterWithDataSource([constants.inrEurMrmEcbIndirectZeroToFactorRate], constants.ECB),
+        constants.TENANT_ID
       )
-    ).get(inrEurMConversionParam) as SingleNonFixedRateConversionResult;
+    ).get(constants.inrEurMConversionParam) as SingleNonFixedRateConversionResult;
     expect(result).toBeTruthy();
     expect(result.convertedAmount.decimalValue.toNumber()).toBe(0);
     expect(result.roundedOffConvertedAmount.decimalValue.toString()).toBe('0');
-    expect(result.exchangeRate).toMatchObject(inrEurMrmEcbIndirectZeroToFactorRate);
+    expect(result.exchangeRate).toMatchObject(constants.inrEurMrmEcbIndirectZeroToFactorRate);
   });
 
   it('Test Direct Zero To Factor Rate.', async () => {
     const result = (
       await currencyConverter.convertCurrenciesWithNonFixedRate(
-        Array.of(inrEurMConversionParam),
-        buildAdapterWithDataSource([inrEurMrmEcbDirectZeroToFactorRate], ECB),
-        TENANT_ID
+        Array.of(constants.inrEurMConversionParam),
+        buildAdapterWithDataSource([constants.inrEurMrmEcbDirectZeroToFactorRate], constants.ECB),
+        constants.TENANT_ID
       )
-    ).get(inrEurMConversionParam) as SingleNonFixedRateConversionResult;
+    ).get(constants.inrEurMConversionParam) as SingleNonFixedRateConversionResult;
     expect(result).toBeTruthy();
     expect(result.convertedAmount.decimalValue.toNumber()).toBe(0);
     expect(result.roundedOffConvertedAmount.decimalValue.toString()).toBe('0');
-    expect(result.exchangeRate).toMatchObject(inrEurMrmEcbDirectZeroToFactorRate);
+    expect(result.exchangeRate).toMatchObject(constants.inrEurMrmEcbDirectZeroToFactorRate);
   });
 
   it('Test Indirect Zero Rate', async () => {
     const result = (
       await currencyConverter.convertCurrenciesWithNonFixedRate(
-        Array.of(inrEurMConversionParam),
-        buildAdapterWithDataSource([inrEurMrmEcbIndirectZeroRate], ECB),
-        TENANT_ID
+        Array.of(constants.inrEurMConversionParam),
+        buildAdapterWithDataSource([constants.inrEurMrmEcbIndirectZeroRate], constants.ECB),
+        constants.TENANT_ID
       )
-    ).get(inrEurMConversionParam) as SingleNonFixedRateConversionResult;
+    ).get(constants.inrEurMConversionParam) as SingleNonFixedRateConversionResult;
     expect(result).toBeTruthy();
     expect(result).toBeInstanceOf(Error);
   });
@@ -395,11 +111,11 @@ describe('Non Fixed Rate -- zero rate or zero factor tests default tenant settin
   it('Test Indirect Zero Factors Zero Rate.', async () => {
     const result = (
       await currencyConverter.convertCurrenciesWithNonFixedRate(
-        Array.of(inrEurMConversionParam),
-        buildAdapterWithDataSource([inrEurMrmEcbIndirectZeroFactorsZeroRate], ECB),
-        TENANT_ID
+        Array.of(constants.inrEurMConversionParam),
+        buildAdapterWithDataSource([constants.inrEurMrmEcbIndirectZeroFactorsZeroRate], constants.ECB),
+        constants.TENANT_ID
       )
-    ).get(inrEurMConversionParam) as CurrencyConversionError;
+    ).get(constants.inrEurMConversionParam) as CurrencyConversionError;
     expect(result).toBeTruthy();
     expect(result).toBeInstanceOf(Error);
     expect(result.message).toBe(ConversionError.ZERO_CURRENCY_FACTOR);
@@ -408,11 +124,11 @@ describe('Non Fixed Rate -- zero rate or zero factor tests default tenant settin
   it('Test Indirect Zero To Factor Zero Rate.', async () => {
     const result = (
       await currencyConverter.convertCurrenciesWithNonFixedRate(
-        Array.of(inrEurMConversionParam),
-        buildAdapterWithDataSource([inrEurMrmEcbIndirectZeroToFactorZeroRate], ECB),
-        TENANT_ID
+        Array.of(constants.inrEurMConversionParam),
+        buildAdapterWithDataSource([constants.inrEurMrmEcbIndirectZeroToFactorZeroRate], constants.ECB),
+        constants.TENANT_ID
       )
-    ).get(inrEurMConversionParam) as CurrencyConversionError;
+    ).get(constants.inrEurMConversionParam) as CurrencyConversionError;
     expect(result).toBeTruthy();
     expect(result).toBeInstanceOf(Error);
     // expect(result.message).toBe(ConversionErrors.ZERO_CURRENCY_FACTOR);
@@ -421,11 +137,11 @@ describe('Non Fixed Rate -- zero rate or zero factor tests default tenant settin
   it('Test Indirect Zero From Fact Zero Rate.', async () => {
     const result = (
       await currencyConverter.convertCurrenciesWithNonFixedRate(
-        Array.of(inrEurMConversionParam),
-        buildAdapterWithDataSource([inrEurMrmEcbIndirectZeroFromFactZeroRate], ECB),
-        TENANT_ID
+        Array.of(constants.inrEurMConversionParam),
+        buildAdapterWithDataSource([constants.inrEurMrmEcbIndirectZeroFromFactZeroRate], constants.ECB),
+        constants.TENANT_ID
       )
-    ).get(inrEurMConversionParam) as CurrencyConversionError;
+    ).get(constants.inrEurMConversionParam) as CurrencyConversionError;
     expect(result).toBeTruthy();
     expect(result).toBeInstanceOf(Error);
     expect(result.message).toBe(ConversionError.ZERO_CURRENCY_FACTOR);
@@ -434,11 +150,11 @@ describe('Non Fixed Rate -- zero rate or zero factor tests default tenant settin
   it('Test Direct Zero Factors Zero Rate.', async () => {
     const result = (
       await currencyConverter.convertCurrenciesWithNonFixedRate(
-        Array.of(inrEurMConversionParam),
-        buildAdapterWithDataSource([inrEurMrmEcbDirectZeroFactorsZeroRate], ECB),
-        TENANT_ID
+        Array.of(constants.inrEurMConversionParam),
+        buildAdapterWithDataSource([constants.inrEurMrmEcbDirectZeroFactorsZeroRate], constants.ECB),
+        constants.TENANT_ID
       )
-    ).get(inrEurMConversionParam) as CurrencyConversionError;
+    ).get(constants.inrEurMConversionParam) as CurrencyConversionError;
     expect(result).toBeTruthy();
     expect(result).toBeInstanceOf(Error);
     expect(result.message).toBe(ConversionError.ZERO_CURRENCY_FACTOR);
@@ -447,11 +163,11 @@ describe('Non Fixed Rate -- zero rate or zero factor tests default tenant settin
   it('Test Direct Zero From Fact Zero Rate.', async () => {
     const result = (
       await currencyConverter.convertCurrenciesWithNonFixedRate(
-        Array.of(inrEurMConversionParam),
-        buildAdapterWithDataSource([inrEurMrmEcbDirectZeroFromFactZeroRate], ECB),
-        TENANT_ID
+        Array.of(constants.inrEurMConversionParam),
+        buildAdapterWithDataSource([constants.inrEurMrmEcbDirectZeroFromFactZeroRate], constants.ECB),
+        constants.TENANT_ID
       )
-    ).get(inrEurMConversionParam) as CurrencyConversionError;
+    ).get(constants.inrEurMConversionParam) as CurrencyConversionError;
     expect(result).toBeTruthy();
     expect(result).toBeInstanceOf(Error);
     expect(result.message).toBe(ConversionError.ZERO_CURRENCY_FACTOR);
@@ -460,11 +176,11 @@ describe('Non Fixed Rate -- zero rate or zero factor tests default tenant settin
   it('Test Indirect Zero Factors Rate.', async () => {
     const result = (
       await currencyConverter.convertCurrenciesWithNonFixedRate(
-        Array.of(inrEurMConversionParam),
-        buildAdapterWithDataSource([inrEurMrmEcbIndirectZeroFactorsRate], ECB),
-        TENANT_ID
+        Array.of(constants.inrEurMConversionParam),
+        buildAdapterWithDataSource([constants.inrEurMrmEcbIndirectZeroFactorsRate], constants.ECB),
+        constants.TENANT_ID
       )
-    ).get(inrEurMConversionParam) as CurrencyConversionError;
+    ).get(constants.inrEurMConversionParam) as CurrencyConversionError;
     expect(result).toBeTruthy();
     expect(result).toBeInstanceOf(Error);
     expect(result.message).toBe(ConversionError.ZERO_CURRENCY_FACTOR);
@@ -473,11 +189,11 @@ describe('Non Fixed Rate -- zero rate or zero factor tests default tenant settin
   it('Test Indirect Zero From Factor Rate.', async () => {
     const result = (
       await currencyConverter.convertCurrenciesWithNonFixedRate(
-        Array.of(inrEurMConversionParam),
-        buildAdapterWithDataSource([inrEurMrmEcbIndirectZeroFromFactorRate], ECB),
-        TENANT_ID
+        Array.of(constants.inrEurMConversionParam),
+        buildAdapterWithDataSource([constants.inrEurMrmEcbIndirectZeroFromFactorRate], constants.ECB),
+        constants.TENANT_ID
       )
-    ).get(inrEurMConversionParam) as CurrencyConversionError;
+    ).get(constants.inrEurMConversionParam) as CurrencyConversionError;
     expect(result).toBeTruthy();
     expect(result).toBeInstanceOf(Error);
     expect(result.message).toBe(ConversionError.ZERO_CURRENCY_FACTOR);
@@ -486,11 +202,11 @@ describe('Non Fixed Rate -- zero rate or zero factor tests default tenant settin
   it('Test Direct Zero Factors Rate.', async () => {
     const result = (
       await currencyConverter.convertCurrenciesWithNonFixedRate(
-        Array.of(inrEurMConversionParam),
-        buildAdapterWithDataSource([inrEurMrmEcbDirectZeroFactorsRate], ECB),
-        TENANT_ID
+        Array.of(constants.inrEurMConversionParam),
+        buildAdapterWithDataSource([constants.inrEurMrmEcbDirectZeroFactorsRate], constants.ECB),
+        constants.TENANT_ID
       )
-    ).get(inrEurMConversionParam) as CurrencyConversionError;
+    ).get(constants.inrEurMConversionParam) as CurrencyConversionError;
     expect(result).toBeTruthy();
     expect(result).toBeInstanceOf(Error);
     expect(result.message).toBe(ConversionError.ZERO_CURRENCY_FACTOR);
@@ -499,11 +215,11 @@ describe('Non Fixed Rate -- zero rate or zero factor tests default tenant settin
   it('Test Direct Zero From Factor Rate.', async () => {
     const result = (
       await currencyConverter.convertCurrenciesWithNonFixedRate(
-        Array.of(inrEurMConversionParam),
-        buildAdapterWithDataSource([inrEurMrmEcbDirectZeroFromFactorRate], ECB),
-        TENANT_ID
+        Array.of(constants.inrEurMConversionParam),
+        buildAdapterWithDataSource([constants.inrEurMrmEcbDirectZeroFromFactorRate], constants.ECB),
+        constants.TENANT_ID
       )
-    ).get(inrEurMConversionParam) as CurrencyConversionError;
+    ).get(constants.inrEurMConversionParam) as CurrencyConversionError;
     expect(result).toBeTruthy();
     expect(result).toBeInstanceOf(Error);
     expect(result.message).toBe(ConversionError.ZERO_CURRENCY_FACTOR);
