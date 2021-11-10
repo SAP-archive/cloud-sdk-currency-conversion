@@ -1474,13 +1474,13 @@
     antlr4 "4.8.0"
 
 "@sap/cds-dk@^4.3.3":
-  version "4.5.4"
-  resolved "https://registry.yarnpkg.com/@sap/cds-dk/-/cds-dk-4.5.4.tgz#9f3e16c8caff522e5733c0ed3061a9f21cf9a07f"
-  integrity sha512-cP2FiQccTHCqdrltyJI4+SOZgSw2ZxuWmC8IxzV+b6qk9p5B2GIHNb8a++ukOKescVVKxCbIaMJeXNAdVJPd/Q==
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/@sap/cds-dk/-/cds-dk-4.6.2.tgz#b8af8a7fd1fbf1836a96d999693ae1dab0c710d4"
+  integrity sha512-O/lMT+tFs+mY8mB7LbYYISJ7lxvynWtXkv89kZk2UTkMjmRvZN/hwKhtn7aZ6k0AAbENes8g/8nO6rfWgGY5Jw==
   dependencies:
-    "@sap/cds" "^5.5.0"
+    "@sap/cds" "^5.6.2"
     "@sap/cds-foss" "^3"
-    "@sap/eslint-plugin-cds" "^2.1.0"
+    "@sap/eslint-plugin-cds" "^2.2.2"
     axios "^0.21.4"
     connect-livereload "^0.6.1"
     eslint "^7.0.0"
@@ -1564,20 +1564,20 @@
     "@sap/cds-reflect" "^2.13.0"
     "@sap/cds-runtime" "~2.7.0"
 
-"@sap/cds@^5.0.0", "@sap/cds@^5.5.0":
-  version "5.5.3"
-  resolved "https://registry.yarnpkg.com/@sap/cds/-/cds-5.5.3.tgz#77d6967397f371b00e5b8dc70d70815b3e707afa"
-  integrity sha512-kFIdD7FGb3+RempaEvzWMnHnm3TrCZ4B+WQZ/+JimgsWS0NumJ17+ZiTRdLEu9Iw/nxP8L7ilhJV/LMktVu2ng==
+"@sap/cds@^5.0.0", "@sap/cds@^5.6.2":
+  version "5.6.2"
+  resolved "https://registry.yarnpkg.com/@sap/cds/-/cds-5.6.2.tgz#2f685d854c4111576887d55be0c0ded9ec510619"
+  integrity sha512-Y4i0vdyJ5klpksIAN+9gZ3yDHskHbhSWPMAuRA6vMP2zZSniDLyKBOiZsgLT3DpMF8ly186P14iN18ztBMp7+g==
   dependencies:
     "@sap-cloud-sdk/core" "^1.41"
     "@sap-cloud-sdk/util" "^1.41"
     "@sap/cds-compiler" "^2.4.4"
     "@sap/cds-foss" "^3"
 
-"@sap/eslint-plugin-cds@^2.1.0":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@sap/eslint-plugin-cds/-/eslint-plugin-cds-2.1.1.tgz#1e5aee2e5cd0e61c6740c96e5bbf1cdd9e88a12d"
-  integrity sha512-7VVJ1r2aexoU5aTzYFwfvP9GwPfdJpbO0tGcLVI19CmoAjbW8K12/4linev5enusPLM7yOLi8c2JjFWwGim/Dg==
+"@sap/eslint-plugin-cds@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@sap/eslint-plugin-cds/-/eslint-plugin-cds-2.2.2.tgz#587b9ee7fa9503f51aedf4292400c9727e0d3f08"
+  integrity sha512-v2PnvwGcXkGa4evQtnq1C5NRThpSbpvcqS1pb+OMbgQmKwGG3PV2dih72R3XePi1mnrprp+y21VggYaKzxJymw==
   dependencies:
     "@sap/cds" "^5.0.0"
     semver "^7.3.4"
@@ -9420,9 +9420,9 @@ ts-jest@^26.3.0:
     yargs-parser "20.x"
 
 ts-node@^10.2.1:
-  version "10.3.0"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.3.0.tgz#a797f2ed3ff50c9a5d814ce400437cb0c1c048b4"
-  integrity sha512-RYIy3i8IgpFH45AX4fQHExrT8BxDeKTdC83QFJkNzkvt8uFB6QJ8XMyhynYiKMLxt9a7yuXaDBZNOYS3XjDcYw==
+  version "10.4.0"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.4.0.tgz#680f88945885f4e6cf450e7f0d6223dd404895f7"
+  integrity sha512-g0FlPvvCXSIO1JDF6S232P5jPYqBkRL9qly81ZgAOSU7rwI0stphCgd2kLiCrU9DjQCrJMWEqcNSjQL02s6d8A==
   dependencies:
     "@cspotcode/source-map-support" "0.7.0"
     "@tsconfig/node10" "^1.0.7"
