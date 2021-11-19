@@ -1407,21 +1407,21 @@
   dependencies:
     "@octokit/openapi-types" "^5.2.2"
 
-"@sap-cloud-sdk/analytics@^1.50.0":
-  version "1.50.0"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/analytics/-/analytics-1.50.0.tgz#39efc2e0ee7fb1d7ab49820a774121835442b444"
-  integrity sha512-7ePq2eq1rKxHPXHOSgOu5rO+Ld64PJVlLLm1Jq5xQepySqx6XazoWH74vQ5rQyf2659+1kw2zcisOCBTgPp/lQ==
+"@sap-cloud-sdk/analytics@^1.52.0":
+  version "1.52.0"
+  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/analytics/-/analytics-1.52.0.tgz#c18d68637f5e20c2a21f7fb1f4c96d93f86e17d2"
+  integrity sha512-NwiK22SqutPDQtXtVgWLRdlXDIcvW95RjyJi6ZiiGKPNsVW3oPLpfa29pQ7pDXpn1ID2VNDEe3fu4WKrt5TMsQ==
   dependencies:
-    "@sap-cloud-sdk/util" "^1.50.0"
+    "@sap-cloud-sdk/util" "^1.52.0"
     axios "^0.21.1"
 
 "@sap-cloud-sdk/core@^1.18.1", "@sap-cloud-sdk/core@^1.32.1", "@sap-cloud-sdk/core@^1.41":
-  version "1.50.0"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/core/-/core-1.50.0.tgz#a1588cc6f275bbb02884cbfe9041f849c38df780"
-  integrity sha512-dA0O/V9rG7asWZsiXoRhIcQP7/DHmejN912oXjrfYRUN4WZGLmrX6gebunEAzQD0yokkPgZ5l0qmDbTC3zvbPg==
+  version "1.52.0"
+  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/core/-/core-1.52.0.tgz#e1886e7d043fb2127b74a180f76ed33c0ac6fa8f"
+  integrity sha512-6ISoOUJOOQ9nasghbQLHP3QWzKbNKba4GRWyi3ocs05/QVB7bueN8FoyKIbGIbZXaXeqZf2cgyyoxMlQk7yOkQ==
   dependencies:
-    "@sap-cloud-sdk/analytics" "^1.50.0"
-    "@sap-cloud-sdk/util" "^1.50.0"
+    "@sap-cloud-sdk/analytics" "^1.52.0"
+    "@sap-cloud-sdk/util" "^1.52.0"
     "@sap/xsenv" "^3.0.0"
     "@sap/xssec" "^3.2.7"
     "@types/jsonwebtoken" "^8.3.8"
@@ -1435,7 +1435,7 @@
     uuid "^8.2.0"
     voca "^1.4.0"
 
-"@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.32.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.50.0":
+"@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.32.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.52.0":
   version "1.52.0"
   resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-1.52.0.tgz#d4f094000046d2617d840e45412695dc2d9551c0"
   integrity sha512-B5tiLwO7BtZlGH3Qsg7yFv9RZgSiFcBhj3acAretWr0nF9/emZGiwX38TQuNEfdX0oaNddGiKmZgKI47pA6eBA==
@@ -1759,9 +1759,9 @@
     "@types/istanbul-lib-report" "*"
 
 "@types/jest@^27.0.1":
-  version "27.0.2"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-27.0.2.tgz#ac383c4d4aaddd29bbf2b916d8d105c304a5fcd7"
-  integrity sha512-4dRxkS/AFX0c5XW6IPMNOydLn2tEhNhJV7DnYK+0bjoJZ+QTmfucBlihX7aoEsh/ocYtkLC73UbnBXBXIxsULA==
+  version "27.0.3"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-27.0.3.tgz#0cf9dfe9009e467f70a342f0f94ead19842a783a"
+  integrity sha512-cmmwv9t7gBYt7hNKH5Spu7Kuu/DotGa+Ff+JGRKZ4db5eh8PnKS4LuebJ3YLUoyOyIHraTGyULn23YtEAm0VSg==
   dependencies:
     jest-diff "^27.0.0"
     pretty-format "^27.0.0"
