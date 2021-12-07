@@ -1474,13 +1474,13 @@
     antlr4 "4.8.0"
 
 "@sap/cds-dk@^4.3.3":
-  version "4.5.4"
-  resolved "https://registry.yarnpkg.com/@sap/cds-dk/-/cds-dk-4.5.4.tgz#9f3e16c8caff522e5733c0ed3061a9f21cf9a07f"
-  integrity sha512-cP2FiQccTHCqdrltyJI4+SOZgSw2ZxuWmC8IxzV+b6qk9p5B2GIHNb8a++ukOKescVVKxCbIaMJeXNAdVJPd/Q==
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/@sap/cds-dk/-/cds-dk-4.7.1.tgz#bc18ecae7a6fd5cdd1d8ab82e850e40c9acdef2f"
+  integrity sha512-YSJ0Os4wBCK8UvGac8UNVE2QcvGHVh4zASo79PUCRyGUn7zRv4bKT38kUSomwhcjSqythbCPoLfeXhZEdkz6GQ==
   dependencies:
-    "@sap/cds" "^5.5.0"
+    "@sap/cds" "^5.6.4"
     "@sap/cds-foss" "^3"
-    "@sap/eslint-plugin-cds" "^2.1.0"
+    "@sap/eslint-plugin-cds" "^2.3.0"
     axios "^0.21.4"
     connect-livereload "^0.6.1"
     eslint "^7.0.0"
@@ -1564,22 +1564,22 @@
     "@sap/cds-reflect" "^2.13.0"
     "@sap/cds-runtime" "~2.7.0"
 
-"@sap/cds@^5.0.0", "@sap/cds@^5.5.0":
-  version "5.5.3"
-  resolved "https://registry.yarnpkg.com/@sap/cds/-/cds-5.5.3.tgz#77d6967397f371b00e5b8dc70d70815b3e707afa"
-  integrity sha512-kFIdD7FGb3+RempaEvzWMnHnm3TrCZ4B+WQZ/+JimgsWS0NumJ17+ZiTRdLEu9Iw/nxP8L7ilhJV/LMktVu2ng==
+"@sap/cds@^5.6.0", "@sap/cds@^5.6.4":
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/@sap/cds/-/cds-5.7.1.tgz#a75ad988cbb36ac222e0e8999e1416a2f737bb2e"
+  integrity sha512-ZDzIFsXiPNTcnvRrbO5Y6UDK9vEjQjiM09+ZgLLSNyETqaTIkKdhnCsEtoR1zVPHUi5hqj/unsIh/IWmG1m72w==
   dependencies:
     "@sap-cloud-sdk/core" "^1.41"
     "@sap-cloud-sdk/util" "^1.41"
     "@sap/cds-compiler" "^2.4.4"
     "@sap/cds-foss" "^3"
 
-"@sap/eslint-plugin-cds@^2.1.0":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@sap/eslint-plugin-cds/-/eslint-plugin-cds-2.1.1.tgz#1e5aee2e5cd0e61c6740c96e5bbf1cdd9e88a12d"
-  integrity sha512-7VVJ1r2aexoU5aTzYFwfvP9GwPfdJpbO0tGcLVI19CmoAjbW8K12/4linev5enusPLM7yOLi8c2JjFWwGim/Dg==
+"@sap/eslint-plugin-cds@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@sap/eslint-plugin-cds/-/eslint-plugin-cds-2.3.0.tgz#21e394480bd5b0ddfed6488317c42cc584b310f8"
+  integrity sha512-7HiCUk8CcBdQIBh2QQPmkiEklzLsZw47NP0+/JHsE/dsDT5Dkk3eREG4mNQQz+xva3Ng4YYQKWuBhbj7nljtNg==
   dependencies:
-    "@sap/cds" "^5.0.0"
+    "@sap/cds" "^5.6.0"
     semver "^7.3.4"
 
 "@sap/hana-client@2.9.28":
