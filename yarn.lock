@@ -1407,21 +1407,21 @@
   dependencies:
     "@octokit/openapi-types" "^5.2.2"
 
-"@sap-cloud-sdk/analytics@^1.52.0":
-  version "1.52.0"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/analytics/-/analytics-1.52.0.tgz#c18d68637f5e20c2a21f7fb1f4c96d93f86e17d2"
-  integrity sha512-NwiK22SqutPDQtXtVgWLRdlXDIcvW95RjyJi6ZiiGKPNsVW3oPLpfa29pQ7pDXpn1ID2VNDEe3fu4WKrt5TMsQ==
+"@sap-cloud-sdk/analytics@^1.53.0":
+  version "1.53.0"
+  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/analytics/-/analytics-1.53.0.tgz#125a27dfbc81b31e04c246295603899b65819478"
+  integrity sha512-319Op2FH/ZL6N7IyKXHs7spyC2ot4KbBPd/yuMe3VUrKlGW3/fEWfjsKbv+p8/dKq22oYHDyTtspTg65+BcUIA==
   dependencies:
-    "@sap-cloud-sdk/util" "^1.52.0"
+    "@sap-cloud-sdk/util" "^1.53.0"
     axios "^0.21.1"
 
 "@sap-cloud-sdk/core@^1.18.1", "@sap-cloud-sdk/core@^1.32.1", "@sap-cloud-sdk/core@^1.41":
-  version "1.52.0"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/core/-/core-1.52.0.tgz#e1886e7d043fb2127b74a180f76ed33c0ac6fa8f"
-  integrity sha512-6ISoOUJOOQ9nasghbQLHP3QWzKbNKba4GRWyi3ocs05/QVB7bueN8FoyKIbGIbZXaXeqZf2cgyyoxMlQk7yOkQ==
+  version "1.53.0"
+  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/core/-/core-1.53.0.tgz#6882d58260fa0c72d068ecb7083418b16920c2cd"
+  integrity sha512-xCiEYiGi7PAQNfzmYmOWRw6oBjIzmiv6Yag8haTRPqLo2Aox6pqEfhbKunzqi6wJPUSgJByW696nzx5CY6BCjQ==
   dependencies:
-    "@sap-cloud-sdk/analytics" "^1.52.0"
-    "@sap-cloud-sdk/util" "^1.52.0"
+    "@sap-cloud-sdk/analytics" "^1.53.0"
+    "@sap-cloud-sdk/util" "^1.53.0"
     "@sap/xsenv" "^3.0.0"
     "@sap/xssec" "^3.2.7"
     "@types/jsonwebtoken" "^8.3.8"
@@ -1435,10 +1435,10 @@
     uuid "^8.2.0"
     voca "^1.4.0"
 
-"@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.32.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.52.0":
-  version "1.52.0"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-1.52.0.tgz#d4f094000046d2617d840e45412695dc2d9551c0"
-  integrity sha512-B5tiLwO7BtZlGH3Qsg7yFv9RZgSiFcBhj3acAretWr0nF9/emZGiwX38TQuNEfdX0oaNddGiKmZgKI47pA6eBA==
+"@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.32.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.53.0":
+  version "1.53.0"
+  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-1.53.0.tgz#e994e23550fdb5f31f6d159f9a190c15caa8da84"
+  integrity sha512-pgaUGolB/0uRzPCaGRnvsAcl/PM8879FqYnLHeuKqii25heb3MEZz1ZcJXuZfKyRyTqMf0f45Xjm0xKBCneCKA==
   dependencies:
     axios "^0.21.1"
     chalk "^4.1.0"
@@ -1597,9 +1597,9 @@
     debug "3.1.0"
 
 "@sap/hdi-deploy@^4":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@sap/hdi-deploy/-/hdi-deploy-4.2.0.tgz#102c03c12bad0297f0fd1d4bde440993b8003442"
-  integrity sha512-ZwH6q3/fK3EQ2p80H0Pw2yKJZk6iY6Kedti+2LNV4urLqNfwuOnoKVuVifohwRlOyPzwluF59XkBcXSr9t0tiA==
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/@sap/hdi-deploy/-/hdi-deploy-4.2.3.tgz#dfcb5f32f2abd52765b22b05a80e927304ca5037"
+  integrity sha512-98YOfDOiVCIOa3TTqjMNf4Dwj5YRsuh1BdqU6C+lDGf/4nyMC/UOgfTMcHLxoTpBMAzLfNX6gAa37tpGi6AFKQ==
   dependencies:
     "@sap/hana-client" "2.9.28"
     "@sap/hdi" "4.1.0"
@@ -1607,6 +1607,7 @@
     async "3.1.0"
     dotenv "10.0.0"
     handlebars "4.7.7"
+    micromatch "4.0.4"
 
 "@sap/hdi@4.1.0":
   version "4.1.0"
@@ -6659,6 +6660,14 @@ methods@~1.1.2:
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
   integrity sha1-VSmk1nZUE07cxSZmVoNbD4Ua/O4=
 
+micromatch@4.0.4, micromatch@^4.0.2:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.4.tgz#896d519dfe9db25fce94ceb7a500919bf881ebf9"
+  integrity sha512-pRmzw/XUcwXGpD9aI9q/0XOwLNygjETJ8y0ao0wdqprrzDa4YnxLcz7fQRZr8voh8V10kGhABbNcHVk5wHgWwg==
+  dependencies:
+    braces "^3.0.1"
+    picomatch "^2.2.3"
+
 micromatch@^3.1.4:
   version "3.1.10"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-3.1.10.tgz#70859bc95c9840952f359a068a3fc49f9ecfac23"
@@ -6677,14 +6686,6 @@ micromatch@^3.1.4:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.2"
-
-micromatch@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.2.tgz#4fcb0999bf9fbc2fcbdd212f6d629b9a56c39259"
-  integrity sha512-y7FpHSbMUMoyPbYUSzO6PaZ6FyRnQOpHuKwbo1G+Knck95XVU4QAiKdGEnj5wwoS7PlOgthX/09u5iFJ+aYf5Q==
-  dependencies:
-    braces "^3.0.1"
-    picomatch "^2.0.5"
 
 mime-db@1.45.0:
   version "1.45.0"
@@ -7736,10 +7737,15 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-picomatch@^2.0.4, picomatch@^2.0.5, picomatch@^2.2.1:
+picomatch@^2.0.4, picomatch@^2.2.1:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.2.2.tgz#21f333e9b6b8eaff02468f5146ea406d345f4dad"
   integrity sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg==
+
+picomatch@^2.2.3:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.0.tgz#f1f061de8f6a4bf022892e2d128234fb98302972"
+  integrity sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==
 
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
