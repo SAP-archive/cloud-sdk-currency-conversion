@@ -1448,13 +1448,14 @@
     winston "^3.3.3"
 
 "@sap/audit-logging@latest":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@sap/audit-logging/-/audit-logging-5.1.0.tgz#1e356f51c6333e60f8b88945dfd3c1185bb4a7cf"
-  integrity sha512-EM2lCFCSxLK9i5zZzPqB7HdUZRZNDhHdx3ieyHy4BLYdDkOGVCd6fHFqc0teWNuh64aWTt18J/T3vNhFkd0vlw==
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@sap/audit-logging/-/audit-logging-5.3.0.tgz#e7447852351171c768f8a05e5541e0e0751de161"
+  integrity sha512-UMJiejVs9uyi2aAUAPEAYXJV/azSqD9XAi15mrLcQJEYqiOqRS/MLYh8Wr7OibmKk0WJhQ3tlIeYCVzrhzOKwQ==
   dependencies:
-    "@sap/xssec" "^3.2.2"
+    "@sap/xssec" "^3.2.10"
     debug "4.2.0"
     fetch-retry "4.1.0"
+    node-cache "5.1.0"
     node-fetch "2.6.1"
 
 "@sap/cds-compiler@^1.43.1":
@@ -1632,7 +1633,7 @@
     debug "4.2.0"
     verror "1.10.0"
 
-"@sap/xssec@^3", "@sap/xssec@^3.2.2", "@sap/xssec@^3.2.7":
+"@sap/xssec@^3", "@sap/xssec@^3.2.10", "@sap/xssec@^3.2.7":
   version "3.2.10"
   resolved "https://registry.yarnpkg.com/@sap/xssec/-/xssec-3.2.10.tgz#968a6dd342439ddeb17ca46f4754ec3c13ca35cb"
   integrity sha512-gY7aRfPip1XW1e1F49k8q+alikFbgFXaQ3xpPzMwtmkWGEnEwFrTaVtOpkaGSiwG4CSWfh3sjDNyLLyr7X9uug==
@@ -2864,6 +2865,11 @@ clone-response@^1.0.2:
   integrity sha1-0dyXOSAxTfZ/vrlCI7TuNQI56Ws=
   dependencies:
     mimic-response "^1.0.0"
+
+clone@2.x:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
+  integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
 
 clone@^1.0.2:
   version "1.0.4"
@@ -6964,6 +6970,13 @@ node-addon-api@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-3.1.0.tgz#98b21931557466c6729e51cb77cd39c965f42239"
   integrity sha512-flmrDNB06LIl5lywUz7YlNGZH/5p0M7W28k8hzd9Lshtdh1wshD2Y+U4h9LD6KObOy1f+fEVdgprPrEymjM5uw==
+
+node-cache@5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/node-cache/-/node-cache-5.1.0.tgz#266786c28dcec0fd34385ee29c383e6d6f1aa5de"
+  integrity sha512-gFQwYdoOztBuPlwg6DKQEf50G+gkK69aqLnw4djkmlHCzeVrLJfwvg9xl4RCAGviTIMUVoqcyoZ/V/wPEu/VVg==
+  dependencies:
+    clone "2.x"
 
 node-fetch@2.6.1, node-fetch@^2.6.1:
   version "2.6.1"
