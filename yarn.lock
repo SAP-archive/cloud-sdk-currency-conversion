@@ -1436,9 +1436,9 @@
     voca "^1.4.0"
 
 "@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.32.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.52.0":
-  version "1.52.0"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-1.52.0.tgz#d4f094000046d2617d840e45412695dc2d9551c0"
-  integrity sha512-B5tiLwO7BtZlGH3Qsg7yFv9RZgSiFcBhj3acAretWr0nF9/emZGiwX38TQuNEfdX0oaNddGiKmZgKI47pA6eBA==
+  version "1.53.1"
+  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-1.53.1.tgz#f90231775f128c3040dc5f2cdfc4f8c383a21fdf"
+  integrity sha512-zhaXZqo4pj0y0+29PQGPI++pZjXJFeAP97uXRyfAJNI02UNL6yy7hRTTiIzzGqRMcqIk4IveIIrjHDbU1SAFVg==
   dependencies:
     axios "^0.21.1"
     chalk "^4.1.0"
@@ -1591,9 +1591,9 @@
     debug "3.1.0"
 
 "@sap/hana-client@^2", "@sap/hana-client@^2.6.58":
-  version "2.10.15"
-  resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.10.15.tgz#5ed1d1479182b413e8c8a1819dd324b3925a24fb"
-  integrity sha512-Bjuomm8xdhb7oTE94RRLS7TlP17vmVlkS9Vs24077xO42v2DET30b/X170+KWpSiFcKz6ExQG4AvWIHlO7K3kQ==
+  version "2.11.14"
+  resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.11.14.tgz#1bee33b34988e39b958e020d0683165e1baacfdf"
+  integrity sha512-THQrPUXFtUV/PPfquzeVySpmfjksPAZpc/mqCgC7AW76IXBO/iPjeNLPI911BQsa2o3JOhTRYBjSjX3kwfzMqw==
   dependencies:
     debug "3.1.0"
 
