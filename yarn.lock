@@ -1448,12 +1448,12 @@
     winston "^3.3.3"
 
 "@sap/audit-logging@latest":
-  version "5.4.1"
-  resolved "https://registry.yarnpkg.com/@sap/audit-logging/-/audit-logging-5.4.1.tgz#b4b8b9d0e786f97f35c4218bbba42c709edac33c"
-  integrity sha512-N2nKt1RXoWvRIC0O3t0OSjG4zu7V5uxXpJCu5DqT49LigUHUCpRcUV2c74sG2ovEuT0R0lvf/OxXSI9j9jfcSQ==
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@sap/audit-logging/-/audit-logging-5.5.0.tgz#eec76e2d8c686de94beee91bc01c7c89a03c63b4"
+  integrity sha512-LWReSb+nJSEQ5psO2XGu1ZB6RPZg2nYKl2HNp+kZzdyXNsi2SdFrJEhnx+nizB92r2FbzB4bOJpq7rjYbzgHZw==
   dependencies:
     "@sap/xssec" "^3.2.10"
-    debug "4.2.0"
+    debug "4.3.3"
     fetch-retry "4.1.0"
     node-cache "5.1.0"
     node-fetch "2.6.7"
@@ -3295,10 +3295,10 @@ debug@3.1.0:
   dependencies:
     ms "2.0.0"
 
-debug@4, debug@4.3.2, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@^4.2.0, debug@^4.3.1:
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
-  integrity sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
+debug@4, debug@4.3.3, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@^4.2.0, debug@^4.3.1:
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.3.tgz#04266e0b70a98d4462e6e288e38259213332b664"
+  integrity sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==
   dependencies:
     ms "2.1.2"
 
@@ -3306,6 +3306,13 @@ debug@4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.2.0.tgz#7f150f93920e94c58f5574c2fd01a3110effe7f1"
   integrity sha512-IX2ncY78vDTjZMFUdmsvIRFY2Cf4FnD0wRs+nQwJU8Lu99/tPFdb0VybiiMTPe3I6rQmwsqQqRBvxU+bZ/I8sg==
+  dependencies:
+    ms "2.1.2"
+
+debug@4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
+  integrity sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
   dependencies:
     ms "2.1.2"
 
