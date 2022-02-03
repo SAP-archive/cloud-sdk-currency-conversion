@@ -1436,9 +1436,9 @@
     voca "^1.4.0"
 
 "@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.32.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.53.1":
-  version "1.53.1"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-1.53.1.tgz#f90231775f128c3040dc5f2cdfc4f8c383a21fdf"
-  integrity sha512-zhaXZqo4pj0y0+29PQGPI++pZjXJFeAP97uXRyfAJNI02UNL6yy7hRTTiIzzGqRMcqIk4IveIIrjHDbU1SAFVg==
+  version "1.54.0"
+  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-1.54.0.tgz#ed2085fd03fac763cb1bc269980de0890963bcf5"
+  integrity sha512-WT5eTmYC4maBMQ6colVesWsASAcSlxMc+KxesfPM9109C84XEe7r/XjUTjXbWzvByJpCiukK1i4St2lh2WQMUQ==
   dependencies:
     axios "^0.21.1"
     chalk "^4.1.0"
