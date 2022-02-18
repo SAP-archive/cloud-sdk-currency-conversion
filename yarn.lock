@@ -1435,12 +1435,24 @@
     uuid "^8.2.0"
     voca "^1.4.0"
 
-"@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.32.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.53.1":
+"@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.53.1":
   version "1.53.1"
   resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-1.53.1.tgz#f90231775f128c3040dc5f2cdfc4f8c383a21fdf"
   integrity sha512-zhaXZqo4pj0y0+29PQGPI++pZjXJFeAP97uXRyfAJNI02UNL6yy7hRTTiIzzGqRMcqIk4IveIIrjHDbU1SAFVg==
   dependencies:
     axios "^0.21.1"
+    chalk "^4.1.0"
+    logform "^2.2.0"
+    promise.allsettled "^1.0.4"
+    voca "^1.4.0"
+    winston "^3.3.3"
+
+"@sap-cloud-sdk/util@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-2.1.0.tgz#e63e18328f11dccaea387a24b079e3c3189f1881"
+  integrity sha512-Qfd7KVf1067exgwK9on+UFi8R6qZjsyn8MfdW59T6srFE06OCRx6tM/YzI/YE9+oJg7yizChBE4x6u+fwmZr1w==
+  dependencies:
+    axios "^0.26.0"
     chalk "^4.1.0"
     logform "^2.2.0"
     promise.allsettled "^1.0.4"
@@ -2359,6 +2371,13 @@ axios@^0.25.0:
   integrity sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==
   dependencies:
     follow-redirects "^1.14.7"
+
+axios@^0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.26.0.tgz#9a318f1c69ec108f8cd5f3c3d390366635e13928"
+  integrity sha512-lKoGLMYtHvFrPVt3r+RBMp9nh34N0M8zEfCWqdWZx6phynIEhQqAdydpyBAAG211zlhX9Rgu08cOamy6XjE5Og==
+  dependencies:
+    follow-redirects "^1.14.8"
 
 babel-jest@^26.6.3:
   version "26.6.3"
@@ -4363,6 +4382,11 @@ follow-redirects@^1.14.0, follow-redirects@^1.14.7:
   version "1.14.7"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.7.tgz#2004c02eb9436eee9a21446a6477debf17e81685"
   integrity sha512-+hbxoLbFMbRKDwohX8GkTataGqO6Jb7jGwpAlwgy2bIz25XtRm7KEzJM76R1WiNT5SwZkX4Y75SwBolkpmE7iQ==
+
+follow-redirects@^1.14.8:
+  version "1.14.8"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.8.tgz#016996fb9a11a100566398b1c6839337d7bfa8fc"
+  integrity sha512-1x0S9UVJHsQprFcEC/qnNzBLcIxsjAV905f/UkQxbclCsoTWlacCNOpQa/anodLl2uaEKFhfWOvM2Qg77+15zA==
 
 for-in@^1.0.2:
   version "1.0.2"
