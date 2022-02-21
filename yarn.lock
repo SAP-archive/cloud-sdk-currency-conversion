@@ -1448,12 +1448,12 @@
     winston "^3.3.3"
 
 "@sap/audit-logging@latest":
-  version "5.4.1"
-  resolved "https://registry.yarnpkg.com/@sap/audit-logging/-/audit-logging-5.4.1.tgz#b4b8b9d0e786f97f35c4218bbba42c709edac33c"
-  integrity sha512-N2nKt1RXoWvRIC0O3t0OSjG4zu7V5uxXpJCu5DqT49LigUHUCpRcUV2c74sG2ovEuT0R0lvf/OxXSI9j9jfcSQ==
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@sap/audit-logging/-/audit-logging-5.5.0.tgz#eec76e2d8c686de94beee91bc01c7c89a03c63b4"
+  integrity sha512-LWReSb+nJSEQ5psO2XGu1ZB6RPZg2nYKl2HNp+kZzdyXNsi2SdFrJEhnx+nizB92r2FbzB4bOJpq7rjYbzgHZw==
   dependencies:
     "@sap/xssec" "^3.2.10"
-    debug "4.2.0"
+    debug "4.3.3"
     fetch-retry "4.1.0"
     node-cache "5.1.0"
     node-fetch "2.6.7"
