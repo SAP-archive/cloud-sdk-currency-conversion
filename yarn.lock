@@ -1603,9 +1603,9 @@
     debug "3.1.0"
 
 "@sap/hana-client@^2", "@sap/hana-client@^2.6.58":
-  version "2.11.14"
-  resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.11.14.tgz#1bee33b34988e39b958e020d0683165e1baacfdf"
-  integrity sha512-THQrPUXFtUV/PPfquzeVySpmfjksPAZpc/mqCgC7AW76IXBO/iPjeNLPI911BQsa2o3JOhTRYBjSjX3kwfzMqw==
+  version "2.11.20"
+  resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.11.20.tgz#24ff7e8a702e2d0b7f70ae38cf05123fc58ff51b"
+  integrity sha512-FBQU7XXHVoo0bECVwFlwjL2d9V3D/N73ffOtKkZM8WGP76LXsl4W9PJWMWQFG+pYRHrSE0uoLgZwxU12DINI1g==
   dependencies:
     debug "3.1.0"
 
@@ -4379,12 +4379,7 @@ fn.name@1.x.x:
   resolved "https://registry.yarnpkg.com/fn.name/-/fn.name-1.1.0.tgz#26cad8017967aea8731bc42961d04a3d5988accc"
   integrity sha512-GRnmB5gPyJpAhTQdSZTSp9uaPSvl09KoYcMQtsB9rQoOmzs9dH6ffeccH+Z+cv6P68Hu5bC6JjRh4Ah/mHSNRw==
 
-follow-redirects@^1.14.0, follow-redirects@^1.14.7:
-  version "1.14.8"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.8.tgz#016996fb9a11a100566398b1c6839337d7bfa8fc"
-  integrity sha512-1x0S9UVJHsQprFcEC/qnNzBLcIxsjAV905f/UkQxbclCsoTWlacCNOpQa/anodLl2uaEKFhfWOvM2Qg77+15zA==
-
-follow-redirects@^1.14.8:
+follow-redirects@^1.14.0, follow-redirects@^1.14.7, follow-redirects@^1.14.8:
   version "1.14.8"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.8.tgz#016996fb9a11a100566398b1c6839337d7bfa8fc"
   integrity sha512-1x0S9UVJHsQprFcEC/qnNzBLcIxsjAV905f/UkQxbclCsoTWlacCNOpQa/anodLl2uaEKFhfWOvM2Qg77+15zA==
