@@ -1638,10 +1638,10 @@
     "@sap/cds" "^5.6.0"
     semver "^7.3.4"
 
-"@sap/hana-client@2.9.28":
-  version "2.9.28"
-  resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.9.28.tgz#7bf7e42f422ff0a72c92ce0f9c32bbfcbb7e435d"
-  integrity sha512-RPWMZHUH/Wi9ef72li+dLgDQgP+9zlr57XTWfWNMqqLfumx5Xp/cMlxBIGO4cJ7TAM032SMlcjU2W2uziRA9Hw==
+"@sap/hana-client@2.10.20":
+  version "2.10.20"
+  resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.10.20.tgz#4aebfc08f5e12091b90272be2ee603ebeabf3b90"
+  integrity sha512-K7Gx+q4B9o+P8yfcd4/QDG3ZKmb8PNWmq8YGMryE4NskNjfrwB7SqbCTda0SP8ne7lajqmuOk1HS1nV5xtQCYA==
   dependencies:
     debug "3.1.0"
 
@@ -1653,22 +1653,22 @@
     debug "3.1.0"
 
 "@sap/hdi-deploy@^4":
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/@sap/hdi-deploy/-/hdi-deploy-4.2.3.tgz#dfcb5f32f2abd52765b22b05a80e927304ca5037"
-  integrity sha512-98YOfDOiVCIOa3TTqjMNf4Dwj5YRsuh1BdqU6C+lDGf/4nyMC/UOgfTMcHLxoTpBMAzLfNX6gAa37tpGi6AFKQ==
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@sap/hdi-deploy/-/hdi-deploy-4.3.0.tgz#2b48f7bfe7d62a5e039fced28baba82309617fe7"
+  integrity sha512-qj5iqQaQxjWzIPToRrNjl8pX/YKA6szhn/gE5h9CVaADX4miULLXBr3xHLE9FNSL02WUJKDaUT9z8fzARyMP0w==
   dependencies:
-    "@sap/hana-client" "2.9.28"
-    "@sap/hdi" "4.1.0"
+    "@sap/hana-client" "2.10.20"
+    "@sap/hdi" "4.2.0"
     "@sap/xsenv" "3.1.0"
     async "3.1.0"
     dotenv "10.0.0"
     handlebars "4.7.7"
     micromatch "4.0.4"
 
-"@sap/hdi@4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@sap/hdi/-/hdi-4.1.0.tgz#ccbcc9a1a2355318016991bc152403bb5e88513b"
-  integrity sha512-rDN5cFk7ejB2xT6qlu/jLYXgDGUQWaNgykpoBK81z8v8/yOkXIvK0C+WXz6ZDOTx8ePDiw0yEm4gUz0UDAhghQ==
+"@sap/hdi@4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@sap/hdi/-/hdi-4.2.0.tgz#27c90cf0137131549b71cb586f89360649635d05"
+  integrity sha512-InmsJdKxmIxewCPcJ2tYvV7yg2xD3BF2EZSamNPhNGXwloq7NfCmXJ7vMDiqFwfoxF5waHvnreLMubZp/YlHMQ==
   dependencies:
     async "3.1.0"
 
