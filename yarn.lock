@@ -1638,39 +1638,32 @@
     "@sap/cds" "^5.6.0"
     semver "^7.3.4"
 
-"@sap/hana-client@2.9.28":
-  version "2.9.28"
-  resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.9.28.tgz#7bf7e42f422ff0a72c92ce0f9c32bbfcbb7e435d"
-  integrity sha512-RPWMZHUH/Wi9ef72li+dLgDQgP+9zlr57XTWfWNMqqLfumx5Xp/cMlxBIGO4cJ7TAM032SMlcjU2W2uziRA9Hw==
-  dependencies:
-    debug "3.1.0"
-
-"@sap/hana-client@^2", "@sap/hana-client@^2.6.58":
-  version "2.11.20"
-  resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.11.20.tgz#24ff7e8a702e2d0b7f70ae38cf05123fc58ff51b"
-  integrity sha512-FBQU7XXHVoo0bECVwFlwjL2d9V3D/N73ffOtKkZM8WGP76LXsl4W9PJWMWQFG+pYRHrSE0uoLgZwxU12DINI1g==
+"@sap/hana-client@2.12.20", "@sap/hana-client@^2", "@sap/hana-client@^2.6.58":
+  version "2.12.20"
+  resolved "https://registry.yarnpkg.com/@sap/hana-client/-/hana-client-2.12.20.tgz#caf02d6d6b7dfe448ac2f6b5af143359197626fc"
+  integrity sha512-qd4LyoqeWZ/Qa5WBBK/5Npu7UxVFonyfHXI7ehgSeArTvOqcw3MY6RnruLPzl7ApMWDWis1YSKvB25yzOz5qWw==
   dependencies:
     debug "3.1.0"
 
 "@sap/hdi-deploy@^4":
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/@sap/hdi-deploy/-/hdi-deploy-4.2.3.tgz#dfcb5f32f2abd52765b22b05a80e927304ca5037"
-  integrity sha512-98YOfDOiVCIOa3TTqjMNf4Dwj5YRsuh1BdqU6C+lDGf/4nyMC/UOgfTMcHLxoTpBMAzLfNX6gAa37tpGi6AFKQ==
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/@sap/hdi-deploy/-/hdi-deploy-4.3.3.tgz#607d4c34d7b9b2b4d3f1b176590b6d93c8507b06"
+  integrity sha512-oZ9QDnm5piUxNk5WyU4XCv7mM3MBlXV6ejvy7zAKAYfM/O2U5SiUX9a0W0RKQ6FBuieQfBC3DHpCHfL8I0H14Q==
   dependencies:
-    "@sap/hana-client" "2.9.28"
-    "@sap/hdi" "4.1.0"
+    "@sap/hana-client" "2.12.20"
+    "@sap/hdi" "4.3.1"
     "@sap/xsenv" "3.1.0"
-    async "3.1.0"
+    async "3.2.3"
     dotenv "10.0.0"
     handlebars "4.7.7"
     micromatch "4.0.4"
 
-"@sap/hdi@4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@sap/hdi/-/hdi-4.1.0.tgz#ccbcc9a1a2355318016991bc152403bb5e88513b"
-  integrity sha512-rDN5cFk7ejB2xT6qlu/jLYXgDGUQWaNgykpoBK81z8v8/yOkXIvK0C+WXz6ZDOTx8ePDiw0yEm4gUz0UDAhghQ==
+"@sap/hdi@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@sap/hdi/-/hdi-4.3.1.tgz#95fb6e0a0462dca1c17e79e08a63784dbdbef470"
+  integrity sha512-7L9blMyMR/x8mpbdwhKEVXD+yf3NgQ8LyUjKCSyPZBF4dRGjB/8c2qzEDAsU3c7D0s/xLBTWbxf0/hj657FR7w==
   dependencies:
-    async "3.1.0"
+    async "3.2.3"
 
 "@sap/xsenv@3.1.0":
   version "3.1.0"
@@ -2384,15 +2377,10 @@ astral-regex@^2.0.0:
   resolved "https://registry.yarnpkg.com/astral-regex/-/astral-regex-2.0.0.tgz#483143c567aeed4785759c0865786dc77d7d2e31"
   integrity sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==
 
-async@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/async/-/async-3.1.0.tgz#42b3b12ae1b74927b5217d8c0016baaf62463772"
-  integrity sha512-4vx/aaY6j/j3Lw3fbCHNWP0pPaTCew3F6F3hYyl/tHs/ndmV1q7NW9T5yuJ2XAGwdQrP+6Wu20x06U4APo/iQQ==
-
-async@^3.1.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/async/-/async-3.2.0.tgz#b3a2685c5ebb641d3de02d161002c60fc9f85720"
-  integrity sha512-TR2mEZFVOj2pLStYxLht7TyfuRzaydfpxr3k9RpHIzMgw7A64dzsdqCxH1WJyQdoe8T10nDXd9wnEigmiuHIZw==
+async@3.2.3, async@^3.1.0:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.2.3.tgz#ac53dafd3f4720ee9e8a160628f18ea91df196c9"
+  integrity sha512-spZRyzKL5l5BZQrr/6m/SqFdBN0q3OCI0f9rjfBzCMBIP4p75P620rR3gTmaksNOhmzgdxcaxdNfMy6anrbM0g==
 
 asynckit@^0.4.0:
   version "0.4.0"
