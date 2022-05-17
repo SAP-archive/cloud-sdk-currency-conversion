@@ -47,6 +47,6 @@
     "@sap-cloud-sdk/util": "^2.1.0",
     "@sap/cds": "4.3.0",
     "@sap/hana-client": "^2.6.58",
-    "sqlite3": "5.0.2"
+    "sqlite3": "5.0.8"
   }
 }
