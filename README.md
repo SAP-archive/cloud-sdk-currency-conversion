@@ -2,6 +2,10 @@
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP/cloud-sdk-currency-conversion)](https://api.reuse.software/info/github.com/SAP/cloud-sdk-currency-conversion)
 
+## The SAP Cloud SDK Currency Conversion Library is deprecated
+This repository and the npm packages `@sap-cloud-sdk/currency-conversion-core`, `@sap-cloud-sdk/currency-conversion-data-adapter`, `@sap-cloud-sdk/currency-conversion-models`, `@sap-cloud-sdk/currency-conversion-integration-objects` are deprecated. There will be no major updates, bug fixes, etc.
+
+## Overview
 The currency conversion library is an extension to the SAP Cloud SDK. You can use this library to facilitate currency exchange rate conversion.
 
 > The library does not provide any out of the box market data. You must provide the currency exchange rates to the library from your own data sources. You can use the [SAP Market Rates Management](https://www.sap.com/products/market-rates-management.html) service or any other service of your choice.
