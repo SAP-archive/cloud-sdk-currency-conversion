@@ -1523,21 +1523,21 @@
     resolve "1.8.1"
     sax "^1.2.4"
 
-"@sap/cds-compiler@^2.4.4":
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/@sap/cds-compiler/-/cds-compiler-2.5.2.tgz#6a6273a36123109f110e1d09829bbb40e14ec772"
-  integrity sha512-C8I9YbZ7LkS7OkjKWMmsIYGXGYYwxW9TgveMxFkDjefv6bljEGD0HkVo3UoEdtbXWAyPxFJ8kBBjKDPHXXFDjQ==
+"@sap/cds-compiler@^2.13.0":
+  version "2.15.4"
+  resolved "https://registry.yarnpkg.com/@sap/cds-compiler/-/cds-compiler-2.15.4.tgz#b0fc480eeeeb2f5d6e26bead32e0e3beeb36aac0"
+  integrity sha512-x76x1zS3Fa49OsR/wgbIWAagquINZd89LzVWM+1V4xkn0QTvQKs+SMUjNKE8tmo8EcmNjh9s7O2TkBpr9YqL6Q==
   dependencies:
     antlr4 "4.8.0"
 
 "@sap/cds-dk@^4.3.3":
-  version "4.8.1"
-  resolved "https://registry.yarnpkg.com/@sap/cds-dk/-/cds-dk-4.8.1.tgz#64f4f86f1d46dc5011339bdd3abef66040ae3666"
-  integrity sha512-/HyQF89wQaMNoAWrkrkCCFW3MBCt15A5V1F2YsWpVpRXdf90lQzPGNb39fsOW/BWcSMGeRd5GxSp2pC3J2ZDNw==
+  version "4.9.7"
+  resolved "https://registry.yarnpkg.com/@sap/cds-dk/-/cds-dk-4.9.7.tgz#3caa77303dcf94a866124a98b683c8dd810fe748"
+  integrity sha512-o44qREvZYiNPJRey2dCFdQPqcc0S/S8Sh4Zde9u9Ehyf4WF844oYZjiIgeCXDK6JxzksCDCfcXnpUp51eG1fSg==
   dependencies:
-    "@sap/cds" "^5.6.4"
+    "@sap/cds" "^5.9.2"
     "@sap/cds-foss" "^3"
-    "@sap/eslint-plugin-cds" "^2.3.0"
+    "@sap/eslint-plugin-cds" "^2.3.3"
     axios ">=0.21"
     connect-livereload "^0.6.1"
     eslint "^8"
@@ -1620,20 +1620,20 @@
     "@sap/cds-reflect" "^2.13.0"
     "@sap/cds-runtime" "~2.7.0"
 
-"@sap/cds@^5.6.0", "@sap/cds@^5.6.4":
-  version "5.7.5"
-  resolved "https://registry.yarnpkg.com/@sap/cds/-/cds-5.7.5.tgz#5992c270cc00e6d57e10faf7613c89250305e6d4"
-  integrity sha512-GAUJA6A8cWMuWX0XJp//44xADFkBX5x1pcJ+xySLoAUNGYZlPx2eTNN+KPYMqWAavr0U1lOAuPR8ckKOikDs8Q==
+"@sap/cds@^5.6.0", "@sap/cds@^5.9.2":
+  version "5.9.8"
+  resolved "https://registry.yarnpkg.com/@sap/cds/-/cds-5.9.8.tgz#4ba06e6441fd4226faf1045d804188e0d36def5b"
+  integrity sha512-qRlhxOt51iz04uvtLTdyMOLp7n9ph1FW9B7Cv/k/e89jNJ3RxMA6BPigw/opw9Qd8uod2j4g/oMXg1XSN3m1vA==
   dependencies:
     "@sap-cloud-sdk/core" "^1.41"
     "@sap-cloud-sdk/util" "^1.41"
-    "@sap/cds-compiler" "^2.4.4"
+    "@sap/cds-compiler" "^2.13.0"
     "@sap/cds-foss" "^3"
 
-"@sap/eslint-plugin-cds@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@sap/eslint-plugin-cds/-/eslint-plugin-cds-2.3.0.tgz#21e394480bd5b0ddfed6488317c42cc584b310f8"
-  integrity sha512-7HiCUk8CcBdQIBh2QQPmkiEklzLsZw47NP0+/JHsE/dsDT5Dkk3eREG4mNQQz+xva3Ng4YYQKWuBhbj7nljtNg==
+"@sap/eslint-plugin-cds@^2.3.3":
+  version "2.3.5"
+  resolved "https://registry.yarnpkg.com/@sap/eslint-plugin-cds/-/eslint-plugin-cds-2.3.5.tgz#69e8fe07579d4391d9080cc37e8e1d43162fcc97"
+  integrity sha512-wbCqc+Vwiqg8svvPB/ms5r/z5VS7ckkSPBKTPY83jftUtvMGKVWvC3yMctAaGItlE32eK5FjHKCmgNZu4qG9Tg==
   dependencies:
     "@sap/cds" "^5.6.0"
     semver "^7.3.4"
