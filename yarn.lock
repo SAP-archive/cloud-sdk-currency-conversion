@@ -1451,25 +1451,25 @@
   dependencies:
     "@octokit/openapi-types" "^5.2.2"
 
-"@sap-cloud-sdk/analytics@^1.54.0":
-  version "1.54.0"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/analytics/-/analytics-1.54.0.tgz#22e073bca592394607b8efb2742d67d10f8ef28d"
-  integrity sha512-m8ehuGe2VXvii6snIDRFolzIxtgyBPRX+GhUhNZR1hzU87n9MOrgPlUL4iwxGRXYzkarFg6WoDuDp8s8LeHaLw==
+"@sap-cloud-sdk/analytics@^1.54.2":
+  version "1.54.2"
+  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/analytics/-/analytics-1.54.2.tgz#8d50c30fd313e0f87df880a519991d3462a1c598"
+  integrity sha512-CUoyVJ2HjPGJKwhV7EnUWR9n7c/uYpDyygy8ROzpgdT1qDVyMNWjtaaCbR4a15afIpRvJ5soLDFFLWyK6CV40g==
   dependencies:
-    "@sap-cloud-sdk/util" "^1.54.0"
-    axios "^0.21.1"
+    "@sap-cloud-sdk/util" "^1.54.2"
+    axios "^0.26.0"
 
 "@sap-cloud-sdk/core@^1.18.1", "@sap-cloud-sdk/core@^1.32.1", "@sap-cloud-sdk/core@^1.41":
-  version "1.54.0"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/core/-/core-1.54.0.tgz#b4fc666400b33e974d34977a3c1f6eb114162b3b"
-  integrity sha512-SMgaf7Vy6g6IPY18eXRQF7YZgb3UBzZcXH/e6l1N7mFHRlVRFHELChaRZPQ8SzSiomHEL3r/I84lDrxNEs4u3A==
+  version "1.54.2"
+  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/core/-/core-1.54.2.tgz#fa8c592787e3e5571554c0e43dd14e70a30d2be7"
+  integrity sha512-oF1nMYo9qAk4BDAypuAfhofxxeNKTqIroMfZAqgOb8vXxwtsZjS+bK03mptxE3cPnDhwUV0LaOeNy5foIv9oCw==
   dependencies:
-    "@sap-cloud-sdk/analytics" "^1.54.0"
-    "@sap-cloud-sdk/util" "^1.54.0"
+    "@sap-cloud-sdk/analytics" "^1.54.2"
+    "@sap-cloud-sdk/util" "^1.54.2"
     "@sap/xsenv" "^3.0.0"
     "@sap/xssec" "^3.2.7"
     "@types/jsonwebtoken" "^8.3.8"
-    axios "^0.21.1"
+    axios "^0.26.0"
     bignumber.js "^9.0.0"
     http-proxy-agent "^5.0.0"
     https-proxy-agent "^5.0.0"
@@ -1479,10 +1479,10 @@
     uuid "^8.2.0"
     voca "^1.4.0"
 
-"@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.54.0":
-  version "1.54.1"
-  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-1.54.1.tgz#28599ff0089c5a89251628a1719b42c9861ae104"
-  integrity sha512-omB4Pucbt+YwCVE565AaHnv7tECnn2VpKaUZaq4a3bw8TBjXh7L7/hy1+oY1wcO2YVwgxFINXXQmsNimyJ4suQ==
+"@sap-cloud-sdk/util@^1.18.1", "@sap-cloud-sdk/util@^1.41", "@sap-cloud-sdk/util@^1.54.2":
+  version "1.54.2"
+  resolved "https://registry.yarnpkg.com/@sap-cloud-sdk/util/-/util-1.54.2.tgz#ffff1c54fca18a736c65bb0bb154bc74e70e0e47"
+  integrity sha512-ZC70YlHG6c2zH4OjzTtbb4s9eNJdMJEQm3KRL+u7/kN/vRJr7IrQZmidSa8RO86nnx2GZPn4zH3GTsnwAQEHuA==
   dependencies:
     axios "^0.26.0"
     chalk "^4.1.0"
@@ -2425,13 +2425,6 @@ axios@>=0.21, axios@^0.26.0:
   integrity sha512-lKoGLMYtHvFrPVt3r+RBMp9nh34N0M8zEfCWqdWZx6phynIEhQqAdydpyBAAG211zlhX9Rgu08cOamy6XjE5Og==
   dependencies:
     follow-redirects "^1.14.8"
-
-axios@^0.21.1:
-  version "0.21.4"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
-  integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
-  dependencies:
-    follow-redirects "^1.14.0"
 
 axios@^0.25.0:
   version "0.25.0"
@@ -4518,7 +4511,7 @@ fn.name@1.x.x:
   resolved "https://registry.yarnpkg.com/fn.name/-/fn.name-1.1.0.tgz#26cad8017967aea8731bc42961d04a3d5988accc"
   integrity sha512-GRnmB5gPyJpAhTQdSZTSp9uaPSvl09KoYcMQtsB9rQoOmzs9dH6ffeccH+Z+cv6P68Hu5bC6JjRh4Ah/mHSNRw==
 
-follow-redirects@^1.14.0, follow-redirects@^1.14.7, follow-redirects@^1.14.8:
+follow-redirects@^1.14.7, follow-redirects@^1.14.8:
   version "1.14.8"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.8.tgz#016996fb9a11a100566398b1c6839337d7bfa8fc"
   integrity sha512-1x0S9UVJHsQprFcEC/qnNzBLcIxsjAV905f/UkQxbclCsoTWlacCNOpQa/anodLl2uaEKFhfWOvM2Qg77+15zA==
